@@ -83,21 +83,19 @@ const SocialItems: Socials[] = [
 
 function NavSocials() {
   return (
-    <div className="pt-[60px] flex justify-end w-4/5 mx-auto pb-[30px]">
-      <div className="flex space-x-8 pr-[30px]">
-        {SocialItems.map((item) => (
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            key={item.id}
-            href={item.link}
-          >
-            <span className="text-[#DD90E1] h-5 w-5">
-              <item.icon size={20} />
-            </span>
-          </Link>
-        ))}
-      </div>
+    <div className="flex space-x-8 pr-[30px]">
+      {SocialItems.map((item) => (
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          key={item.id}
+          href={item.link}
+        >
+          <span className="text-[#DD90E1] h-5 w-5">
+            <item.icon size={20} />
+          </span>
+        </Link>
+      ))}
     </div>
   );
 }
