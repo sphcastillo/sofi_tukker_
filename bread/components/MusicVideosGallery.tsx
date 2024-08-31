@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import { useState } from "react";
 
 function MusicVideosGallery() {
@@ -47,10 +48,12 @@ function MusicVideosGallery() {
               className="w-full h-full"
             ></iframe>
           ) : (
-            <img
+            <Image
               src={video.thumbnail}
               alt={video.title}
               className="w-full h-full object-cover"
+              width={280}
+              height={160}
             />
           )}
           {!activeVideo && (
