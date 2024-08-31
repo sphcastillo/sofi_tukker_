@@ -36,27 +36,28 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="w-4/5 mx-auto flex justify-center">
+    <div className="w-full mx-auto flex justify-center">
       <ul
-        className={`${beiko.className} h-[78px] items-end flex space-x-[85px] text-[#DD90E1] text-[22px] font-bold`}
+        className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-5 sm:space-x-5 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
       >
-        <li>MUSIC</li>
-        <li>TOUR</li>
+        <li className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">MUSIC</li>
+        <li className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">TOUR</li>
         <motion.div
             initial="initial"
             animate="animate"
             variants={imageVariants}
             key={isScrolled ? 'st_logo' : 'sofitukkerlogo'}
+            className="w-[185px] sm:w-[186px] md:w-[220px] lg:w-[280px]"
         >
           <Image
             src={isScrolled ? st_logo : sofitukkerlogo}
             alt="Sofi Tukker Logo"
             priority
-            className="object-contain items-start"
+            className="object-cover "
           />
         </motion.div>
-        <li>STORE</li>
-        <li>SIGN UP</li>
+        <li className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">STORE</li>
+        <li className="text-pretty text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">SIGN UP</li>
       </ul>
     </div>
   );
