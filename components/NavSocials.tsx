@@ -83,7 +83,7 @@ const SocialItems: Socials[] = [
 
 function NavSocials() {
   return (
-    <div className="flex space-x-8 pr-[30px]">
+    <div className="flex space-x-8">
       {SocialItems.map((item) => (
         <Link
           target="_blank"

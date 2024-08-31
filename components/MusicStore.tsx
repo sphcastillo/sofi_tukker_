@@ -47,15 +47,17 @@ function MusicStore() {
         {BreadStoreItems.map((item) => (
           <div
             key={item.id}
-            className=""
+            className="flex flex-col items-center"
           >
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={400} // Adjust size as needed
-              height={300} // Adjust size as needed
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative w-full h-48 max-w-[400px] max-h-[300px]">
+              <Image
+                src={item.image}
+                alt={item.title}
+                layout="fill"
+                objectFit="contain"
+                className="w-full h-full"
+              />
+            </div>
             <div className={`${beiko.className} p-4 `}>
               <h2 className="text-[28px] font-semibold mb-2 text-center leading-3">{item.title}</h2>
               <p className="text-[28px] text-[#000000] mb-4 text-center">{item.price}</p>

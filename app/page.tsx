@@ -16,19 +16,19 @@ import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Variants } from "framer-motion";
-
+import Link from "next/link";
 
 const imageVariants: Variants = {
-  initial: { 
-    y: 50, 
-    opacity: 0, 
-    transition: { duration: 1, ease: "easeOut" } 
+  initial: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 1, ease: "easeOut" },
   },
-  animate: { 
-    y: 0, 
-    opacity: 1, 
-    transition: { duration: 1, ease: "easeOut" } 
-  }
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, ease: "easeOut" },
+  },
 };
 
 const beiko = localFont({
@@ -49,25 +49,23 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-
       if (window.scrollY > 20) {
-
         setHasScrolled(true);
-      } 
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
     if (hasScrolled && musicRef.current) {
-      gsap.fromTo(musicRef.current, 
-        { opacity: 0, y: 50 }, 
+      gsap.fromTo(
+        musicRef.current,
+        { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1.2 }
       );
     }
@@ -96,7 +94,7 @@ export default function Home() {
           <div
             ref={musicRef}
             className="top-[-50px] absolute object-contain md:mx-[200px] lg:mx-[120px] z-20"
-            style={{ backgroundColor: 'transparent' }}
+            style={{ backgroundColor: "transparent" }}
           >
             <Image
               src={MusicTitle}
@@ -133,9 +131,11 @@ export default function Home() {
           className={`${beiko.className} flex justify-center items-center pt-[54px]`}
         >
           <button className="rounded-full text-[#dd90e1] bg-[#ffffff] border-[2px] border-white pb-3 pt-[14px] px-4 ">
-            <span className="flex items-center text-[40px]">
-              PURCHASE TICKETS
-            </span>
+            <Link href="/tour">
+              <span className="flex items-center text-[40px]">
+                PURCHASE TICKETS
+              </span>
+            </Link>
           </button>
         </div>
       </div>
