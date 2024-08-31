@@ -5,16 +5,24 @@ import Image from "next/image";
 import st_logo from "@/images/header/st_logo.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
 const beiko = localFont({
   src: "../public/fonts/Beiko.otf",
 });
 
-const imageVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    transition: { duration: 2, ease: 'easeOut' }
-}
+const imageVariants: Variants = {
+  initial: { 
+    y: 50, 
+    opacity: 0, 
+    transition: { duration: 2, ease: "easeOut" } 
+  },
+  animate: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { duration: 2, ease: "easeOut" } 
+  }
+};
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

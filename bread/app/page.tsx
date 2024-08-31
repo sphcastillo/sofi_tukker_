@@ -15,13 +15,21 @@ import Footer from "@/components/Footer";
 import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Variants } from "framer-motion";
 
-const imageVariants = {
-  initial: { y: 50, opacity: 0 },
-  animate: { y: 0, opacity: 1 },
-  transition: { duration: 1, ease: "easeOut" },
+
+const imageVariants: Variants = {
+  initial: { 
+    y: 50, 
+    opacity: 0, 
+    transition: { duration: 1, ease: "easeOut" } 
+  },
+  animate: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { duration: 1, ease: "easeOut" } 
+  }
 };
-
 
 const beiko = localFont({
   src: "../public/fonts/Beiko.otf",

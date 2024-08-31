@@ -1,1 +1,4 @@
-#BREAD
+# BREAD
+
+## Purpose
+For portfolio purposes
