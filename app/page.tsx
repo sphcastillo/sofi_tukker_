@@ -95,7 +95,7 @@ export default function Home() {
       {/* Music Section */}
       <div className="relative  bg-[#dd90e1] flex flex-col justify-center items-center">
         {!hasScrolled ? (
-          <div className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px]">
+          <div className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px] xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]">
             <Image
               src={MusicTitle}
               alt="MUSIC Title"
@@ -108,7 +108,7 @@ export default function Home() {
         ) : (
           <div
             ref={musicRef}
-            className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px]"
+            className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px] xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
             style={{ backgroundColor: "transparent" }}
           >
             <Image
@@ -133,7 +133,7 @@ export default function Home() {
             initial="initial"
             animate={tourInView ? "animate" : "initial"}
             variants={imageVariants}
-            className="flex pt-[42px] xs:pt-[66px] justify-center object-contain w-[234px] z-20"
+            className="flex pt-[42px] xs:pt-[66px] justify-center object-contain w-[234px] xxs:w-[254px] z-20 xs:w-[315px] sm:w-[375px] md:w-[429px]"
           >
             <Image
               src={TourTitle}
@@ -168,7 +168,7 @@ export default function Home() {
             initial="initial"
             animate={merchInView ? "animate" : "initial"}
             variants={imageVariants}
-            className="flex pt-[66px] justify-center object-contain w-[254px] z-20"
+            className="flex pt-[66px] justify-center object-contain w-[254px] z-20 xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
           >
             <Image
               src={MerchTitle}
@@ -190,7 +190,7 @@ export default function Home() {
             initial="initial"
             animate={videoInView ? "animate" : "initial"}
             variants={imageVariants}
-            className="flex pt-[66px] justify-center object-contain w-[254px] z-20 mb-[60px]"
+            className="flex pt-[66px] justify-center object-contain w-[254px] z-20 mb-[60px] xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
           >
             <Image
               src={VideoTitle}

@@ -68,14 +68,14 @@ function Navbar() {
           animate="animate"
           variants={imageVariants}
           key={isScrolled ? "st_logo" : "sofitukkerlogo"}
-          className="w-[115px] xxs:w-[185px] sm:w-[186px] md:w-[220px] lg:w-[280px]"
+          className="w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[186px] md:w-[220px] lg:w-[280px]"
         >
           <Link href="/" className="flex justify-center">
             <Image
               src={isScrolled ? st_logo : sofitukkerlogo}
               alt="Sofi Tukker Logo"
               priority
-              className="w-[99px] object-cover "
+              className="w-[99px] xxs:w-[124px] xs:w-[154px] object-cover "
             />
           </Link>
         </motion.div>
