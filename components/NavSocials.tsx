@@ -83,7 +83,7 @@ const SocialItems: Socials[] = [
 
 function NavSocials() {
   return (
-    <div className="flex space-x-8">
+    <div className="flex space-x-3 xxs:space-x-5 sm:space-x-8 sm:pr-[30px]">
       {SocialItems.map((item) => (
         <Link
           target="_blank"
@@ -91,8 +91,8 @@ function NavSocials() {
           key={item.id}
           href={item.link}
         >
-          <span className="text-[#DD90E1] h-5 w-5">
-            <item.icon size={20} />
+          <span className="text-[#DD90E1]">
+            <item.icon className="h-4 w-4 sm:h-5 sm:w-5"/>
           </span>
         </Link>
       ))}

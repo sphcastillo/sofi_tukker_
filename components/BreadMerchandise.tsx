@@ -1,3 +1,5 @@
+import { motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import hoodie from "@/images/breadMerchandise/breadHoodie1.png";
 import breadtshirt from "@/images/breadMerchandise/breadTee2.png";
@@ -88,35 +90,62 @@ const BreadShopItems: BreadMerchandiseItems[] = [
   },
 ];
 
+const itemVariants: Variants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
+  },
+};
+
 function BreadMerchandise() {
+  const rowRef = useRef(null);
+  const inView = useInView(rowRef, { once: false });
+
   return (
-    <div className="p-4 pt-[120px]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {BreadShopItems.map((item) => (
-          <div key={item.id} className="">
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={5600} // Adjust size as needed
-              height={350} // Adjust size as needed
-              className=" h-[260px] object-contain"
-            />
-            <div className={`${beiko.className} p-4 `}>
-              <h2 className="text-[28px] text-[#fa264e] text-center leading-tight">
+    <div className=" p-4 flex justify-center bg-[#fff2e7]">
+      <motion.div 
+        className=" z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full"
+        initial="initial"
+        animate={inView ? "animate" : "initial"}
+        variants={itemVariants}
+        ref={rowRef}
+      >
+        {BreadShopItems.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center"
+          >
+            <div className="w-full h-full flex justify-center items-center">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={560}
+                height={350}
+                className="max-h-[260px] object-contain z-10 w-auto h-auto"
+              />
+            </div>
+            <div className={`${beiko.className} p-4 w-full`}>
+              <h2 className="text-[18px] xs:text-[28px] text-[#fa264e] text-center leading-tight">
                 {item.title}
               </h2>
-              <p className="text-[28px] text-[#fa264e] mb-3 text-center mt-[-8px]">
+              <p className="text-[18px] xs:text-[28px] text-[#fa264e] mb-3 text-center mt-[-8px]">
                 {item.price}
               </p>
               <div className="flex justify-center items-center">
-                <button className=" text-[#eac0ff] bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
+                <button className="text-[16px] tracking-wide text-[#eac0ff] bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
                   SHOP NOW
                 </button>
               </div>
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

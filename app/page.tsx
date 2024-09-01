@@ -12,10 +12,9 @@ import MusicVideosGallery from "@/components/MusicVideosGallery";
 import throwSomeAssBuns from "@/images/homepage/breadThrowSomeAssBuns.png";
 import breadArtWork from "@/images/homepage/breadAlbumArtwork.png";
 import Footer from "@/components/Footer";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Variants } from "framer-motion";
 import Link from "next/link";
 
 const imageVariants: Variants = {
@@ -31,6 +30,19 @@ const imageVariants: Variants = {
   },
 };
 
+const albumArtworkVariants: Variants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 1, ease: "easeOut", delay: 0.65 },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, ease: "easeOut", delay: 0.65 },
+  },
+};
+
 const beiko = localFont({
   src: "../public/fonts/Beiko.otf",
 });
@@ -42,10 +54,12 @@ export default function Home() {
   const tourRef = useRef(null);
   const merchRef = useRef(null);
   const videoRef = useRef(null);
+  const albumArtworkRef = useRef(null);
 
   const tourInView = useInView(tourRef, { once: false });
   const merchInView = useInView(merchRef, { once: false });
   const videoInView = useInView(videoRef, { once: false });
+  const albumArtworkInView = useInView(albumArtworkRef, { once: false });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,19 +95,20 @@ export default function Home() {
       {/* Music Section */}
       <div className="relative  bg-[#dd90e1] flex flex-col justify-center items-center">
         {!hasScrolled ? (
-          <div className="top-[-50px] absolute object-contain md:mx-[200px] lg:mx-[120px] z-20">
+          <div className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px]">
             <Image
               src={MusicTitle}
               alt="MUSIC Title"
               priority
               width={600}
               height={100}
+              className=""
             />
           </div>
         ) : (
           <div
             ref={musicRef}
-            className="top-[-50px] absolute object-contain md:mx-[200px] lg:mx-[120px] z-20"
+            className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px]"
             style={{ backgroundColor: "transparent" }}
           >
             <Image
@@ -111,28 +126,30 @@ export default function Home() {
       </div>
 
       {/* Tour Section */}
-      <div className="bg-[#b9ddba] h-[500px]">
-        <motion.div
-          ref={tourRef}
-          initial="initial"
-          animate={tourInView ? "animate" : "initial"}
-          variants={imageVariants}
-          className="flex pt-[66px] justify-center object-contain md:mx-[200px] lg:mx-[120px] z-20"
-        >
-          <Image
-            src={TourTitle}
-            alt="Tour Title"
-            priority
-            width={600}
-            height={100}
-          />
-        </motion.div>
+      <div className="bg-[#b9ddba]">
+        <div className="flex justify-center">
+          <motion.div
+            ref={tourRef}
+            initial="initial"
+            animate={tourInView ? "animate" : "initial"}
+            variants={imageVariants}
+            className="flex pt-[42px] xs:pt-[66px] justify-center object-contain w-[234px] z-20"
+          >
+            <Image
+              src={TourTitle}
+              alt="Tour Title"
+              priority
+              width={600}
+              height={100}
+            />
+          </motion.div>
+        </div>
         <div
-          className={`${beiko.className} flex justify-center items-center pt-[54px]`}
+          className={`${beiko.className} flex justify-center items-center pt-[48px] xs:pt-[54px] pb-10`}
         >
           <button className="rounded-full text-[#dd90e1] bg-[#ffffff] border-[2px] border-white pb-3 pt-[14px] px-4 ">
             <Link href="/tour">
-              <span className="flex items-center text-[40px]">
+              <span className="flex items-center text-[18px] sm:text-[40px]">
                 PURCHASE TICKETS
               </span>
             </Link>
@@ -141,63 +158,82 @@ export default function Home() {
       </div>
 
       {/* Merch Section */}
-      <div className="bg-[#fff2e7] relative min-h-screen flex flex-col">
-        <motion.div
-          ref={merchRef}
-          initial="initial"
-          animate={merchInView ? "animate" : "initial"}
-          variants={imageVariants}
-          className="flex pt-[66px] justify-center object-contain md:mx-[200px] lg:mx-[120px] z-20"
-        >
-          <Image
-            src={MerchTitle}
-            alt="Merch Title"
-            priority
-            width={600}
-            height={100}
-          />
-        </motion.div>
+      <div
+        id="merchSection"
+        className="bg-[#fff2e7] relative flex flex-col pb-9 "
+      >
+        <div className="flex justify-center">
+          <motion.div
+            ref={merchRef}
+            initial="initial"
+            animate={merchInView ? "animate" : "initial"}
+            variants={imageVariants}
+            className="flex pt-[66px] justify-center object-contain w-[254px] z-20"
+          >
+            <Image
+              src={MerchTitle}
+              alt="Merch Title"
+              priority
+              width={600}
+              height={100}
+            />
+          </motion.div>
+        </div>
         <BreadMerchandise />
       </div>
 
       {/* Video Gallery Section */}
       <div className="bg-[#000000]">
-        <motion.div
-          ref={videoRef}
-          initial="initial"
-          animate={videoInView ? "animate" : "initial"}
-          variants={imageVariants}
-          className="flex pt-[66px] justify-center object-contain md:mx-[200px] lg:mx-[120px] z-20 mb-[60px]"
-        >
-          <Image
-            src={VideoTitle}
-            alt="Video Title"
-            priority
-            width={600}
-            height={100}
-          />
-        </motion.div>
+        <div className="flex justify-center">
+          <motion.div
+            ref={videoRef}
+            initial="initial"
+            animate={videoInView ? "animate" : "initial"}
+            variants={imageVariants}
+            className="flex pt-[66px] justify-center object-contain w-[254px] z-20 mb-[60px]"
+          >
+            <Image
+              src={VideoTitle}
+              alt="Video Title"
+              priority
+              width={600}
+              height={100}
+            />
+          </motion.div>
+        </div>
         <MusicVideosGallery />
       </div>
 
       {/* Image Gallery Section */}
       <div className="flex w-full h-full overflow-hidden pt-4 bg-[#000000]">
-        <div className="flex-1">
+        <motion.div
+          className="flex-1"
+          ref={albumArtworkRef}
+          initial="initial"
+          variants={albumArtworkVariants}
+          animate={albumArtworkInView ? "animate" : "initial"}
+        >
           <Image
             src={throwSomeAssBuns}
             alt="Throw Some Ass Buns"
             className="w-full h-full object-cover"
             priority
           />
-        </div>
-        <div className="flex-1">
+        </motion.div>
+        <motion.div
+          ref={albumArtworkRef}
+          initial="initial"
+          variants={albumArtworkVariants}
+          animate={albumArtworkInView ? "animate" : "initial"}
+          className="flex-1"
+        >
           <Image
             src={breadArtWork}
             alt="Bread Album Artwork"
             className="w-full h-full object-cover"
             priority
           />
-        </div>
+        </motion.div>
       </div>
 
       <Footer />

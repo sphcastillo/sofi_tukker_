@@ -42,7 +42,7 @@ const BreadStoreItems: MusicStoreItems[] = [
 
 function MusicStore() {
   return (
-    <div className="p-4 pt-[120px]">
+    <div className="p-4 pt-[72px] sm:pt-[120px]">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {BreadStoreItems.map((item) => (
           <div
@@ -59,10 +59,10 @@ function MusicStore() {
               />
             </div>
             <div className={`${beiko.className} p-4 `}>
-              <h2 className="text-[28px] font-semibold mb-2 text-center leading-3">{item.title}</h2>
-              <p className="text-[28px] text-[#000000] mb-4 text-center">{item.price}</p>
+              <h2 className="text-[18px] xs:text-[28px] font-semibold mb-2 text-center leading-3">{item.title}</h2>
+              <p className="text-[18px] xs:text-[28px] text-[#000000] mb-4 text-center">{item.price}</p>
               <div className="flex justify-center items-center">
-                <button className=" text-[#eac0ff] bg-[#000000] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
+                <button className="text-[16px] tracking-wide text-[#eac0ff] bg-[#000000] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
                     SHOP NOW
                 </button>
               </div>

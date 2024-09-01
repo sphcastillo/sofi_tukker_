@@ -1,9 +1,27 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
+
+const musicVideosVariants: Variants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 1, ease: "easeOut", delay: 0.5 },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, ease: "easeOut", delay: 0.5 },
+  },
+};
 
 function MusicVideosGallery() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const musicVideoRef = useRef(null);
+
+  const musicVideoInView = useInView(musicVideoRef, { once: false });
 
   const videos = [
     {
@@ -32,7 +50,13 @@ function MusicVideosGallery() {
     },
   ];
   return (
-    <div className="flex w-full overflow-hidden">
+    <motion.div 
+      className="flex w-full overflow-hidden"
+      ref={musicVideoRef}
+      initial='initial'
+      variants={musicVideosVariants}
+      animate={musicVideoInView ? 'animate' : 'initial'}
+    >
       {videos.map((video) => (
         <div
           key={video.id}
@@ -63,7 +87,7 @@ function MusicVideosGallery() {
           )}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 export default MusicVideosGallery;

@@ -45,9 +45,9 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="w-full mx-auto flex justify-center">
+    <div className="w-full mx-auto flex justify-center pb-4 sm:pb-6">
       <ul
-        className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-5 sm:space-x-5 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
+        className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-4 xxs:space-x-5 sm:space-x-5 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
       >
         <li className="">
           <Link href="/music">
@@ -68,14 +68,14 @@ function Navbar() {
           animate="animate"
           variants={imageVariants}
           key={isScrolled ? "st_logo" : "sofitukkerlogo"}
-          className="w-[185px] sm:w-[186px] md:w-[220px] lg:w-[280px]"
+          className="w-[115px] xxs:w-[185px] sm:w-[186px] md:w-[220px] lg:w-[280px]"
         >
-          <Link href="/">
+          <Link href="/" className="flex justify-center">
             <Image
               src={isScrolled ? st_logo : sofitukkerlogo}
               alt="Sofi Tukker Logo"
               priority
-              className="object-cover "
+              className="w-[99px] object-cover "
             />
           </Link>
         </motion.div>
