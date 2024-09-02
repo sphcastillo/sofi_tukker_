@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         )}
         <div className="flex-1 w-full">
-          <MusicStore />
+          {/* <MusicStore /> */}
         </div>
       </div>
 

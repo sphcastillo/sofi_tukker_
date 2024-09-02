@@ -104,21 +104,22 @@ const itemVariants: Variants = {
 };
 
 function BreadMerchandise() {
-  const columnRefs = [useRef(null), useRef(null), useRef(null)];
-  const inViewStates = columnRefs.map((ref) => useInView(ref, { once: false }));
+  const refs = BreadShopItems.map(() => useRef<HTMLDivElement>(null));
+  const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
 
   return (
     <div className="p-4 flex justify-center bg-[#fff2e7]">
       <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {BreadShopItems.map((item, index) => {
-          const columnIndex = Math.floor(index / 3);
+          const ref = refs[index];
+          const isInView = inViewStates[index];
           return (
             <motion.div
               key={index}
-              ref={columnRefs[columnIndex]}
+              ref={ref}
               className="flex flex-col items-center"
               initial="initial"
-              animate={inViewStates[columnIndex] ? "animate" : "initial"}
+              animate={isInView ? "animate" : "initial"}
               variants={itemVariants}
             >
               <div className="w-full h-full flex justify-center items-center">
