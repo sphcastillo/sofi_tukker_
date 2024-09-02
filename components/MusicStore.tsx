@@ -73,7 +73,7 @@ function MusicStore() {
               variants={MusicStoreVariants}
               className="flex flex-col items-center"
             >
-              <div className="relative w-full h-48 max-w-[400px] max-h-[300px]">
+              <div className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px]">
                 <Image
                   src={item.image}
                   alt={item.title}

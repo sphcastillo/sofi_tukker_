@@ -51,7 +51,7 @@ function MusicVideosGallery() {
   ];
   return (
     <motion.div 
-      className="flex w-full overflow-hidden"
+      className="grid grid-cols-2 sm:grid-cols-4 w-full overflow-hidden"
       ref={musicVideoRef}
       initial='initial'
       variants={musicVideosVariants}
@@ -60,7 +60,7 @@ function MusicVideosGallery() {
       {videos.map((video) => (
         <div
           key={video.id}
-          className="relative w-1/4 h-auto aspect-video cursor-pointer"
+          className="relative w-full aspect-video cursor-pointer"
           onClick={() => setActiveVideo(video.url)}
         >
           {activeVideo === video.url ? (

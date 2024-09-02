@@ -147,9 +147,9 @@ export default function Home() {
         <div
           className={`${beiko.className} flex justify-center items-center pt-[48px] xs:pt-[54px] pb-10`}
         >
-          <button className="rounded-full text-[#dd90e1] bg-[#ffffff] border-[2px] border-white pb-3 pt-[14px] px-4 ">
+          <button className="rounded-full text-[#dd90e1] bg-[#ffffff] border-[2px] border-white pb-[9px] pt-[14px] px-4 ">
             <Link href="/tour">
-              <span className="flex items-center text-[18px] sm:text-[40px]">
+              <span className="flex items-center text-[18px] sm:text-[36px]">
                 PURCHASE TICKETS
               </span>
             </Link>
