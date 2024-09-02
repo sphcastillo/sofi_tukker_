@@ -104,48 +104,49 @@ const itemVariants: Variants = {
 };
 
 function BreadMerchandise() {
-  const rowRef = useRef(null);
-  const inView = useInView(rowRef, { once: false });
+  const columnRefs = [useRef(null), useRef(null), useRef(null)];
+  const inViewStates = columnRefs.map((ref) => useInView(ref, { once: false }));
 
   return (
-    <div className=" p-4 flex justify-center bg-[#fff2e7]">
-      <motion.div 
-        className=" z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full"
-        initial="initial"
-        animate={inView ? "animate" : "initial"}
-        variants={itemVariants}
-        ref={rowRef}
-      >
-        {BreadShopItems.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center"
-          >
-            <div className="w-full h-full flex justify-center items-center">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={560}
-                height={350}
-                className="max-h-[260px] object-contain z-10 w-auto h-auto"
-              />
-            </div>
-            <div className={`${beiko.className} p-4 w-full`}>
-              <h2 className="text-[18px] xs:text-[28px] text-[#fa264e] text-center leading-tight">
-                {item.title}
-              </h2>
-              <p className="text-[18px] xs:text-[28px] text-[#fa264e] mb-3 text-center mt-[-8px]">
-                {item.price}
-              </p>
-              <div className="flex justify-center items-center">
-                <button className="text-[16px] tracking-wide text-[#eac0ff] bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
-                  SHOP NOW
-                </button>
+    <div className="p-4 flex justify-center bg-[#fff2e7]">
+      <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+        {BreadShopItems.map((item, index) => {
+          const columnIndex = Math.floor(index / 3);
+          return (
+            <motion.div
+              key={index}
+              ref={columnRefs[columnIndex]}
+              className="flex flex-col items-center"
+              initial="initial"
+              animate={inViewStates[columnIndex] ? "animate" : "initial"}
+              variants={itemVariants}
+            >
+              <div className="w-full h-full flex justify-center items-center">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={560}
+                  height={350}
+                  className="max-h-[260px] object-contain z-10 w-auto h-auto"
+                />
               </div>
-            </div>
-          </div>
-        ))}
-      </motion.div>
+              <div className={`${beiko.className} p-4 w-full`}>
+                <h2 className="text-[18px] xs:text-[28px] text-[#fa264e] text-center leading-tight">
+                  {item.title}
+                </h2>
+                <p className="text-[18px] xs:text-[28px] text-[#fa264e] mb-3 text-center mt-[-8px]">
+                  {item.price}
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="text-[16px] tracking-wide text-[#eac0ff] bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
+                    SHOP NOW
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 }
