@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
     cursor: url('/images/cursor-bread.png'), auto;
   }
