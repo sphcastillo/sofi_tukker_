@@ -50,14 +50,14 @@ function Navbar() {
         className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-4 xxs:space-x-5 sm:space-x-5 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
       >
         <li className="">
-          <Link href="/music">
+          <Link href="/music" className="cursor-pointer">
             <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
               MUSIC
             </span>
           </Link>
         </li>
         <li>
-          <Link href="/tour">
+          <Link href="/tour" className="cursor-pointer">
             <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
               TOUR
             </span>
@@ -68,27 +68,38 @@ function Navbar() {
           animate="animate"
           variants={imageVariants}
           key={isScrolled ? "st_logo" : "sofitukkerlogo"}
-          className={`flex justify-center ${isScrolled ? "w-[96px] xxs:w-[130px] xs:w-[160px] sm:w-[134px] md:w-[170px] lg:w-[120px]" : "w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[216px] md:w-[240px] lg:w-[320px]"}`}
+          className={`flex justify-center ${
+            isScrolled
+              ? "w-[96px] xxs:w-[130px] xs:w-[160px] sm:w-[134px] md:w-[170px] lg:w-[120px]"
+              : "w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[216px] md:w-[240px] lg:w-[320px]"
+          }`}
         >
           <Link href="/" className="flex justify-center">
             <Image
               src={isScrolled ? st_logo : sofitukkerlogo}
               alt="Sofi Tukker Logo"
               priority
-              className={`object-cover ${isScrolled ? "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[280px]" : "w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]"} ` }
+              className={`object-cover cursor-pointer ${
+                isScrolled
+                  ? "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[280px]"
+                  : "w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]"
+              } `}
             />
           </Link>
         </motion.div>
-        <li >
-          <Link href='/store'>
-          <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">STORE</span>
+        <li>
+          <Link href="/store" className="cursor-pointer">
+            <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+              STORE
+            </span>
           </Link>
-
         </li>
-        <li >
-          <Link href='/signup'>
-          <span className="text-pretty text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">SIGN UP</span></Link>
-          
+        <li>
+          <Link href="/signup" className="cursor-pointer">
+            <span className="text-pretty text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+              SIGN UP
+            </span>
+          </Link>
         </li>
       </ul>
     </div>

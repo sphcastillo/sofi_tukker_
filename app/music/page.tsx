@@ -5,6 +5,7 @@ import blurredAlbumCover from "@/images/musicpage/blurredBreadAlbumCover.jpg";
 import stBreadLogo from "@/images/musicpage/STBreadLogo.png";
 import Image from "next/image";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const franklinGothicCondensed = localFont({
   src: "../../public/fonts/FGC.ttf",
@@ -14,57 +15,57 @@ const SofiTukkerMusicObjectives = [
   {
     id: 1,
     title: '"WOOF (FEAT. KAH-LO)" MUSIC VIDEO',
-    url: "/",
+    url: "https://www.youtube.com/watch?v=bwNDSAuDACc",
   },
   {
     id: 2,
     title: 'LISTEN TO "HEY HOMIE"',
-    url: "/",
+    url: "https://sofitukker.lnk.to/heyhomie-single",
   },
   {
     id: 3,
     title: '"HEY HOMIE" VIDEO',
-    url: "/",
+    url: "https://www.youtube.com/watch?v=6wYLQmMyhF0",
   },
   {
     id: 4,
-    title: "PRE-SAVE ALBUM ON SPOTIFY",
-    url: "/",
+    title: "SAVE ALBUM ON SPOTIFY",
+    url: "https://open.spotify.com/album/4diOe5MxsDKBVZbqKaoaex",
   },
   {
     id: 5,
-    title: "PRE-ADD ALBUM APPLE MUSIC",
-    url: "/",
+    title: "ALBUM APPLE MUSIC",
+    url: "https://music.apple.com/us/album/bread/1741844916",
   },
   {
     id: 6,
-    title: "PRE-SAVE ALBUM AMAZON MUSIC",
-    url: "/",
+    title: "SAVE ALBUM AMAZON MUSIC",
+    url: "https://music.amazon.com/albums/B0D21GWDQ9",
   },
   {
     id: 7,
     title: "VINYL, CD + CASSETTE",
-    url: "/",
+    url: "https://sofitukker.lnk.to/bread-physical",
   },
   {
     id: 8,
     title: 'LISTEN TO "THROW SOME ASS"',
-    url: "/",
+    url: "https://sofitukker.lnk.to/throwsomeass-single",
   },
   {
     id: 9,
     title: '"THROW SOME ASS" VIDEO',
-    url: "/",
+    url: "https://www.youtube.com/watch?v=nRpCivrtmXM",
   },
   {
     id: 10,
     title: 'LISTEN TO "SPIRAL"',
-    url: "/",
+    url: "https://sofitukker.lnk.to/spiral-single",
   },
   {
     id: 11,
     title: '"SPIRAL" MUSIC VIDEO',
-    url: "/",
+    url: "https://www.youtube.com/watch?v=sc04A4n0qkk",
   },
 ];
 
@@ -133,9 +134,12 @@ export default function MusicPage() {
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
               <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center">
+                <Link href={objective.url} target="_blank" rel="noopener noreferrer">
                 <span className="text-[18px] text-[#FFF3E8] text-center">
                   {objective.title}
                 </span>
+                </Link>
+
               </div>
             </div>
           </div>
@@ -152,7 +156,7 @@ export default function MusicPage() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center  pt-3">
+      <div className="flex justify-center items-center pt-3">
         <Image
           src={stBreadLogo}
           alt="Sofi Tukker Bread Logo ~ ST Bread"
