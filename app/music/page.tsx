@@ -75,9 +75,13 @@ export default function MusicPage() {
       className="w-full h-screen bg-cover bg-center"
       style={{
         backgroundImage: `url(${blurredAlbumCover.src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100%',
+        width: '100%',
       }}
     >
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center py-4">
         <Image 
           src={sofitukkerTitle}
           alt="Sofi Tukker"
@@ -87,7 +91,7 @@ export default function MusicPage() {
         />
       </div>
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center py-4">
         <Image 
           src={breadTitle}
           alt="Bread"
@@ -97,7 +101,7 @@ export default function MusicPage() {
         />
       </div>
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center py-4">
         <Image 
           src={breadAlbumCover}
           alt="Bread Album Cover"
@@ -120,13 +124,13 @@ export default function MusicPage() {
         ))}
       </div>
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pb-10 pt-3">
         <Image 
           src={stBreadLogo}
           alt="Sofi Tukker Bread Logo ~ ST Bread" 
           width={700}
           height={375}
-          className=""
+          className="w-[64px] xxs:w-[76px] xs:w-[84px] sm:w-[96px] md:w-[116px] lg:w-[158px]"
         />
       </div>
     </div>

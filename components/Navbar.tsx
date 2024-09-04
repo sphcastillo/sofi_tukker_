@@ -68,14 +68,14 @@ function Navbar() {
           animate="animate"
           variants={imageVariants}
           key={isScrolled ? "st_logo" : "sofitukkerlogo"}
-          className="w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[216px] md:w-[240px] lg:w-[320px]"
+          className={`flex justify-center ${isScrolled ? "w-[96px] xxs:w-[130px] xs:w-[160px] sm:w-[134px] md:w-[170px] lg:w-[120px]" : "w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[216px] md:w-[240px] lg:w-[320px]"}`}
         >
           <Link href="/" className="flex justify-center">
             <Image
               src={isScrolled ? st_logo : sofitukkerlogo}
               alt="Sofi Tukker Logo"
               priority
-              className="w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px] object-cover "
+              className={`object-cover ${isScrolled ? "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[280px]" : "w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]"} ` }
             />
           </Link>
         </motion.div>
