@@ -87,6 +87,7 @@ export default function MusicPage() {
           alt="Sofi Tukker"
           width={700}
           height={375}
+          priority
           className="w-[226px] xxs:w-[260px] xs:w-[342px] sm:w-[360px] md:w-[431px] lg:w-[395px]"
         />
       </div>
@@ -97,6 +98,7 @@ export default function MusicPage() {
           alt="Bread"
           width={700}
           height={375}
+          priority
           className="w-[194px] xxs:w-[223px] xs:w-[293px] sm:w-[308px] md:w-[370px] lg:w-[338px]"
         />
       </div>
@@ -111,6 +113,7 @@ export default function MusicPage() {
           alt="Bread Album Cover"
           width={700}
           height={375}
+          priority
           className="w-[293px] xxs:w-[334px] xs:w-[440px] sm:w-[464px] md:w-[554px] lg:w-[508px]"
         />
       </div>
@@ -133,14 +136,14 @@ export default function MusicPage() {
             <div
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
-              <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center">
+              <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center ">
                 <Link 
                   href={objective.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
-                <span className="text-[18px] text-[#FFF3E8] text-center">
+                <span className="text-[18px] text-[#FFF3E8] text-center ">
                   {objective.title}
                 </span>
                 </Link>
@@ -156,7 +159,7 @@ export default function MusicPage() {
           className={`${franklinGothicCondensed.className} p-1 flex justify-center`}
         >
           <div className="w-[70%] rounded-3xl bg-[#FFF3E8] flex justify-center py-[6px]">
-            <span className="text-[#E98CE6]">EMAIL SIGN UP</span>
+            <span className="text-[#E98CE6] ">EMAIL SIGN UP</span>
           </div>
         </div>
       </div>
@@ -166,6 +169,7 @@ export default function MusicPage() {
           src={stBreadLogo}
           alt="Sofi Tukker Bread Logo ~ ST Bread"
           width={700}
+          priority
           height={375}
           className="w-[64px] xxs:w-[76px] xs:w-[84px] sm:w-[96px] md:w-[116px] lg:w-[158px]"
         />
