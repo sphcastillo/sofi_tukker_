@@ -124,7 +124,7 @@ export default function MusicPage() {
       <div
         className={`${franklinGothicCondensed.className} flex items-center justify-center pb-2 `}
       >
-        <span className="text-[#FFF3E8] text-[22px] xs:text-[23px] sm:text-[28px]">"HEY HOMIE" OUT NOW</span>
+        <span className="text-[#FFF3E8] text-[22px] xs:text-[23px] sm:text-[28px]">&quot;HEY HOMIE&quot; OUT NOW</span>
       </div>
 
       <div className="w-full md:w-4/5 mx-auto">
@@ -134,7 +134,12 @@ export default function MusicPage() {
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
               <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center">
-                <Link href={objective.url} target="_blank" rel="noopener noreferrer">
+                <Link 
+                  href={objective.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
                 <span className="text-[18px] text-[#FFF3E8] text-center">
                   {objective.title}
                 </span>

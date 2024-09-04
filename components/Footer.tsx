@@ -29,55 +29,55 @@ const SocialItems: Socials[] = [
     id: 1,
     name: "Instagram",
     icon: FaInstagram,
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/sofitukker/",
   },
   {
     id: 2,
     name: "Facebook",
     icon: IoLogoFacebook,
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/sofitukker",
   },
   {
     id: 3,
     name: "Tiktok",
     icon: FaTiktok,
-    link: "https://www.tiktok.com/",
+    link: "https://www.tiktok.com/@sofitukker?lang=en",
   },
   {
     id: 4,
     name: "Twitter",
     icon: FaTwitter,
-    link: "https://twitter.com/",
+    link: "https://twitter.com/sofitukker",
   },
   {
     id: 5,
     name: "Snapchat",
     icon: FaSnapchat,
-    link: "https://www.snapchat.com/",
+    link: "https://ffm.link/sofitukkersnapchat",
   },
   {
     id: 6,
     name: "Spotify",
     icon: FaSpotify,
-    link: "https://www.spotify.com/",
+    link: "https://open.spotify.com/artist/586uxXMyD5ObPuzjtrzO1Q?si=mVU722GuREmKQHKhx18X8A&nd=1&dlsi=de2a9525e08a4a78",
   },
   {
     id: 7,
     name: "Apple Music",
     icon: IoIosMusicalNotes,
-    link: "https://www.apple.com/music/",
+    link: "https://music.apple.com/us/artist/sofi-tukker/998656537"
   },
   {
     id: 8,
     name: "Youtube",
     icon: FaYoutube,
-    link: "https://www.youtube.com/",
+    link: "https://www.youtube.com/@SOFITUKKER",
   },
   {
     id: 9,
     name: "Discord",
     icon: FaDiscord,
-    link: "https://discord.com/",
+    link: "https://discord.com/invite/AK8nFnSbDR",
   },
   {
     id: 10,
@@ -94,7 +94,12 @@ function Footer() {
         <div className="flex flex-col space-y-8 md:flex-row md:justify-between items-center sm:space-y-6 md:space-y-0">
           {/* Subscribe Section */}
           <div className="flex items-center">
-            <Link href="/signup" className="flex items-center space-x-2">
+            <Link 
+              href="/signup" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <span className={`${beiko.className} text-[#FA264E]`}>
                 SUBSCRIBE
               </span>
