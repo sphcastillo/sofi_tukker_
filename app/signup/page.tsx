@@ -89,7 +89,7 @@ export default function SignUpPage() {
               City
             </label>
             <input
-              type="tel"
+              type="text"
               name="city"
               value={formData.city}
               onChange={handleChange}
