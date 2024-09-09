@@ -24,7 +24,7 @@ export default function StorePage() {
       </div>
 
       <div className="pt-10">
-        <ul className={`${franklinGothicCondensed.className} flex flex-col xxs:flex-row justify-center xxs:space-x-8 space-y-4 xxs:space-y-0 items-center`}>
+        <ul className={`${franklinGothicCondensed.className} flex flex-row justify-center space-x-5 xxs:space-x-8 items-center`}>
           <li>
             <span className="tracking-wide text-[#fa264e] text-[15px] xs:text-[18px] sm:text-[20px]">FEATURED</span>
           </li>
