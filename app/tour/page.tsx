@@ -86,7 +86,7 @@ export default function TourPage() {
     </div>
 
     <div className="flex items-center justify-center pb-4">
-      <span className={`${franklinGothicCondensed.className} text-[15px] xxs:text-[18px] sm:text-[22px]`}>GET NOTIFIED WHEN NEW EVENTS ARE ANNOUNCED IN YOUR AREA</span>
+      <span className={`${franklinGothicCondensed.className} text-[15px] xxs:text-[18px] sm:text-[22px] text-center`}>GET NOTIFIED WHEN NEW EVENTS ARE ANNOUNCED IN YOUR AREA</span>
     </div>
 
     <div className="flex items-center justify-center pb-[72px]">
