@@ -130,8 +130,11 @@ function Footer() {
           {/* Copyright Section */}
           <div className="">
             <span className={`${beiko.className} text-[#FA264E]`}>
-              © Copyright 2024 Sofi Tukker LLC
+              © Copyright 2025 Sofi-Tukker. All Rights Reserved.
             </span>
+            <p className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}>Website by
+              <Link href='https://www.builtbysophia.com/' className="pl-1 text-[#FA264E] hover:text-[#DD90E1]">Built By Sophia</Link>
+            </p>
           </div>
         </div>
       </div>
