@@ -47,18 +47,18 @@ function Navbar() {
   return (
     <div className="w-full mx-auto flex justify-center pb-4 sm:pb-6">
       <ul
-        className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-4 xxs:space-x-5 sm:space-x-5 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
+        className={`${beiko.className} flex items-center justify-center w-full max-w-screen space-x-4 xxs:space-x-5 xs:space-x-6 sm:space-x-9 md:space-x-12 lg:space-x-20 text-[#DD90E1]`}
       >
         <li className="">
           <Link href="/music" className="cursor-pointer">
-            <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px]">
               MUSIC
             </span>
           </Link>
         </li>
         <li>
           <Link href="/tour" className="cursor-pointer">
-            <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px]">
               TOUR
             </span>
           </Link>
@@ -89,14 +89,14 @@ function Navbar() {
         </motion.div>
         <li>
           <Link href="/store" className="cursor-pointer">
-            <span className="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px]">
               STORE
             </span>
           </Link>
         </li>
         <li>
           <Link href="/signup" className="cursor-pointer">
-            <span className="text-pretty text-[11px] sm:text-[13px] md:text-[16px] lg:text-[22px]">
+            <span className="text-pretty text-[12px] xs:text-[13px] sm:text-[14px]  md:text-[16px] lg:text-[22px]">
               SIGN UP
             </span>
           </Link>

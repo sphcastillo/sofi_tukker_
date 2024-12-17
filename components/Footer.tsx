@@ -132,9 +132,11 @@ function Footer() {
             <span className={`${beiko.className} text-[#FA264E]`}>
               © Copyright 2025 Sofi-Tukker. All Rights Reserved.
             </span>
-            <p className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}>Website by
-              <Link href='https://www.builtbysophia.com/' className="pl-1 text-[#FA264E] hover:text-[#DD90E1]">Built By Sophia</Link>
-            </p>
+            <div className="flex justify-center md:justify-start">
+              <p className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}>Website by
+                <Link href='https://www.builtbysophia.com/' className="pl-1 text-[#FA264E] hover:text-[#DD90E1]">Built By Sophia</Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
