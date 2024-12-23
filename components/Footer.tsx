@@ -65,7 +65,7 @@ const SocialItems: Socials[] = [
     id: 7,
     name: "Apple Music",
     icon: IoIosMusicalNotes,
-    link: "https://music.apple.com/us/artist/sofi-tukker/998656537"
+    link: "https://music.apple.com/us/artist/sofi-tukker/998656537",
   },
   {
     id: 8,
@@ -94,10 +94,10 @@ function Footer() {
         <div className="flex flex-col space-y-8 md:flex-row md:justify-between items-center sm:space-y-6 md:space-y-0">
           {/* Subscribe Section */}
           <div className="flex items-center">
-            <Link 
-              href="/signup" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              href="/signup"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 cursor-pointer"
             >
               <span className={`${beiko.className} text-[#FA264E]`}>
@@ -133,8 +133,18 @@ function Footer() {
               © Copyright 2025 Sofi-Tukker. All Rights Reserved.
             </span>
             <div className="flex justify-center md:justify-start">
-              <p className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}>Website by
-                <Link href='https://www.builtbysophia.com/' className="pl-1 text-[#FA264E] hover:text-[#DD90E1]">Built By Sophia</Link>
+              <p
+                className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}
+              >
+                Website by
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.builtbysophia.com/"
+                  className="pl-1 text-[#FA264E] hover:text-[#DD90E1]"
+                >
+                  Built By Sophia
+                </Link>
               </p>
             </div>
           </div>
