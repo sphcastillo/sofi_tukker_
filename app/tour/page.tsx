@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import Image from "next/image";
 import TourTitle from "@/images/homepage/TOURtitle.png";
+import Link from "next/link";
 const franklinGothicCondensed = localFont({
   src: "../../public/fonts/FGC.ttf",
 });
@@ -15,130 +16,28 @@ const franklinGothicCondensed = localFont({
 
 const tourDates = [
   {
-    date: "FEB 20, 2025",
-    venue: "BELLY UP ASPEN (DJ SET)",
-    city: "ASPEN, CO",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "FEB 21, 2025",
-    venue: "THE SNOW LODGE (DJ SET)",
-    city: "ASPEN, CO",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "FEB 22, 2025",
-    venue: "PALM TREE MUSIC FESTIVAL ASPEN (DJ SET)",
-    city: "ASPEN, CO",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAR 6, 2025",
-    venue: "AT OF THE WILD (DJ SET)",
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAR 28, 2025",
-    venue: 'ENCORE BEACH CLUB (DJ RESIDENCY)',
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAR 29, 2025",
-    venue: "TREEFORT MUSIC FEST (DJ SET)",
-    city: "BOISE, ID",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "APR 5, 2025",
-    venue: "PALM TREE MUSIC FESTIVAL (DJ SET)",
-    city: "MIAMI, FL",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "APR 5, 2025",
-    venue: "LIV (DJ SET)",
-    city: "MIAMI BEACH, FL",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "APR 18, 2025 - APR 19, 2025",
-    venue: "BREAKAWAY MUSIC FESTIVAL ARIZONA (DJ SET)",
-    city: "PHOENIX, AZ",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "APR 26, 2025",
-    venue: "BIG NIGHT LIVE",
-    city: "BOSTON, MA",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAY 2, 2025",
-    venue: "ENCORE BEACH CLUB (DJ RESIDENCY)",
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAY 23, 2025 - MAY 25, 2025",
-    venue: "BOTTLE ROCK NAPA VALLEY",
-    city: "NAPA, CA",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "MAY 31, 2025",
-    venue: "SILO",
-    city: "DALLAS, TX",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "JUN 13, 2025",
-    venue: "XS NIGHTCLUB (DJ RESIDENCY)",
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "JUN 25, 2025",
-    venue: "ENCORE BEACH CLUB AT NIGHT (DJ RESIDENCY)",
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
-    date: "JUN 27, 2025",
-    venue: "XS NIGHTCLUB (DJ RESIDENCY)",
-    city: "LAS VEGAS, NV",
-    VIP: false,
-    tickets: true,
-  },
-  {
     date: "JUL 15, 2025",
-    venue: "XS NIGHTCLUB (DJ RESIDENCY)",
-    city: "LAS VEGAS, NV",
+    venue: "BUDAPEST PARK",
+    city: "BUDAPEST, HUNGARY",
     VIP: false,
     tickets: true,
+    link: "https://www.livenation.hu/en/tickets/sofi-tukker-budapest-events-edp1562763",
   },
   {
-    date: "JUL 16, 2025 - JUL 20, 2025",
+    date: "JUL 17, 2025",
     venue: "ELECTRIC CASTLE",
     city: "TRANSYLVANIA, ROMANIA",
     VIP: false,
     tickets: true,
+    link: "https://electriccastle.com/tickets",
+  },
+  {
+    date: "JUL 18, 2025",
+    venue: "INPULSTANZ FESTIVAL",
+    city: "VIENNA, AUSTRIA",
+    VIP: false,
+    tickets: true,
+    link: "https://www.impulstanz.com/en/social/aid2149/",
   },
   {
     date: "JUL 19, 2025",
@@ -146,27 +45,47 @@ const tourDates = [
     city: "OSTRAVA, MORAVIAN-SILESIAN REGION",
     VIP: false,
     tickets: true,
+    link: "https://www.colours.cz/vstupenky-2025/",
   },
   {
     date: "JUL 20, 2025",
     venue: "TOMORROWLAND (DJ SET)",
     city: "BOOM, ANTWERP, BELGIUM",
     VIP: false,
-    tickets: true,
+    tickets: false,
+    link: "https://belgium.tomorrowland.com/en/passes-packages/",
   },
   {
-    date: "AUG 8, 2025 - AUG 10, 2025",
+    date: "JUL 27, 2025",
+    venue: "SHAMBHALA MUSIC FESTIVAL",
+    city: "SALMO, CANADA",
+    VIP: false,
+    tickets: false,
+    link: "https://www.shambhalamusicfestival.com/",
+  },
+  {
+    date: "AUG 1, 2025",
+    venue: "NEWPORT JAZZ FESTIVAL (BUTTER SET)",
+    city: "NEWPORT, RI",
+    VIP: false,
+    tickets: false,
+    link: "https://newportjazz.org/",
+  },
+  {
+    date: "AUG 9, 2025",
     venue: "ELEMENTS MUSIC & ARTS FESTIVAL",
     city: "LONG POND, PA",
     VIP: false,
     tickets: true,
+    link: "https://www.elementsfest.us/",
   },
   {
-    date: "AUG 9, 2025 - AUG 10, 2025",
+    date: "AUG 10, 2025",
     venue: "ÎLESONIQ FESTIVAL",
     city: "MONTREAL, CANADA",
     VIP: false,
     tickets: true,
+    link: "https://www.ticketmaster.ca/event/310060F7E5C355F9?lang=fr-ca&brand=ilesoniq&language=en-ca",
   },
   {
     date: "AUG 13, 2025",
@@ -174,6 +93,7 @@ const tourDates = [
     city: "LAS VEGAS, NV",
     VIP: false,
     tickets: true,
+    link: "https://www.wynnsocial.com/event/EVE116300020250813/sofi-tukker/",
   },
   {
     date: "AUG 15, 2025",
@@ -181,6 +101,23 @@ const tourDates = [
     city: "LAS VEGAS, NV",
     VIP: false,
     tickets: true,
+    link: "https://www.wynnsocial.com/event/EVE111500020250815/sofi-tukker/",
+  },
+  {
+    date: "AUG 16, 2025",
+    venue: "THE CONCOURSE PROJECT",
+    city: "AUSTIN, TX",
+    VIP: false,
+    tickets: false,
+    link: "https://go.seated.com/tour-events/a056855a-e67d-49f4-8560-b5dffd9a64bb?utm_referrer=https%3A%2F%2Fsofitukker.com%2F",
+  },
+  {
+    date: "AUG 17, 2025",
+    venue: "SPLASH HOUSE",
+    city: "PALM SPRINGS, CA",
+    VIP: false,
+    tickets: true,
+    link: "https://www.tixr.com/groups/splashhouse/events/splash-house-2025-130850",
   },
   {
     date: "AUG 29, 2025",
@@ -188,6 +125,23 @@ const tourDates = [
     city: "LAS VEGAS, NV",
     VIP: false,
     tickets: true,
+    link: "https://www.wynnsocial.com/event/EVE110300020250829/sofi-tukker/",
+  },
+  {
+    date: "AUG 30, 2025",
+    venue: "NORTH COAST MUSIC FESTIVAL",
+    city: "BRIDGEVIEW, IL",
+    VIP: false,
+    tickets: true,
+    link: "https://wl.seetickets.us/event/North-Coast-Music-Festival-2025-15-Year-Anniversary/619463?afflky=NorthCoastMusicFestival",
+  },
+  {
+    date: "AUG 31, 2025",
+    venue: "CABANA POOL BAR",
+    city: "TORONTO, ON",
+    VIP: false,
+    tickets: true,
+    link: "https://www.ticketweb.ca/event/sofi-tukker-cabana-toronto-tickets/14379943?pl=cabanatoronto",
   },
   {
     date: "SEP 14, 2025",
@@ -195,6 +149,7 @@ const tourDates = [
     city: "LAS VEGAS, NV",
     VIP: false,
     tickets: true,
+    link: "https://www.tixr.com/groups/ebc/events/wynn-las-vegas--sofi-tukker-128175?_gl=1*bio7ox*_gcl_au*MTg3NzczODI2Ni4xNzUxOTI3MDAz*_ga*ODE3NTc2OTY5LjE3NTE5MjcwMDQ.*_ga_WWT4E4PXL7*czE3NTE5MjcwMDMkbzEkZzEkdDE3NTE5MjcwMjQkajM5JGwwJGgw&_ga=2.145575540.1524183808.1751927004-817576969.1751927004",
   },
   {
     date: "SEP 26, 2025",
@@ -202,7 +157,31 @@ const tourDates = [
     city: "LAS VEGAS, NV",
     VIP: false,
     tickets: true,
+    link: "https://www.wynnsocial.com/event/EVE111500020250926/sofi-tukker/",
   },
+  {
+    date: "OCT 4, 2025",
+    venue: "PALM TREE MUSIC FESTIVAL - MONTECITO",
+    city: "MONTECITO, CA",
+    VIP: false,
+    tickets: true,
+    link: "https://posh.vip/e/palm-tree-music-festival-montecito",
+  },
+  {
+    date: "NOV 9, 2025",
+    venue: "EDC - ORLANDO",
+    city: "ORLANDO, FL",
+    VIP: false,
+    tickets: true,
+    link: "https://edcorlando.frontgatetickets.com/?irgwc=1&clickid=V02QCa1P0xycTmuVoOQuFTBsUksSRlUdIx6ZWw0&camefrom=CFC_BUYAT_1387536&impradid=1387536&REFERRAL_ID=tmfeedbuyat1387536&wt.mc_id=aff_BUYAT_1387536&utm_source=1387536-Seated&impradname=Seated&utm_medium=affiliate&ircid=4272",
+  },
+  // {
+  //   date: "",
+  //   venue: "",
+  //   city: "",
+  //   VIP: false,
+  //   tickets: true,
+  // },
 ];
 
 export default function TourPage() {
@@ -254,21 +233,25 @@ export default function TourPage() {
                 </button>
               )}
               {tour.tickets ? (
-                <button
-                  className={`${franklinGothicCondensed.className} w-full ${
-                    !tour.VIP ? "xl:max-w-[240px]" : ""
-                  } text-[#dd90e1] bg-[#000000] text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:text-[#fa264e] hover:bg-[#dd90e1] hover:border-2 hover:border-white`}
-                >
-                  Tickets
-                </button>
+                <Link href={tour.link} target="_blank">
+                  <div
+                    className={`${franklinGothicCondensed.className} w-full ${
+                      !tour.VIP ? "xl:max-w-[240px]" : ""
+                    } text-[#dd90e1] bg-[#000000] text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:text-[#fa264e] hover:bg-[#dd90e1] hover:border-2 hover:border-white`}
+                  >
+                    Tickets
+                  </div>
+                </Link>
               ) : (
-                <button
-                  className={`${franklinGothicCondensed.className} w-full ${
-                    !tour.VIP ? "xl:max-w-[240px]" : ""
-                  } text-[#dd90e1] bg-[#000000] text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:text-[#fa264e] hover:bg-[#dd90e1] hover:border-2 hover:border-white`}
-                >
-                  Join Waitlist
-                </button>
+                <Link href={tour.link} target="_blank">
+                  <div
+                    className={`${franklinGothicCondensed.className} w-full ${
+                      !tour.VIP ? "xl:max-w-[240px]" : ""
+                    } text-[#dd90e1] bg-[#000000] text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:text-[#fa264e] hover:bg-[#dd90e1] hover:border-2 hover:border-white`}
+                  >
+                    Join Waitlist
+                  </div>
+                </Link>
               )}
             </div>
           </div>

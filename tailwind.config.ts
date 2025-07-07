@@ -10,7 +10,16 @@ const config: Config = {
     extend: {
       screens: {
         xxs: "414px",
-        xs: "540px"
+        xs: "540px",
+        md825: "825px",
+        md925: "925px",
+        lgPlus: "1105px",
+        xlPlus: "1220px",
+        maxW: "1280px",
+        xtraMax: "1360px",
+        ultraMax: "1440px",
+        ultraMaxPlus: "1520px",
+        ultraMaxPlusPlus: "1600px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
