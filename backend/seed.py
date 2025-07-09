@@ -1,5 +1,16 @@
-from app import app
+from flask import Flask
 from models.tour_date import db, TourDate
+import os
+
+# Create app and configure DB
+app = Flask(__name__)
+uri = os.getenv("DATABASE_URL", "sqlite:///mydata.db")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
 
 tour_data =  [
   {
@@ -165,7 +176,7 @@ tour_data =  [
 
 ];
 
-with app.app_context():  # 👈 Wrap DB actions inside this
+with app.app_context():
     db.drop_all()
     db.create_all()
 
