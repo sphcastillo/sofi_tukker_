@@ -179,10 +179,7 @@ tour_data =  [
 with app.app_context():
     db.drop_all()
     db.create_all()
-
     for entry in tour_data:
-        tour_date = TourDate(**entry)
-        db.session.add(tour_date)
-
+        db.session.add(TourDate(**entry))
     db.session.commit()
     print("✅ Tour dates added.")

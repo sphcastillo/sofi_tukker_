@@ -200,7 +200,7 @@ export default function TourPage() {
   const [tourDates, setTourDates] = useState<TourDate[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/tour-dates")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-dates`)
       .then((res) => res.json())
       .then((data) => setTourDates(data))
       .catch((err) => console.error("Failed to load tour dates:", err));
