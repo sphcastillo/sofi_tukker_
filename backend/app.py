@@ -7,14 +7,13 @@ import os
 # Create Flask app
 app = Flask(__name__)
 
-# Enable CORS for frontend/backend communication
+# Enable CORS (optional: restrict origins in production)
 CORS(app)
 
-# Configure database
-# Use DATABASE_URL on Heroku, fallback to SQLite locally
+# Database configuration
 DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mydata.db')
 
-# Heroku provides DATABASE_URL starting with postgres:// (deprecated), so we fix that
+# Heroku may provide old-style postgres://, convert it
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
@@ -29,6 +28,6 @@ app.register_blueprint(tour_routes)
 with app.app_context():
     db.create_all()
 
-# Run the server
+# Run the server (avoid this block in production)
 if __name__ == '__main__':
     app.run(debug=True)
