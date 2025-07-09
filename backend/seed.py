@@ -1,17 +1,5 @@
-from app import db
-from models.tour_date import TourDate
-
-tour_data = [
-    {
-        "date": "JUL 15, 2025",
-        "venue": "BUDAPEST PARK",
-        "city": "BUDAPEST, HUNGARY",
-        "VIP": False,
-        "tickets": True,
-        "link": "https://www.livenation.hu/en/tickets/sofi-tukker-budapest-events-edp1562763",
-    },
-    # ... more data
-]
+from app import app
+from models.tour_date import db, TourDate
 
 tour_data =  [
   {
@@ -177,9 +165,13 @@ tour_data =  [
 
 ];
 
-with db.session.begin():
+with app.app_context():  # 👈 Wrap DB actions inside this
+    db.drop_all()
+    db.create_all()
+
     for entry in tour_data:
         tour_date = TourDate(**entry)
         db.session.add(tour_date)
 
-print("✅ Tour dates added.")
+    db.session.commit()
+    print("✅ Tour dates added.")
