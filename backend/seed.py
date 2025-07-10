@@ -1,15 +1,14 @@
 from flask import Flask
 from models.tour_date import db, TourDate
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Create app and configure DB
 app = Flask(__name__)
-uri = os.getenv("DATABASE_URL", "sqlite:///mydata.db")
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
-app.config['SQLALCHEMY_DATABASE_URI'] = uri
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 db.init_app(app)
 
 tour_data =  [
@@ -177,9 +176,9 @@ tour_data =  [
 ];
 
 with app.app_context():
-    db.drop_all()
-    db.create_all()
-    for entry in tour_data:
-        db.session.add(TourDate(**entry))
+    db.create_all()  # Optional: only needed if not yet created
+    for data in tour_data:
+        tour = TourDate(**data)
+        db.session.add(tour)
     db.session.commit()
-    print("✅ Tour dates added.")
+    print("✅ RDS database has been seeded!")
