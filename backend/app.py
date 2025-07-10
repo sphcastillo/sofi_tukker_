@@ -23,6 +23,9 @@ if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL or 'sqlite:///mydata.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# ✅ Debug: print which DB is being used
+print("Using database:", app.config['SQLALCHEMY_DATABASE_URI'])
+
 # Initialize DB and register routes
 db.init_app(app)
 app.register_blueprint(tour_routes)
