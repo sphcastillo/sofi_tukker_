@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         theme1: {
+          navbgcolor: '#000000',
           navbannercolor: '#fff2e7',
           navsociallinks: '#DD90E1',
           navlinkcolor: '#DD90E1',
@@ -27,8 +28,10 @@ const config: Config = {
           merchbuttontextcolor: '#EAC0FF',
           footertextcolor: '#fa264e',
           footersociallinks: '#DD90E1',
+          footerBycolor: '#fff2e7',
         },
         theme2: {
+          navbgcolor: '#161314',
           navbannercolor: '#9DDAED',
           navsociallinks: '#FDF729',
           navlinkcolor: '#FFFFFF',
@@ -46,6 +49,7 @@ const config: Config = {
           merchbuttontextcolor: '#ef2018',
           footertextcolor: '#9bdaec',
           footersociallinks: '#FDF729',
+          footerBycolor: '#ffffff'
         }
       },
       screens: {

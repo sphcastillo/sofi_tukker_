@@ -1,93 +1,12 @@
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
-import localFont from "next/font/local";
-import { FaDiscord } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { IoLogoFacebook } from "react-icons/io5";
-import { FaTiktok } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaSnapchat } from "react-icons/fa6";
-import { FaSpotify } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
-import { IoIosMusicalNotes } from "react-icons/io";
-import { IoIosMail } from "react-icons/io";
-import { IconType } from "react-icons";
-
-const beiko = localFont({
-  src: "../public/fonts/Beiko.otf",
-});
-
-type Socials = {
-  id: number;
-  name: string;
-  icon: IconType;
-  link: string;
-};
-
-const SocialItems: Socials[] = [
-  {
-    id: 1,
-    name: "Instagram",
-    icon: FaInstagram,
-    link: "https://www.instagram.com/sofitukker/",
-  },
-  {
-    id: 2,
-    name: "Facebook",
-    icon: IoLogoFacebook,
-    link: "https://www.facebook.com/sofitukker",
-  },
-  {
-    id: 3,
-    name: "Tiktok",
-    icon: FaTiktok,
-    link: "https://www.tiktok.com/@sofitukker?lang=en",
-  },
-  {
-    id: 4,
-    name: "Twitter",
-    icon: FaTwitter,
-    link: "https://twitter.com/sofitukker",
-  },
-  {
-    id: 5,
-    name: "Snapchat",
-    icon: FaSnapchat,
-    link: "https://ffm.link/sofitukkersnapchat",
-  },
-  {
-    id: 6,
-    name: "Spotify",
-    icon: FaSpotify,
-    link: "https://open.spotify.com/artist/586uxXMyD5ObPuzjtrzO1Q?si=mVU722GuREmKQHKhx18X8A&nd=1&dlsi=de2a9525e08a4a78",
-  },
-  {
-    id: 7,
-    name: "Apple Music",
-    icon: IoIosMusicalNotes,
-    link: "https://music.apple.com/us/artist/sofi-tukker/998656537",
-  },
-  {
-    id: 8,
-    name: "Youtube",
-    icon: FaYoutube,
-    link: "https://www.youtube.com/@SOFITUKKER",
-  },
-  {
-    id: 9,
-    name: "Discord",
-    icon: FaDiscord,
-    link: "https://discord.com/invite/AK8nFnSbDR",
-  },
-  {
-    id: 10,
-    name: "Email",
-    icon: IoIosMail,
-    link: "mailto:",
-  },
-];
+import { FooterSocialItems } from "@/data/FooterSocialsData";
+import { beiko } from "@/utils/fonts";
+import { useTheme } from "@/context/ThemeContext";
 
 function Footer() {
+  const { theme } = useTheme();
+
   return (
     <div className="bg-[#000000]">
       <div className="p-5 pb-[92px] pt-[96px]">
@@ -100,10 +19,22 @@ function Footer() {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 cursor-pointer"
             >
-              <span className={`${beiko.className} text-[#FA264E]`}>
+              <span
+                className={`${beiko.className} ${
+                  theme === "theme1"
+                    ? "text-theme1-footertextcolor"
+                    : "text-theme2-footertextcolor"
+                }`}
+              >
                 SUBSCRIBE
               </span>
-              <div className="text-[#FA264E]">
+              <div
+                className={`${
+                  theme === "theme1"
+                    ? "text-theme1-footertextcolor"
+                    : "text-theme2-footertextcolor"
+                }`}
+              >
                 <FaChevronRight />
               </div>
             </Link>
@@ -112,14 +43,18 @@ function Footer() {
           {/* Social Icons Section */}
           <div className="w-full md:w-auto">
             <div className="flex flex-wrap justify-center gap-8">
-              {SocialItems.map((item) => (
+              {FooterSocialItems.map((item, index) => (
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
-                  key={item.id}
+                  key={index}
                   href={item.link}
                 >
-                  <span className="text-[#DD90E1] h-5 w-5">
+                  <span className={`${
+                    theme === "theme1"
+                      ? "text-theme1-footersociallinks"
+                      : "text-theme2-footersociallinks"
+                  } h-5 w-5`}>
                     <item.icon size={20} />
                   </span>
                 </Link>
@@ -129,19 +64,33 @@ function Footer() {
 
           {/* Copyright Section */}
           <div className="">
-            <span className={`${beiko.className} text-[#FA264E]`}>
+            <span
+              className={`${beiko.className} ${
+                theme === "theme1"
+                  ? "text-theme1-footertextcolor"
+                  : "text-theme2-footertextcolor"
+              }`}
+            >
               © Copyright 2025 Sofi-Tukker. All Rights Reserved.
             </span>
             <div className="flex justify-center md:justify-start">
               <p
-                className={`${beiko.className} text-xs leading-5 text-gray-400 pt-1`}
+                className={`${beiko.className} text-xs tracking-wide leading-5 pt-1 ${
+                  theme === "theme1"
+                    ? "text-theme1-footerBycolor"
+                    : "text-theme2-footerBycolor"
+                }`}
               >
                 Website by
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.builtbysophia.com/"
-                  className="pl-1 text-[#FA264E] hover:text-[#DD90E1]"
+                  className={`pl-1 tracking-wide  hover:text-[#DD90E1] ${
+                    theme === "theme1"
+                      ? "text-theme1-footertextcolor"
+                      : "text-theme2-footertextcolor"
+                  }`}
                 >
                   Built By Sophia
                 </Link>
