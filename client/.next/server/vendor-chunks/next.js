@@ -10,26 +10,6 @@ exports.id = "vendor-chunks/next";
 exports.ids = ["vendor-chunks/next"];
 exports.modules = {
 
-/***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"app/page.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}":
-/*!**************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/font/local/target.css?{"path":"app/page.tsx","import":"","arguments":[{"src":"../public/fonts/Beiko.otf"}],"variableName":"beiko"} ***!
-  \**************************************************************************************************************************************************************/
-/***/ ((module) => {
-
-eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__beiko_16f3a6', '__beiko_Fallback_16f3a6'\"},\n\t\"className\": \"__className_16f3a6\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/e1wicGF0aFwiOlwiYXBwL3BhZ2UudHN4XCIsXCJpbXBvcnRcIjpcIlwiLFwiYXJndW1lbnRzXCI6W3tcInNyY1wiOlwiLi4vcHVibGljL2ZvbnRzL0JlaWtvLm90ZlwifV0sXCJ2YXJpYWJsZU5hbWVcIjpcImJlaWtvXCJ9IiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQSxXQUFXLDJEQUEyRDtBQUN0RTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYnJlYWQvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/NDBiZiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFeHBvcnRzXG5tb2R1bGUuZXhwb3J0cyA9IHtcblx0XCJzdHlsZVwiOiB7XCJmb250RmFtaWx5XCI6XCInX19iZWlrb18xNmYzYTYnLCAnX19iZWlrb19GYWxsYmFja18xNmYzYTYnXCJ9LFxuXHRcImNsYXNzTmFtZVwiOiBcIl9fY2xhc3NOYW1lXzE2ZjNhNlwiXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"app/page.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}\n");
-
-/***/ }),
-
-/***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"app/tour/page.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../../public/fonts/FGC.ttf\"}],\"variableName\":\"franklinGothicCondensed\"}":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/font/local/target.css?{"path":"app/tour/page.tsx","import":"","arguments":[{"src":"../../public/fonts/FGC.ttf"}],"variableName":"franklinGothicCondensed"} ***!
-  \**************************************************************************************************************************************************************************************/
-/***/ ((module) => {
-
-eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__franklinGothicCondensed_cfba2f', '__franklinGothicCondensed_Fallback_cfba2f'\"},\n\t\"className\": \"__className_cfba2f\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/e1wicGF0aFwiOlwiYXBwL3RvdXIvcGFnZS50c3hcIixcImltcG9ydFwiOlwiXCIsXCJhcmd1bWVudHNcIjpbe1wic3JjXCI6XCIuLi8uLi9wdWJsaWMvZm9udHMvRkdDLnR0ZlwifV0sXCJ2YXJpYWJsZU5hbWVcIjpcImZyYW5rbGluR290aGljQ29uZGVuc2VkXCJ9IiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQSxXQUFXLCtGQUErRjtBQUMxRztBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYnJlYWQvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/YzYxYiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFeHBvcnRzXG5tb2R1bGUuZXhwb3J0cyA9IHtcblx0XCJzdHlsZVwiOiB7XCJmb250RmFtaWx5XCI6XCInX19mcmFua2xpbkdvdGhpY0NvbmRlbnNlZF9jZmJhMmYnLCAnX19mcmFua2xpbkdvdGhpY0NvbmRlbnNlZF9GYWxsYmFja19jZmJhMmYnXCJ9LFxuXHRcImNsYXNzTmFtZVwiOiBcIl9fY2xhc3NOYW1lX2NmYmEyZlwiXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"app/tour/page.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../../public/fonts/FGC.ttf\"}],\"variableName\":\"franklinGothicCondensed\"}\n");
-
-/***/ }),
-
 /***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"components/BreadMerchandise.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}":
 /*!*********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/next/font/local/target.css?{"path":"components/BreadMerchandise.tsx","import":"","arguments":[{"src":"../public/fonts/Beiko.otf"}],"variableName":"beiko"} ***!
@@ -50,23 +30,13 @@ eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__beiko_16
 
 /***/ }),
 
-/***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"components/MusicStore.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/font/local/target.css?{"path":"components/MusicStore.tsx","import":"","arguments":[{"src":"../public/fonts/Beiko.otf"}],"variableName":"beiko"} ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"utils/fonts.ts\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/font/local/target.css?{"path":"utils/fonts.ts","import":"","arguments":[{"src":"../public/fonts/Beiko.otf"}],"variableName":"beiko"} ***!
+  \****************************************************************************************************************************************************************/
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__beiko_16f3a6', '__beiko_Fallback_16f3a6'\"},\n\t\"className\": \"__className_16f3a6\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/e1wicGF0aFwiOlwiY29tcG9uZW50cy9NdXNpY1N0b3JlLnRzeFwiLFwiaW1wb3J0XCI6XCJcIixcImFyZ3VtZW50c1wiOlt7XCJzcmNcIjpcIi4uL3B1YmxpYy9mb250cy9CZWlrby5vdGZcIn1dLFwidmFyaWFibGVOYW1lXCI6XCJiZWlrb1wifSIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0EsV0FBVywyREFBMkQ7QUFDdEU7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL2JyZWFkLy4vbm9kZV9tb2R1bGVzL25leHQvZm9udC9sb2NhbC90YXJnZXQuY3NzPzVlZWIiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwic3R5bGVcIjoge1wiZm9udEZhbWlseVwiOlwiJ19fYmVpa29fMTZmM2E2JywgJ19fYmVpa29fRmFsbGJhY2tfMTZmM2E2J1wifSxcblx0XCJjbGFzc05hbWVcIjogXCJfX2NsYXNzTmFtZV8xNmYzYTZcIlxufTtcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"components/MusicStore.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}\n");
-
-/***/ }),
-
-/***/ "(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"components/Navbar.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}":
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/font/local/target.css?{"path":"components/Navbar.tsx","import":"","arguments":[{"src":"../public/fonts/Beiko.otf"}],"variableName":"beiko"} ***!
-  \***********************************************************************************************************************************************************************/
-/***/ ((module) => {
-
-eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__beiko_16f3a6', '__beiko_Fallback_16f3a6'\"},\n\t\"className\": \"__className_16f3a6\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/e1wicGF0aFwiOlwiY29tcG9uZW50cy9OYXZiYXIudHN4XCIsXCJpbXBvcnRcIjpcIlwiLFwiYXJndW1lbnRzXCI6W3tcInNyY1wiOlwiLi4vcHVibGljL2ZvbnRzL0JlaWtvLm90ZlwifV0sXCJ2YXJpYWJsZU5hbWVcIjpcImJlaWtvXCJ9IiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQSxXQUFXLDJEQUEyRDtBQUN0RTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYnJlYWQvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/YTY0YSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFeHBvcnRzXG5tb2R1bGUuZXhwb3J0cyA9IHtcblx0XCJzdHlsZVwiOiB7XCJmb250RmFtaWx5XCI6XCInX19iZWlrb18xNmYzYTYnLCAnX19iZWlrb19GYWxsYmFja18xNmYzYTYnXCJ9LFxuXHRcImNsYXNzTmFtZVwiOiBcIl9fY2xhc3NOYW1lXzE2ZjNhNlwiXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"components/Navbar.tsx\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}\n");
+eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'__beiko_16f3a6', '__beiko_Fallback_16f3a6'\"},\n\t\"className\": \"__className_16f3a6\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2xvY2FsL3RhcmdldC5jc3M/e1wicGF0aFwiOlwidXRpbHMvZm9udHMudHNcIixcImltcG9ydFwiOlwiXCIsXCJhcmd1bWVudHNcIjpbe1wic3JjXCI6XCIuLi9wdWJsaWMvZm9udHMvQmVpa28ub3RmXCJ9XSxcInZhcmlhYmxlTmFtZVwiOlwiYmVpa29cIn0iLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBLFdBQVcsMkRBQTJEO0FBQ3RFO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9icmVhZC8uL25vZGVfbW9kdWxlcy9uZXh0L2ZvbnQvbG9jYWwvdGFyZ2V0LmNzcz83ZmQzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIEV4cG9ydHNcbm1vZHVsZS5leHBvcnRzID0ge1xuXHRcInN0eWxlXCI6IHtcImZvbnRGYW1pbHlcIjpcIidfX2JlaWtvXzE2ZjNhNicsICdfX2JlaWtvX0ZhbGxiYWNrXzE2ZjNhNidcIn0sXG5cdFwiY2xhc3NOYW1lXCI6IFwiX19jbGFzc05hbWVfMTZmM2E2XCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/font/local/target.css?{\"path\":\"utils/fonts.ts\",\"import\":\"\",\"arguments\":[{\"src\":\"../public/fonts/Beiko.otf\"}],\"variableName\":\"beiko\"}\n");
 
 /***/ }),
 
@@ -2199,17 +2169,6 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));
 
 /***/ }),
 
-/***/ "(rsc)/./node_modules/next/dist/api/link.js":
-/*!********************************************!*\
-  !*** ./node_modules/next/dist/api/link.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport default from dynamic */ _client_link__WEBPACK_IMPORTED_MODULE_0___default.a)\n/* harmony export */ });\n/* harmony import */ var _client_link__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../client/link */ \"(rsc)/./node_modules/next/dist/client/link.js\");\n/* harmony import */ var _client_link__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_client_link__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};\n/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _client_link__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== \"default\") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _client_link__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]\n/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);\n\n\n\n//# sourceMappingURL=link.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2FwaS9saW5rLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUF5QztBQUNWOztBQUUvQiIsInNvdXJjZXMiOlsid2VicGFjazovL2JyZWFkLy4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9hcGkvbGluay5qcz8zZjM4Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB7IGRlZmF1bHQgfSBmcm9tIFwiLi4vY2xpZW50L2xpbmtcIjtcbmV4cG9ydCAqIGZyb20gXCIuLi9jbGllbnQvbGlua1wiO1xuXG4vLyMgc291cmNlTWFwcGluZ1VSTD1saW5rLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/next/dist/api/link.js\n");
-
-/***/ }),
-
 /***/ "(rsc)/./node_modules/next/dist/build/output/log.js":
 /*!****************************************************!*\
   !*** ./node_modules/next/dist/build/output/log.js ***!
@@ -2374,21 +2333,6 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\n0 && (0);\nfunction _export(target, all) {\n    for(var name in all)Object.defineProperty(target, name, {\n        enumerable: true,\n        get: all[name]\n    });\n}\n_export(exports, {\n    StaticGenBailoutError: function() {\n        return StaticGenBailoutError;\n    },\n    isStaticGenBailoutError: function() {\n        return isStaticGenBailoutError;\n    }\n});\nconst NEXT_STATIC_GEN_BAILOUT = \"NEXT_STATIC_GEN_BAILOUT\";\nclass StaticGenBailoutError extends Error {\n    constructor(...args){\n        super(...args);\n        this.code = NEXT_STATIC_GEN_BAILOUT;\n    }\n}\nfunction isStaticGenBailoutError(error) {\n    if (typeof error !== \"object\" || error === null || !(\"code\" in error)) {\n        return false;\n    }\n    return error.code === NEXT_STATIC_GEN_BAILOUT;\n}\nif ((typeof exports.default === \"function\" || typeof exports.default === \"object\" && exports.default !== null) && typeof exports.default.__esModule === \"undefined\") {\n    Object.defineProperty(exports.default, \"__esModule\", {\n        value: true\n    });\n    Object.assign(exports.default, exports);\n    module.exports = exports.default;\n} //# sourceMappingURL=static-generation-bailout.js.map\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2NsaWVudC9jb21wb25lbnRzL3N0YXRpYy1nZW5lcmF0aW9uLWJhaWxvdXQuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0lBRWFBLHVCQUFxQjtlQUFyQkE7O0lBSUdDLHlCQUF1QjtlQUF2QkE7OztBQU5oQixNQUFNQywwQkFBMEI7QUFFekIsTUFBTUYsOEJBQThCRzs7O2FBQ3pCQyxJQUFBQSxHQUFPRjs7QUFDekI7QUFFTyxTQUFTRCx3QkFDZEksS0FBYztJQUVkLElBQUksT0FBT0EsVUFBVSxZQUFZQSxVQUFVLFFBQVEsQ0FBRSxXQUFVQSxLQUFBQSxHQUFRO1FBQ3JFLE9BQU87SUFDVDtJQUVBLE9BQU9BLE1BQU1ELElBQUksS0FBS0Y7QUFDeEIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9icmVhZC8uLi8uLi8uLi9zcmMvY2xpZW50L2NvbXBvbmVudHMvc3RhdGljLWdlbmVyYXRpb24tYmFpbG91dC50cz80YzMxIl0sIm5hbWVzIjpbIlN0YXRpY0dlbkJhaWxvdXRFcnJvciIsImlzU3RhdGljR2VuQmFpbG91dEVycm9yIiwiTkVYVF9TVEFUSUNfR0VOX0JBSUxPVVQiLCJFcnJvciIsImNvZGUiLCJlcnJvciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/next/dist/client/components/static-generation-bailout.js\n");
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/next/dist/client/link.js":
-/*!***********************************************!*\
-  !*** ./node_modules/next/dist/client/link.js ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-/* __next_internal_client_entry_do_not_use__  cjs */ 
-const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("/Users/sphcastillo/devPlayground/sofi_tukker_/client/node_modules/next/dist/client/link.js");
- //# sourceMappingURL=link.js.map
-
 
 /***/ }),
 

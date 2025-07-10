@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
-import NavbarBanner from "./NavbarBanner";
-import NavSocials from "./NavSocials";
+import Navbar from "./Navbar/Navbar";
+import NavbarBanner from "./Navbar/NavbarBanner";
+import NavSocials from "./Navbar/NavSocials";
 
 function Header() {
   return (
