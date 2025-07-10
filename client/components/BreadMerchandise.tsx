@@ -1,94 +1,10 @@
+"use client";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
-import hoodie from "@/images/breadMerchandise/breadHoodie1.png";
-import breadtshirt from "@/images/breadMerchandise/breadTee2.png";
-import crop from "@/images/breadMerchandise/breadCrop3.png";
-import joggers from "@/images/breadMerchandise/breadJoggers4.png";
-import tshirt from "@/images/breadMerchandise/breadTee5.png";
-import thong from "@/images/breadMerchandise/breadThong6.png";
-import socks from "@/images/breadMerchandise/breadSocks7.png";
-import tee from "@/images/breadMerchandise/breadTee8.png";
-import sticker from "@/images/breadMerchandise/breadSticker9.png";
-import localFont from "next/font/local";
-
-const beiko = localFont({
-  src: "../public/fonts/Beiko.otf",
-});
-
-type BreadMerchandiseItems = {
-  id: number;
-  title: string;
-  price: string;
-  image: StaticImageData;
-  link: string;
-};
-
-const BreadShopItems: BreadMerchandiseItems[] = [
-  {
-    id: 1,
-    title: "HOODIE",
-    price: "$125",
-    image: hoodie,
-    link: "/",
-  },
-  {
-    id: 2,
-    title: "TEE",
-    price: "$45",
-    image: breadtshirt,
-    link: "/",
-  },
-  {
-    id: 3,
-    title: "CROP",
-    price: "$35",
-    image: crop,
-    link: "/",
-  },
-  {
-    id: 4,
-    title: "JOGGERS",
-    price: "$110",
-    image: joggers,
-    link: "/",
-  },
-  {
-    id: 5,
-    title: "TEE",
-    price: "$45",
-    image: tshirt,
-    link: "/",
-  },
-  {
-    id: 6,
-    title: "THONG",
-    price: "$35",
-    image: thong,
-    link: "/",
-  },
-  {
-    id: 7,
-    title: "SOCKS",
-    price: "$30",
-    image: socks,
-    link: "/",
-  },
-  {
-    id: 8,
-    title: "TEE",
-    price: "$45",
-    image: tee,
-    link: "/",
-  },
-  {
-    id: 9,
-    title: "STICKER",
-    price: "$6",
-    image: sticker,
-    link: "/",
-  },
-];
+import Image from "next/image";
+import { BreadShopItems } from "@/data/BreadMerchandiseData";
+import { beiko } from "@/utils/fonts";
+import { useTheme } from "@/context/ThemeContext";
 
 const itemVariants: Variants = {
   initial: {
@@ -104,11 +20,16 @@ const itemVariants: Variants = {
 };
 
 function BreadMerchandise() {
+  const { theme } = useTheme();
   const refs = BreadShopItems.map(() => useRef<HTMLDivElement>(null));
   const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
 
   return (
-    <div className="p-4 flex justify-center bg-[#fff2e7]">
+    <div
+      className={`p-4 flex justify-center ${
+        theme === "theme1" ? "bg-theme1-merchbgcolor" : "bg-theme2-merchbgcolor"
+      }`}
+    >
       <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {BreadShopItems.map((item, index) => {
           const ref = refs[index];
@@ -132,14 +53,36 @@ function BreadMerchandise() {
                 />
               </div>
               <div className={`${beiko.className} p-4 w-full`}>
-                <h2 className="text-[18px] xs:text-[28px] text-[#fa264e] text-center leading-tight">
+                <h2
+                  className={`text-[18px] xs:text-[28px] text-center leading-tight ${
+                    theme === "theme1"
+                      ? "text-theme1-merchtextcolor"
+                      : "text-theme2-merchtextcolor"
+                  }`}
+                >
                   {item.title}
                 </h2>
-                <p className="text-[18px] xs:text-[28px] text-[#fa264e] mb-3 text-center mt-[-8px]">
+                <p
+                  className={`text-[18px] xs:text-[28px] mb-3 text-center mt-[-8px] ${
+                    theme === "theme1"
+                      ? "text-theme1-merchtextcolor"
+                      : "text-theme2-merchtextcolor"
+                  }`}
+                >
                   {item.price}
                 </p>
                 <div className="flex justify-center items-center">
-                  <button className="text-[16px] tracking-wide text-[#eac0ff] bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]">
+                  <button
+                    className={`text-[16px] tracking-wide bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1] ${
+                      theme === "theme1"
+                        ? "text-theme1-merchbuttontextcolor"
+                        : "text-theme2-merchbuttontextcolor"
+                    } ${
+                      theme === "theme1"
+                        ? "bg-theme1-merchbuttonbgcolor"
+                        : "bg-theme2-merchbuttonbgcolor"
+                    }`}
+                  >
                     SHOP NOW
                   </button>
                 </div>
