@@ -1,7 +1,7 @@
 "use client";
 import localFont from "next/font/local";
 import Image from "next/image";
-import TourTitle from "@/images/homepage/TOURtitle.png";
+import TourTitle from "@/images/homepage/tourSection/TOURtitle.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 const franklinGothicCondensed = localFont({
