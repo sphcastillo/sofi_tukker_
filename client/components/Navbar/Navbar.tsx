@@ -6,19 +6,7 @@ import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
-
-const imageVariants: Variants = {
-  initial: {
-    y: 50,
-    opacity: 0,
-    transition: { duration: 2, ease: "easeOut" },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 2, ease: "easeOut" },
-  },
-};
+import { imageVariants } from "@/utils/variants";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -4,20 +4,8 @@ import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import MusicVideosGallery from "@/components/MusicVideosGallery";
+import { imageVariants } from "@/utils/variants";
 
-const imageVariants: Variants = {
-    initial: {
-      y: 50,
-      opacity: 0,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
-  
 
 function VideoGallerySection() {
   const { theme } = useTheme();

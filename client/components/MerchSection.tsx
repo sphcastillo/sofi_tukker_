@@ -4,19 +4,7 @@ import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import SofiTukkerMerch from "@/components/SofiTukkerMerch";
-
-const imageVariants: Variants = {
-  initial: {
-    y: 50,
-    opacity: 0,
-    transition: { duration: 1, ease: "easeOut" },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 1, ease: "easeOut" },
-  },
-};
+import { imageVariants } from "@/utils/variants";
 
 function MerchSection() {
   const { theme } = useTheme();
