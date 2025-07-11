@@ -2,8 +2,6 @@
 import { motion, useInView, Variants } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
-import TourTitle from "@/images/homepage/tourSection/TOURtitle.png";
-import TourTitleTheme2 from "@/images/homepage/tourSection/TourTheme2.png";
 import Image from "next/image";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
@@ -43,11 +41,11 @@ function TourSection() {
           className="flex pt-[42px] xs:pt-[66px] justify-center object-contain w-[234px] xxs:w-[254px] z-20 xs:w-[315px] sm:w-[375px] md:w-[429px]"
         >
           <Image
-            src={theme === 'theme1' ? TourTitle : TourTitleTheme2} 
+            src={theme === 'theme1' ? '/images/homepage/tourSection/TOURtitle.png' : '/images/homepage/tourSection/TourTheme2.png'} 
             alt="Tour Title"
             priority
-            width={600}
-            height={100}
+            width={1158}
+            height={275}
           />
         </motion.div>
       </div>

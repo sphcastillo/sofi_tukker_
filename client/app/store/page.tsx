@@ -1,7 +1,5 @@
 import SofiTukkerStore from "@/components/SofiTukkerStore";
-import SofiTukkerStoreLogo from "@/images/storeFrontpage/sofitukkerstorelogo.png";
 import Image from "next/image";
-import SofiTukkerBreadLogo from "@/images/musicpage/STBreadLogo.png";
 import { franklinGothicCondensed } from "@/utils/fonts";
 
 export default function StorePage() {
@@ -9,7 +7,7 @@ export default function StorePage() {
     <div className="w-full bg-[#FFF3E8] pt-6 pb-[124px]">
       <div className="flex items-center justify-center pt-2 xs:pt-7">
         <Image
-          src={SofiTukkerStoreLogo}
+          src='/images/storeFrontpage/sofitukkerstorelogo.png'
           alt="Sofi Tukker Store Logo"
           width={800}
           height={225}
@@ -41,7 +39,7 @@ export default function StorePage() {
 
       <div className="flex items-center justify-center pt-8">
         <Image 
-          src={SofiTukkerBreadLogo}
+          src='/images/musicpage/STBreadLogo.png'
           alt="Sofi Tukker Bread Logo"
           width={800}
           height={225}

@@ -1,80 +1,15 @@
-import breadAlbumCover from "@/images/musicpage/breadAlbumCover.jpeg";
-import sofitukkerTitle from "@/images/musicpage/SofiTukkerTitle.png";
-import breadTitle from "@/images/musicpage/BreadTitle.png";
-import blurredAlbumCover from "@/images/musicpage/blurredBreadAlbumCover.jpg";
-import stBreadLogo from "@/images/musicpage/STBreadLogo.png";
 import Image from "next/image";
-import localFont from "next/font/local";
 import Link from "next/link";
+import { franklinGothicCondensed } from "@/utils/fonts";
+import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
 
-const franklinGothicCondensed = localFont({
-  src: "../../public/fonts/FGC.ttf",
-});
-
-const SofiTukkerMusicObjectives = [
-  {
-    id: 1,
-    title: '"WOOF (FEAT. KAH-LO)" MUSIC VIDEO',
-    url: "https://www.youtube.com/watch?v=bwNDSAuDACc",
-  },
-  {
-    id: 2,
-    title: 'LISTEN TO "HEY HOMIE"',
-    url: "https://sofitukker.lnk.to/heyhomie-single",
-  },
-  {
-    id: 3,
-    title: '"HEY HOMIE" VIDEO',
-    url: "https://www.youtube.com/watch?v=6wYLQmMyhF0",
-  },
-  {
-    id: 4,
-    title: "SAVE ALBUM ON SPOTIFY",
-    url: "https://open.spotify.com/album/4diOe5MxsDKBVZbqKaoaex",
-  },
-  {
-    id: 5,
-    title: "SAVE ALBUM APPLE MUSIC",
-    url: "https://music.apple.com/us/album/bread/1741844916",
-  },
-  {
-    id: 6,
-    title: "SAVE ALBUM AMAZON MUSIC",
-    url: "https://music.amazon.com/albums/B0D21GWDQ9",
-  },
-  {
-    id: 7,
-    title: "VINYL, CD + CASSETTE",
-    url: "https://sofitukker.lnk.to/bread-physical",
-  },
-  {
-    id: 8,
-    title: 'LISTEN TO "THROW SOME ASS"',
-    url: "https://sofitukker.lnk.to/throwsomeass-single",
-  },
-  {
-    id: 9,
-    title: '"THROW SOME ASS" VIDEO',
-    url: "https://www.youtube.com/watch?v=nRpCivrtmXM",
-  },
-  {
-    id: 10,
-    title: 'LISTEN TO "SPIRAL"',
-    url: "https://sofitukker.lnk.to/spiral-single",
-  },
-  {
-    id: 11,
-    title: '"SPIRAL" MUSIC VIDEO',
-    url: "https://www.youtube.com/watch?v=sc04A4n0qkk",
-  },
-];
 
 export default function MusicPage() {
   return (
     <div
-      className="w-full h-screen bg-cover bg-center pb-[76px] sm:pb-[84px] md:pb-[76px]"
+      className="min-h-screen w-full bg-cover bg-center bg-no-repeat pb-[76px] sm:pb-[84px] md:pb-[76px]"
       style={{
-        backgroundImage: `url(${blurredAlbumCover.src})`,
+        backgroundImage: `url('/images/musicpage/blurredBreadAlbumCover.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100%",
@@ -83,7 +18,7 @@ export default function MusicPage() {
     >
       <div className="flex justify-center items-center pt-5 pb-1 sm:pt-7">
         <Image
-          src={sofitukkerTitle}
+          src='/images/musicpage/SofiTukkerTitle.png'
           alt="Sofi Tukker"
           width={700}
           height={375}
@@ -94,7 +29,7 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center py-4">
         <Image
-          src={breadTitle}
+          src='/images/musicpage/BreadTitle.png'
           alt="Bread"
           width={700}
           height={375}
@@ -109,7 +44,7 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center py-4">
         <Image
-          src={breadAlbumCover}
+          src='/images/musicpage/breadAlbumCover.jpeg'
           alt="Bread Album Cover"
           width={700}
           height={375}
@@ -166,7 +101,7 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center pt-3">
         <Image
-          src={stBreadLogo}
+          src='/images/musicpage/STBreadLogo.png'
           alt="Sofi Tukker Bread Logo ~ ST Bread"
           width={700}
           priority

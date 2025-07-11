@@ -15,9 +15,8 @@ export default function SofiTukkerStore() {
               <Image
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full"
-                objectFit="contain"
-                layout="fill"
+                className="w-full h-full object-contain"
+                fill
               />
             </div>
 

@@ -1,8 +1,6 @@
 "use client";
 import { beiko } from "@/utils/fonts";
-import sofitukkerlogo from "@/images/header/sofitukker_logo.png";
 import Image from "next/image";
-import st_logo from "@/images/header/st_logo.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
@@ -80,8 +78,10 @@ function Navbar() {
         >
           <Link href="/" className="flex justify-center">
             <Image
-              src={isScrolled ? st_logo : sofitukkerlogo}
+              src={isScrolled ? '/images/homepage/header/st_logo.png' : '/images/homepage/header/sofitukker_logo.png'}
               alt="Sofi Tukker Logo"
+              width={397}
+              height={49}
               priority
               className={`object-cover cursor-pointer ${
                 isScrolled

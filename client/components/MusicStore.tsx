@@ -42,9 +42,8 @@ function MusicStore() {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="contain"
-                  className="w-full h-full"
+                  fill
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className={`${beiko.className} p-4`}>

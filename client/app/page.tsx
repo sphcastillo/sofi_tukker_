@@ -1,19 +1,16 @@
 "use client";
-import Image from "next/image";
-import BREADHeroImage from "@/images/homepage/homepageHeroCover.png";
-import SofiTukkerHeroImage from "@/images/homepage/homepageHeroCoverTheme2.png";
+
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import MusicSection from "@/components/MusicSection";
-import { useTheme } from "@/context/ThemeContext";
 import TourSection from "@/components/TourSection";
 import MerchSection from "@/components/MerchSection";
 import VideoGallerySection from "@/components/VideoGallerySection";
 import ImageGallerySection from "@/components/ImageGallerySection";
+import HeroSection from "@/components/HeroSection";
 
 
 export default function Home() {
-  const { theme } = useTheme();
   const [hasScrolled, setHasScrolled] = useState(false);
 
 
@@ -32,15 +29,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
-      {/* Hero Section */}
-      <div>
-        <Image
-          src={theme === "theme1" ? BREADHeroImage : SofiTukkerHeroImage}
-          alt="BREAD Hero Image"
-          priority
-        />
-      </div>
+    <main>
+      <HeroSection />
       <MusicSection />
       <TourSection />
       <MerchSection />

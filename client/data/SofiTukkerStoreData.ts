@@ -1,29 +1,7 @@
-import { StaticImageData } from "next/image";
-import Vinyl from "@/images/musicStore/vinyl.png";
-import CD from "@/images/musicStore/cd.png";
-import Cassette from "@/images/musicStore/cassette.png";
-import woof from "@/images/breadMerchandise/woof.png";
-import hoodie from "@/images/breadMerchandise/breadHoodie1.png";
-import breadtshirt from "@/images/breadMerchandise/breadTee2.png";
-import crop from "@/images/breadMerchandise/breadCrop3.png";
-import joggers from "@/images/breadMerchandise/breadJoggers4.png";
-import tshirt from "@/images/breadMerchandise/breadTee5.png";
-import thong from "@/images/breadMerchandise/breadThong6.png";
-import socks from "@/images/breadMerchandise/breadSocks7.png";
-import tee from "@/images/breadMerchandise/breadTee8.png";
-import sticker from "@/images/breadMerchandise/breadSticker9.png";
-import st1 from "@/images/storeFrontpage/stMusic1.png";
-import st2 from "@/images/storeFrontpage/stMusic2.png";
-import st3 from "@/images/storeFrontpage/stMusic3.png";
-import st4 from "@/images/storeFrontpage/stMusic4.png";
-import st5 from "@/images/storeFrontpage/stMusic5.png";
-import st6 from "@/images/storeFrontpage/stMusic6.png";
-import st7 from "@/images/storeFrontpage/stMusic7.png";
-
 type BandStoreFrontItems = {
   id: number;
   title: string;
-  image: StaticImageData;
+  image: string;
   price: string;
 };
 
@@ -32,119 +10,119 @@ export const BandStoreProducts: BandStoreFrontItems[] = [
     id: 1,
     title: "TEE",
     price: "45.00",
-    image: woof,
+    image: '/images/breadMerchandise/woof.png',
   },
   {
     id: 2,
     title: "VINYL",
     price: "34.99",
-    image: Vinyl,
+    image: '/images/homepage/musicStore/vinyl.png',
   },
   {
     id: 3,
     title: "CD",
     price: "14.99",
-    image: CD,
+    image: '/images/homepage/musicStore/cd.png',
   },
   {
     id: 4,
     title: "CASSETTE",
     price: "14.99",
-    image: Cassette,
+    image: '/images/homepage/musicStore/cassette.png',
   },
   {
     id: 5,
     title: "HOODIE",
     price: "125.00",
-    image: hoodie,
+    image: '/images/breadMerchandise/breadHoodie1.png',
   },
   {
     id: 6,
     title: "TEE",
     price: "45.00",
-    image: breadtshirt,
+    image: '/images/breadMerchandise/breadTee2.png',
   },
   {
     id: 7,
     title: "CROP",
     price: "35.00",
-    image: crop,
+    image: '/images/breadMerchandise/breadCrop3.png',
   },
   {
     id: 8,
     title: "JOGGERS",
     price: "110.00",
-    image: joggers,
+    image: '/images/breadMerchandise/breadJoggers4.png',
   },
   {
     id: 9,
     title: "TEE",
     price: "45.00",
-    image: tshirt,
+    image: '/images/breadMerchandise/breadTee5.png',
   },
   {
     id: 10,
     title: "THONG",
     price: "35.00",
-    image: thong,
+    image: '/images/breadMerchandise/breadThong6.png',
   },
   {
     id: 11,
     title: "SOCKS",
     price: "30.00",
-    image: socks,
+    image: '/images/breadMerchandise/breadSocks7.png',
   },
   {
     id: 12,
     title: "TEE",
     price: "45.00",
-    image: tee,
+    image: '/images/breadMerchandise/breadTee8.png',
   },
   {
     id: 13,
     title: "STICKER",
     price: "6.00",
-    image: sticker,
+    image: '/images/breadMerchandise/breadSticker9.png',
   },
   {
     id: 14,
     title: "SOFT ANIMALS LIMITED EDITION GREEN VINYL",
     price: "35.00",
-    image: st1,
+    image: '/images/storeFrontpage/stMusic1.png',
   },
   {
     id: 15,
-    image: st2,
+    image: '/images/storeFrontpage/stMusic2.png',
     title: "WET TENNIS CD",
     price: "14.99",
   },
   {
     id: 16,
-    image: st3,
+    image: '/images/storeFrontpage/stMusic3.png',
     title: "WET TENNIS VINYL",
     price: "29.99",
   },
   {
     id: 17,
-    image: st4,
+    image: '/images/storeFrontpage/stMusic4.png',
     title: "TREEHOUSE VINYL",
     price: "29.99",
   },
   {
     id: 18,
-    image: st5,
+    image: '/images/storeFrontpage/stMusic5.png',
     title: "SOFT ANIMALS CD",
     price: "12.00",
   },
   {
     id: 19,
-    image: st6,
+    image: '/images/storeFrontpage/stMusic6.png',
     title: "DANCING ON THE PEOPLE VINYL",
     price: "24.99",
   },
   {
     id: 20,
-    image: st7,
+    image: '/images/storeFrontpage/stMusic7.png',
     title: "SOFT ANIMALS VINYL",
     price: "24.99",
   },

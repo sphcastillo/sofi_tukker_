@@ -1,20 +1,8 @@
-import { StaticImageData } from "next/image";
-import hoodie from "@/images/breadMerchandise/breadHoodie1.png";
-import breadtshirt from "@/images/breadMerchandise/breadTee2.png";
-import crop from "@/images/breadMerchandise/breadCrop3.png";
-import joggers from "@/images/breadMerchandise/breadJoggers4.png";
-import tshirt from "@/images/breadMerchandise/breadTee5.png";
-import thong from "@/images/breadMerchandise/breadThong6.png";
-import socks from "@/images/breadMerchandise/breadSocks7.png";
-import tee from "@/images/breadMerchandise/breadTee8.png";
-// import sticker from "@/images/breadMerchandise/breadSticker9.png";
-import woof from "@/images/breadMerchandise/woof.png";
-
 type SofiTukkerMerchItems = {
   id: number;
   title: string;
   price: string;
-  image: StaticImageData;
+  image: string;
   link: string;
 };
 
@@ -23,70 +11,70 @@ export const SofiTukkerMerchItems: SofiTukkerMerchItems[] = [
     id: 1,
     title: "TEE",
     price: "45.00",
-    image: woof,
+    image: '/images/breadMerchandise/woof.png',
     link: "/",
   },
   {
     id: 1,
     title: "HOODIE",
     price: "$125",
-    image: hoodie,
+    image: '/images/breadMerchandise/breadHoodie1.png',
     link: "/",
   },
   {
     id: 2,
     title: "TEE",
     price: "$45",
-    image: breadtshirt,
+    image: '/images/breadMerchandise/breadTee2.png',
     link: "/",
   },
   {
     id: 3,
     title: "CROP",
     price: "$35",
-    image: crop,
+    image: '/images/breadMerchandise/breadCrop3.png',
     link: "/",
   },
   {
     id: 4,
     title: "JOGGERS",
     price: "$110",
-    image: joggers,
+    image: '/images/breadMerchandise/breadJoggers4.png',
     link: "/",
   },
   {
     id: 5,
     title: "TEE",
     price: "$45",
-    image: tshirt,
+    image: '/images/breadMerchandise/breadTee5.png',
     link: "/",
   },
   {
     id: 6,
     title: "THONG",
     price: "$35",
-    image: thong,
+    image: '/images/breadMerchandise/breadThong6.png',
     link: "/",
   },
   {
     id: 7,
     title: "SOCKS",
     price: "$30",
-    image: socks,
+    image: '/images/breadMerchandise/breadSocks7.png',
     link: "/",
   },
   {
     id: 8,
     title: "TEE",
     price: "$45",
-    image: tee,
+    image: '/images/breadMerchandise/breadTee8.png',
     link: "/",
   },
   // {
   //   id: 9,
   //   title: "STICKER",
   //   price: "$6",
-  //   image: sticker,
+  //   image: '/images/breadMerchandise/breadSticker9.png,
   //   link: "/",
   // },
 ];

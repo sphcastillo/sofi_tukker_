@@ -1,12 +1,8 @@
 "use client";
 import STBread from "@/images/header/st_logo.png";
 import { useState } from "react";
-import localFont from "next/font/local";
 import Image from "next/image";
-
-const franklinGothicCondensed = localFont({
-  src: "../../public/fonts/FGC.ttf",
-});
+import { franklinGothicCondensed } from "@/utils/fonts";
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -157,7 +153,7 @@ export default function SignUpPage() {
       </div>
       <div className="flex items-center justify-center pt-4 sm:pt-7">
         <Image 
-          src={STBread}
+          src='/images/header/st_logo.png'
           alt="Sofi Tukker - Bread Logo"
           width={200}
           height={100}

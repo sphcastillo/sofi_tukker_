@@ -3,9 +3,7 @@ import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
-import VideoTitle from '@/images/homepage/videogallerySection/VIDEOtitle.png';
 import MusicVideosGallery from "@/components/MusicVideosGallery";
-import VideoTitleTheme2 from '@/images/homepage/videogallerySection/Videotheme2.png';
 
 const imageVariants: Variants = {
     initial: {
@@ -39,7 +37,7 @@ function VideoGallerySection() {
           className="flex pt-[66px] justify-center object-contain w-[254px] z-20 mb-[60px] xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
         >
           <Image
-            src={theme === 'theme1' ? VideoTitle : VideoTitleTheme2} 
+            src={theme === 'theme1' ? '/images/homepage/videogallerySection/VIDEOtitle.png' : '/images/homepage/videogallerySection/Videotheme2.png'} 
             alt="Video Title"
             priority
             width={600}

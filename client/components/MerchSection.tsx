@@ -2,8 +2,6 @@
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
-import MerchTitle from "@/images/homepage/merchSection/MERCHtitle.png";
-import MerchTitleTheme2 from "@/images/homepage/merchSection/Merchtheme2.png";
 import { useTheme } from "@/context/ThemeContext";
 import SofiTukkerMerch from "@/components/SofiTukkerMerch";
 
@@ -43,7 +41,7 @@ function MerchSection() {
           className="flex pt-[66px] justify-center object-contain w-[254px] z-20 xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
         >
           <Image
-            src={theme === 'theme1' ? MerchTitle : MerchTitleTheme2} 
+            src={theme === 'theme1' ? '/images/homepage/merchSection/MERCHtitle.png' : '/images/homepage/merchSection/Merchtheme2.png'} 
             alt="Merch Title"
             priority
             width={600}
