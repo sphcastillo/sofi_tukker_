@@ -9,6 +9,7 @@
 
 # next.js
 client/.next/
+client/README.md
 /out/
 
 # production

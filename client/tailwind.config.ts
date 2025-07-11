@@ -29,6 +29,10 @@ const config: Config = {
           footertextcolor: '#fa264e',
           footersociallinks: '#DD90E1',
           footerBycolor: '#fff2e7',
+          tourpagebgcolor: '#b9ddba',
+          tourpagetextcolor: '#000000',
+          tourpagebuttonbgcolor: '#000000',
+          tourpagebuttontextcolor: '#DD90E1',
         },
         theme2: {
           navbgcolor: '#161314',
@@ -49,7 +53,11 @@ const config: Config = {
           merchbuttontextcolor: '#ef2018',
           footertextcolor: '#9bdaec',
           footersociallinks: '#FDF729',
-          footerBycolor: '#ffffff'
+          footerBycolor: '#ffffff',
+          tourpagebgcolor: '#161314',
+          tourpagetextcolor: '#da362f',
+          tourpagebuttonbgcolor: '#606ADC',
+          tourpagebuttontextcolor: '#2FC64d',
         }
       },
       screens: {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
-import { FooterSocialItems } from "@/data/FooterSocialsData";
+import { SocialItems } from "@/data/SocialsData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -43,7 +43,7 @@ function Footer() {
           {/* Social Icons Section */}
           <div className="w-full md:w-auto">
             <div className="flex flex-wrap justify-center gap-8">
-              {FooterSocialItems.map((item, index) => (
+              {SocialItems.map((item, index) => (
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"

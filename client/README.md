@@ -74,3 +74,19 @@ Footer Social Links
 
 theme1: #DD90E1
 theme2: #FDF729
+
+Tour Page BG 
+theme1: #b9ddba
+theme2: #161314
+
+Tour Page Text 
+theme1: #000000
+theme2: #da362f
+
+Tour Page Button BG
+theme1: #000000
+theme2: #606ADC
+
+Tour Page Button Text
+theme1: #DD90E1 
+theme2: #2FC64d

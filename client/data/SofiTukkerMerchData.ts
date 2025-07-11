@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import hoodie from "@/images/breadMerchandise/breadHoodie1.png";
 import breadtshirt from "@/images/breadMerchandise/breadTee2.png";
 import crop from "@/images/breadMerchandise/breadCrop3.png";
@@ -7,9 +7,10 @@ import tshirt from "@/images/breadMerchandise/breadTee5.png";
 import thong from "@/images/breadMerchandise/breadThong6.png";
 import socks from "@/images/breadMerchandise/breadSocks7.png";
 import tee from "@/images/breadMerchandise/breadTee8.png";
-import sticker from "@/images/breadMerchandise/breadSticker9.png";
+// import sticker from "@/images/breadMerchandise/breadSticker9.png";
+import woof from "@/images/breadMerchandise/woof.png";
 
-type BreadMerchandiseItems = {
+type SofiTukkerMerchItems = {
   id: number;
   title: string;
   price: string;
@@ -17,7 +18,14 @@ type BreadMerchandiseItems = {
   link: string;
 };
 
-export const BreadShopItems: BreadMerchandiseItems[] = [
+export const SofiTukkerMerchItems: SofiTukkerMerchItems[] = [
+  {
+    id: 1,
+    title: "TEE",
+    price: "45.00",
+    image: woof,
+    link: "/",
+  },
   {
     id: 1,
     title: "HOODIE",
@@ -74,11 +82,11 @@ export const BreadShopItems: BreadMerchandiseItems[] = [
     image: tee,
     link: "/",
   },
-  {
-    id: 9,
-    title: "STICKER",
-    price: "$6",
-    image: sticker,
-    link: "/",
-  },
+  // {
+  //   id: 9,
+  //   title: "STICKER",
+  //   price: "$6",
+  //   image: sticker,
+  //   link: "/",
+  // },
 ];

@@ -1,13 +1,8 @@
 import SofiTukkerStore from "@/components/SofiTukkerStore";
 import SofiTukkerStoreLogo from "@/images/storeFrontpage/sofitukkerstorelogo.png";
 import Image from "next/image";
-import localFont from "next/font/local";
 import SofiTukkerBreadLogo from "@/images/musicpage/STBreadLogo.png";
-
-const franklinGothicCondensed = localFont({
-  src: "../../public/fonts/FGC.ttf",
-});
-
+import { franklinGothicCondensed } from "@/utils/fonts";
 
 export default function StorePage() {
   return (

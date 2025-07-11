@@ -2,7 +2,7 @@
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { BreadShopItems } from "@/data/BreadMerchandiseData";
+import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -19,9 +19,9 @@ const itemVariants: Variants = {
   },
 };
 
-function BreadMerchandise() {
+export default function SofiTukkerMerch() {
   const { theme } = useTheme();
-  const refs = BreadShopItems.map(() => useRef<HTMLDivElement>(null));
+  const refs = SofiTukkerMerchItems.map(() => useRef<HTMLDivElement>(null));
   const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
 
   return (
@@ -31,7 +31,7 @@ function BreadMerchandise() {
       }`}
     >
       <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
-        {BreadShopItems.map((item, index) => {
+        {SofiTukkerMerchItems.map((item, index) => {
           const ref = refs[index];
           const isInView = inViewStates[index];
           return (
@@ -94,4 +94,4 @@ function BreadMerchandise() {
     </div>
   );
 }
-export default BreadMerchandise;
+

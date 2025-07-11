@@ -16,13 +16,13 @@ type Socials = {
     icon: IconType;
     link: string;
   };
-
-export const SocialItems: Socials[] = [
+  
+  export const SocialItems: Socials[] = [
     {
       id: 1,
       name: "Instagram",
       icon: FaInstagram,
-      link: "https://www.instagram.com/sofitukker/"
+      link: "https://www.instagram.com/sofitukker/",
     },
     {
       id: 2,

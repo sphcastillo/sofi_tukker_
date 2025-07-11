@@ -5,7 +5,7 @@ import { useRef } from "react";
 import MerchTitle from "@/images/homepage/merchSection/MERCHtitle.png";
 import MerchTitleTheme2 from "@/images/homepage/merchSection/Merchtheme2.png";
 import { useTheme } from "@/context/ThemeContext";
-import BreadMerchandise from "@/components/BreadMerchandise";
+import SofiTukkerMerch from "@/components/SofiTukkerMerch";
 
 const imageVariants: Variants = {
   initial: {
@@ -51,7 +51,7 @@ function MerchSection() {
           />
         </motion.div>
       </div>
-      <BreadMerchandise />
+      <SofiTukkerMerch />
     </div>
   );
 }

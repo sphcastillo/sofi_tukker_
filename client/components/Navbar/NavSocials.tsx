@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import { SocialItems } from "@/data/NavSocialsData";
+import { SocialItems } from "@/data/SocialsData";
 import { useTheme } from "@/context/ThemeContext";
 
 function NavSocials() {
