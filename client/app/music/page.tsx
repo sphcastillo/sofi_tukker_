@@ -1,10 +1,22 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
-import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
+// import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
 
 
 export default function MusicPage() {
+  const [musicReleases, setMusicReleases] = useState([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
+      .then((res) => res.json())
+      .then((data) => setMusicReleases(data))
+      .catch((err) => console.error("Failed to load music releases:", err));
+  }, []);
+
   return (
     <div
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat pb-[76px] sm:pb-[84px] md:pb-[76px]"
@@ -66,8 +78,8 @@ export default function MusicPage() {
       </div>
 
       <div className="w-full md:w-4/5 mx-auto">
-        {SofiTukkerMusicObjectives.map((objective) => (
-          <div key={objective.id} className="mb-2">
+        {musicReleases.map((release) => (
+          <div key={release.id} className="mb-2">
             <div
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
