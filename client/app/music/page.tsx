@@ -6,9 +6,15 @@ import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
 // import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
 
+type MusicRelease = {
+  id: number;
+  title: string;
+  url: string;
+}
+
 
 export default function MusicPage() {
-  const [musicReleases, setMusicReleases] = useState([]);
+  const [musicReleases, setMusicReleases] = useState<MusicRelease[]>([]);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
@@ -78,20 +84,20 @@ export default function MusicPage() {
       </div>
 
       <div className="w-full md:w-4/5 mx-auto">
-        {musicReleases.map((release) => (
-          <div key={release.id} className="mb-2">
+        {musicReleases.map((release, index) => (
+          <div key={index} className="mb-2">
             <div
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
               <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center ">
                 <Link 
-                  href={objective.url} 
+                  href={release.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
                 <span className="text-[18px] text-[#FFF3E8] text-center ">
-                  {objective.title}
+                  {release.title}
                 </span>
                 </Link>
 
