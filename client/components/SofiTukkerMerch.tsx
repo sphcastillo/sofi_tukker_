@@ -5,19 +5,7 @@ import Image from "next/image";
 import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
-
-const itemVariants: Variants = {
-  initial: {
-    y: 50,
-    opacity: 0,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
-  },
-};
+import { imageVariants } from "@/utils/variants";
 
 export default function SofiTukkerMerch() {
   const { theme } = useTheme();
@@ -41,7 +29,7 @@ export default function SofiTukkerMerch() {
               className="flex flex-col items-center"
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              variants={itemVariants}
+              variants={imageVariants}
             >
               <div className="w-full h-full flex justify-center items-center">
                 <Image
@@ -73,7 +61,7 @@ export default function SofiTukkerMerch() {
                 </p>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`text-[16px] tracking-wide bg-[#eb3d3b] pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1] ${
+                    className={`text-[16px] tracking-wide pt-2 pb-1 px-3 rounded-3xl ${
                       theme === "theme1"
                         ? "text-theme1-merchbuttontextcolor"
                         : "text-theme2-merchbuttontextcolor"
@@ -81,6 +69,15 @@ export default function SofiTukkerMerch() {
                       theme === "theme1"
                         ? "bg-theme1-merchbuttonbgcolor"
                         : "bg-theme2-merchbuttonbgcolor"
+                    }
+                    ${
+                      theme === "theme1"
+                        ? "hover:text-theme1-merchbuttonhovertextcolor"
+                        : "hover:text-theme2-merchbuttonhovertextcolor"
+                    }          ${
+                      theme === "theme1"
+                        ? "hover:bg-theme1-merchbuttonhoverbgcolor"
+                        : "hover:bg-theme2-merchbuttonhoverbgcolor"
                     }`}
                   >
                     SHOP NOW
@@ -94,4 +91,3 @@ export default function SofiTukkerMerch() {
     </div>
   );
 }
-

@@ -229,11 +229,11 @@ export default function TourPage() {
           } py-2 px-4 rounded-3xl hover:border-2 ${
             theme === "theme1"
               ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
-              : "hover:bg-theme2-tourpagehoverbutonbgcolor"
+              : "hover:bg-theme2-followbuttonhoverbgcolor"
           } ${
             theme === "theme1"
               ? "hover:text-theme1-tourpagehoverbuttontextcolor"
-              : "hover:text-theme2-tourpagehoverbuttontextcolorr"
+              : "hover:text-theme2-followbuttonhovertextcolor"
           } hover:border-2 
                              ${
                                theme === "theme1"

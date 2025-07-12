@@ -67,7 +67,7 @@ function MusicStore() {
                 </p>
                 <div className="flex justify-center items-center">
                   <button
-                    className={`text-[16px] tracking-wide pt-2 pb-1 px-3 rounded-3xl hover:bg-[#b562c1]  ${
+                    className={`text-[16px] tracking-wide pt-2 pb-1 px-3 rounded-3xl  ${
                       theme === "theme1"
                         ? "text-theme1-musicbuttontextcolor"
                         : "text-theme2-musicbuttontextcolor"
@@ -76,6 +76,11 @@ function MusicStore() {
                       theme === "theme1"
                         ? "bg-theme1-musicbuttonbgcolor"
                         : "bg-theme2-musicbuttonbgcolor"
+                    }
+                                        ${
+                      theme === "theme1"
+                        ? "hover:text-theme1-musicbuttonhovertextcolor"
+                        : "hover:text-theme2-musicbuttonhovertextcolor"
                     }
                     `}
                   >

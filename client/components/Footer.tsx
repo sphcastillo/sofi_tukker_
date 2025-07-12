@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 import { SocialItems } from "@/data/SocialsData";
 import { beiko } from "@/utils/fonts";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 function Footer() {
   const { theme } = useTheme();
@@ -50,11 +50,13 @@ function Footer() {
                   key={index}
                   href={item.link}
                 >
-                  <span className={`${
-                    theme === "theme1"
-                      ? "text-theme1-footersociallinks"
-                      : "text-theme2-footersociallinks"
-                  } h-5 w-5`}>
+                  <span
+                    className={`${
+                      theme === "theme1"
+                        ? "text-theme1-footersociallinks"
+                        : "text-theme2-footersociallinks"
+                    } h-5 w-5`}
+                  >
                     <item.icon size={20} />
                   </span>
                 </Link>
@@ -75,7 +77,9 @@ function Footer() {
             </span>
             <div className="flex justify-center md:justify-start">
               <p
-                className={`${beiko.className} text-xs tracking-wide leading-5 pt-1 ${
+                className={`${
+                  beiko.className
+                } text-xs tracking-wide leading-5 pt-1 ${
                   theme === "theme1"
                     ? "text-theme1-footerBycolor"
                     : "text-theme2-footerBycolor"
@@ -86,10 +90,15 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.builtbysophia.com/"
-                  className={`pl-1 tracking-wide  hover:text-[#DD90E1] ${
+                  className={`pl-1 tracking-wide  ${
                     theme === "theme1"
                       ? "text-theme1-footertextcolor"
                       : "text-theme2-footertextcolor"
+                  }
+                  ${
+                    theme === "theme1"
+                      ? "hover:text-theme1-builtbysophiahover"
+                      : "hover:text-theme2-builtbysophiahover"
                   }`}
                 >
                   Built By Sophia

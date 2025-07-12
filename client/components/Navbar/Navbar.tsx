@@ -3,7 +3,6 @@ import { beiko } from "@/utils/fonts";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Variants } from "framer-motion";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { imageVariants } from "@/utils/variants";
@@ -14,22 +13,46 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 230) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      console.log("scrollY:", window.scrollY);
+      setIsScrolled(window.scrollY > 52);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  let logoSrc = "/images/homepage/header/sofitukker_logo.png";
+  let logoWidthClassName = "";
+
+  if (!isScrolled) {
+    if (theme === "theme1") {
+      logoSrc = "/images/homepage/header/st_logo.png";
+      logoWidthClassName =
+        "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[280px]";
+    } else {
+      logoSrc = "/images/homepage/header/sofitukkertheme2.png";
+      logoWidthClassName =
+        "";
+    }
+  } else {
+    logoWidthClassName =
+      "w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]";
+  }
+
+  const navLinks = [
+    { href: "/music", label: "MUSIC" },
+    { href: "/tour", label: "TOUR" },
+    { href: "/store", label: "STORE" },
+    { href: "/signup", label: "SIGN UP" },
+  ];
+
   return (
-    <div className="w-full mx-auto flex justify-center pb-4 sm:pb-6">
+    <div
+      className={`w-full mx-auto flex justify-center pb-4 sm:pb-6 transition-all duration-300 ${
+        isScrolled ? "sticky top-0 z-50 backdrop-blur-md" : ""
+      }`}
+    >
       <ul
         className={`${
           beiko.className
@@ -39,26 +62,21 @@ function Navbar() {
             : "text-theme2-navlinkcolor"
         }`}
       >
-        <li className="">
-          <Link href="/music" className="cursor-pointer">
-            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
-              MUSIC
-            </span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/tour" className="cursor-pointer">
-            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
-              TOUR
-            </span>
-          </Link>
-        </li>
+        {navLinks.slice(0, 2).map(({ href, label }) => (
+          <li key={label}>
+            <Link href={href} className="cursor-pointer">
+              <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
+                {label}
+              </span>
+            </Link>
+          </li>
+        ))}
+
         <motion.div
           initial="initial"
           animate="animate"
           variants={imageVariants}
-          key={isScrolled ? "st_logo" : "sofitukkerlogo"}
-          className={`flex justify-center ${
+          className={`flex justify-center transition-all duration-300 ${
             isScrolled
               ? "w-[96px] xxs:w-[130px] xs:w-[160px] sm:w-[134px] md:w-[170px] lg:w-[120px] "
               : "w-[115px] xxs:w-[140px] xs:w-[175px] sm:w-[216px] md:w-[240px] lg:w-[320px] lgPlus:w-[295px] xlPlus:w-[320px]"
@@ -66,33 +84,24 @@ function Navbar() {
         >
           <Link href="/" className="flex justify-center">
             <Image
-              src={isScrolled ? '/images/homepage/header/st_logo.png' : '/images/homepage/header/sofitukker_logo.png'}
+              src={logoSrc}
               alt="Sofi Tukker Logo"
               width={397}
               height={49}
               priority
-              className={`object-cover cursor-pointer ${
-                isScrolled
-                  ? "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[280px]"
-                  : "w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]"
-              } `}
+              className={`object-cover cursor-pointer ${logoWidthClassName}`}
             />
           </Link>
         </motion.div>
-        <li>
-          <Link href="/store" className="cursor-pointer">
-            <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
-              STORE
-            </span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signup" className="cursor-pointer">
-            <span className="text-pretty text-[12px] xs:text-[13px] sm:text-[14px]  md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
-              SIGN UP
-            </span>
-          </Link>
-        </li>
+        {navLinks.slice(2).map(({ href, label }) => (
+          <li key={label}>
+            <Link href={href} className="cursor-pointer">
+              <span className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] lgPlus:text-[24px]">
+                {label}
+              </span>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
