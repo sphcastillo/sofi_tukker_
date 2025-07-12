@@ -1,1 +1,3 @@
-from .tour_date import db, TourDate
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()

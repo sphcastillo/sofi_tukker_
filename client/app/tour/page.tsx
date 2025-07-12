@@ -1,12 +1,10 @@
 "use client";
 import { franklinGothicCondensed } from "@/utils/fonts";
 import Image from "next/image";
-import TourTitle from "@/images/homepage/tourSection/TOURtitle.png";
-import TourTitle2 from "@/images/homepage/tourSection/TourTheme2.png";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { useEffect, useState } from "react";
-import { tourDates } from "@/data/TourData";
+// import { tourDates } from "@/data/TourData";
 
 type TourDate = {
   id: number;

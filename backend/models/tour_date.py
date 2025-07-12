@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from models import db
 
 class TourDate(db.Model):
     __tablename__ = 'tour_dates'

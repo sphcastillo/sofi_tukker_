@@ -1,15 +1,5 @@
-from flask import Flask
+from app import app
 from models.tour_date import db, TourDate
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# Create app and configure DB
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)
 
 tour_data =  [
   {
@@ -173,12 +163,12 @@ tour_data =  [
     "link": "https://edcorlando.frontgatetickets.com/?irgwc=1&clickid=V02QCa1P0xycTmuVoOQuFTBsUksSRlUdIx6ZWw0&camefrom=CFC_BUYAT_1387536&impradid=1387536&REFERRAL_ID=tmfeedbuyat1387536&wt.mc_id=aff_BUYAT_1387536&utm_source=1387536-Seated&impradname=Seated&utm_medium=affiliate&ircid=4272",
   },
 
-];
+]
 
 with app.app_context():
-    db.create_all()  # Optional: only needed if not yet created
+    db.create_all()  # Optional: only needed if tables are not created yet
     for data in tour_data:
         tour = TourDate(**data)
         db.session.add(tour)
     db.session.commit()
-    print("✅ RDS database has been seeded!")
+    print("✅ Tour dates seeded!")
