@@ -59,4 +59,4 @@ with app.app_context():
         release = MusicRelease(**release)
         db.session.add(release)
     db.session.commit()
-    print("✅ Music releases seeded successfully!")
+    print("✅ Sofi Tukker Music releases seeded successfully!")

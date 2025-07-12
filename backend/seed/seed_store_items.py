@@ -122,7 +122,7 @@ store_data = [
 with app.app_context():
     db.create_all()
     for item in store_data:
-        product = StoreItem(**item)
-        db.session.add(product)
+        store = StoreItem(**item)
+        db.session.add(store)
     db.session.commit()
-    print("✅ Store items seeded successfully!")
+    print("✅ Sofi Tukker Store items seeded successfully!")

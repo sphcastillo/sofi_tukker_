@@ -6,6 +6,8 @@ from models.tour_date import TourDate
 from models.store_item import StoreItem
 from routes.tour_routes import tour_routes
 from routes.store_routes import store_routes
+from routes.music_routes import music_routes
+from routes.merch_routes import merch_routes
 import os
 
 load_dotenv()
@@ -33,6 +35,8 @@ print("Using database:", app.config['SQLALCHEMY_DATABASE_URI'])
 db.init_app(app)
 app.register_blueprint(tour_routes)
 app.register_blueprint(store_routes)
+app.register_blueprint(music_routes)
+app.register_blueprint(merch_routes)
 
 # Create tables if they don't exist
 with app.app_context():

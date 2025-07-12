@@ -171,4 +171,4 @@ with app.app_context():
         tour = TourDate(**data)
         db.session.add(tour)
     db.session.commit()
-    print("✅ Tour dates seeded!")
+    print("✅ Sofi Tukker Tour dates seeded!")
