@@ -8,6 +8,16 @@ from models.store_item import db, StoreItem
 
 store_data = [
     {
+        "title": "BUTTER VINYL",
+        "price": '36.99',
+        "image": '/images/storeFrontpage/butterCD.png',
+    },
+    {
+        "title": "BUTTER CD",
+        "price": "14.99",
+        "image": '/images/storeFrontpage/butterVinyl.png'
+    },
+    {
         'title': 'TEE',
         'price': '45.00',
         'image': '/images/breadMerchandise/woof.png',

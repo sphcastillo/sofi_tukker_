@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { BandStoreProducts } from "@/data/SofiTukkerStoreData";
+// import { BandStoreProducts } from "@/data/SofiTukkerStoreData";
 import { franklinGothicCondensed } from "@/utils/fonts";
 import { useEffect, useState } from "react";
 

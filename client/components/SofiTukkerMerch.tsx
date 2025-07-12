@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
