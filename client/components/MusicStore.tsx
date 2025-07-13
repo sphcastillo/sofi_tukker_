@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { beiko } from "@/utils/fonts";
-// import { BreadStoreItems } from "@/data/MusicStoreData";
+import { BreadStoreItems } from "@/data/MusicStoreData";
 import { useTheme } from "@/context/ThemeContext";
 import { MusicStoreVariants } from "@/utils/variants";
 
@@ -19,21 +19,22 @@ type BreadGood = {
 
 function MusicStore() {
   const { theme } = useTheme();
-  const [breadGoods, setBreadGoods] = useState<BreadGood[]>([]);
+  // const [breadGoods, setBreadGoods] = useState<BreadGood[]>([]);
   const columnRefs = [useRef(null), useRef(null), useRef(null)];
   const inViewStates = columnRefs.map((ref) => useInView(ref, { once: false }));
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bread-goods`)
-      .then((res) => res.json())
-      .then((data) => setBreadGoods(data))
-      .catch((err) => console.error("Failed to sell those BREAD goods:", err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bread-goods`)
+  //     .then((res) => res.json())
+  //     .then((data) => setBreadGoods(data))
+  //     .catch((err) => console.error("Failed to sell those BREAD goods:", err));
+  // }, []);
 
   return (
     <div className="p-4 pt-[72px] sm:pt-[120px]">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {breadGoods.map((breadGood, index) => {
+        {BreadStoreItems.map((breadGood, index) => {
+          console.log(breadGood);
           const columnIndex = Math.floor(index / 1); // Each item will be in its own column
           return (
             <motion.div
