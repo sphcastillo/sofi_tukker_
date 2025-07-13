@@ -10,8 +10,7 @@ def get_music_releases():
         {
             "id": release.id,
             "title": release.title,
-            "image": release.image,
-            "link": release.link,
+            "url": release.url,
         } for release in releases
     ]
     return jsonify(data)

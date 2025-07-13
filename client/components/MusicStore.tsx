@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { beiko } from "@/utils/fonts";
 // import { BreadStoreItems } from "@/data/MusicStoreData";
 import { useTheme } from "@/context/ThemeContext";
+import { MusicStoreVariants } from "@/utils/variants";
 
 type BreadGood = {
   id: number;
@@ -15,18 +16,6 @@ type BreadGood = {
   link: string;
 }
 
-const MusicStoreVariants: Variants = {
-  initial: {
-    y: 50,
-    opacity: 0,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
-  },
-};
 
 function MusicStore() {
   const { theme } = useTheme();

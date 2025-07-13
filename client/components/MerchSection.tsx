@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import SofiTukkerMerch from "@/components/SofiTukkerMerch";

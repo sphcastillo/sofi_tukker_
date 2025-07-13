@@ -1,16 +1,32 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
+// import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 import { imageVariants } from "@/utils/variants";
 
+type MerchItem = {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+  link: string;
+};
+
 export default function SofiTukkerMerch() {
   const { theme } = useTheme();
-  const refs = SofiTukkerMerchItems.map(() => useRef<HTMLDivElement>(null));
+  const [merchItems, setMerchItems] = useState<MerchItem[]>([]);
+  const refs = merchItems.map(() => useRef<HTMLDivElement>(null));
   const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/merch-products`)
+      .then((res) => res.json())
+      .then((data) => setMerchItems(data))
+      .catch((err) => console.error("Failed to load merch items: ", err));
+  }, []);
 
   return (
     <div
@@ -19,7 +35,7 @@ export default function SofiTukkerMerch() {
       }`}
     >
       <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
-        {SofiTukkerMerchItems.map((item, index) => {
+        {merchItems.map((item, index) => {
           const ref = refs[index];
           const isInView = inViewStates[index];
           return (
