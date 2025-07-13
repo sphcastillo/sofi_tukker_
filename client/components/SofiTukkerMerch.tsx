@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-// import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
+import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 import { imageVariants } from "@/utils/variants";
@@ -18,7 +18,7 @@ type MerchItem = {
 export default function SofiTukkerMerch() {
   const { theme } = useTheme();
   const [merchItems, setMerchItems] = useState<MerchItem[]>([]);
-  const refs = merchItems.map(() => useRef<HTMLDivElement>(null));
+  const refs = SofiTukkerMerchItems.map(() => useRef<HTMLDivElement>(null));
   const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
 
   useEffect(() => {
