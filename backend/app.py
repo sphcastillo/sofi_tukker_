@@ -2,8 +2,12 @@ from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
 from models import db
+from models.bread_good import BreadGood
 from models.tour_date import TourDate
 from models.store_item import StoreItem
+from models.music_release import MusicRelease
+from models.merch_product import MerchProduct
+from routes.bread_routes import bread_routes
 from routes.tour_routes import tour_routes
 from routes.store_routes import store_routes
 from routes.music_routes import music_routes
@@ -33,6 +37,7 @@ print("Using database:", app.config['SQLALCHEMY_DATABASE_URI'])
 
 # Initialize DB and register routes
 db.init_app(app)
+app.register_blueprint(bread_routes)
 app.register_blueprint(tour_routes)
 app.register_blueprint(store_routes)
 app.register_blueprint(music_routes)

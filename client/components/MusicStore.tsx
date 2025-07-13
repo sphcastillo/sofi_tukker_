@@ -63,7 +63,7 @@ function MusicStore() {
                       : "text-theme2-musictextcolor"
                   }`}
                 >
-                  {item.price}
+                  ${item.price}
                 </p>
                 <div className="flex justify-center items-center">
                   <button
