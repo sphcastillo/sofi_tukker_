@@ -152,7 +152,7 @@ export default function SignUpPage() {
       </div>
       <div className="flex items-center justify-center pt-4 sm:pt-7">
         <Image 
-          src='/images/header/st_logo.png'
+          src='/images/homepage/header/st_logo.png'
           alt="Sofi Tukker - Bread Logo"
           width={200}
           height={100}
