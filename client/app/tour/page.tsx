@@ -24,7 +24,7 @@ export default function TourPage() {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-dates`)
       .then((res) => res.json())
       .then((data) => setTourDates(data))
-      .catch((err) => console.error("Failed to load tour dates:", err));
+      .catch((err) => console.error("Failed to load Sofi Tukker tour dates:", err));
   }, []);
 
   return (

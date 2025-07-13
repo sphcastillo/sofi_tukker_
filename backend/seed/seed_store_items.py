@@ -10,12 +10,12 @@ store_data = [
     {
         "title": "BUTTER VINYL",
         "price": '36.99',
-        "image": '/images/storeFrontpage/butterCD.png',
+        "image": '/images/storeFrontpage/butterVinyl.png'
     },
     {
         "title": "BUTTER CD",
         "price": "14.99",
-        "image": '/images/storeFrontpage/butterVinyl.png'
+        "image": '/images/storeFrontpage/butterCD.png'
     },
     {
         'title': 'TEE',

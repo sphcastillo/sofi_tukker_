@@ -1,10 +1,19 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { beiko } from "@/utils/fonts";
-import { BreadStoreItems } from "@/data/MusicStoreData";
+// import { BreadStoreItems } from "@/data/MusicStoreData";
 import { useTheme } from "@/context/ThemeContext";
+
+type BreadGood = {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+  link: string;
+}
 
 const MusicStoreVariants: Variants = {
   initial: {
@@ -21,17 +30,25 @@ const MusicStoreVariants: Variants = {
 
 function MusicStore() {
   const { theme } = useTheme();
+  const [breadGoods, setBreadGoods] = useState<BreadGood[]>([]);
   const columnRefs = [useRef(null), useRef(null), useRef(null)];
   const inViewStates = columnRefs.map((ref) => useInView(ref, { once: false }));
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bread-goods`)
+      .then((res) => res.json())
+      .then((data) => setBreadGoods(data))
+      .catch((err) => console.error("Failed to sell those BREAD goods:", err));
+  }, []);
 
   return (
     <div className="p-4 pt-[72px] sm:pt-[120px]">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {BreadStoreItems.map((item, index) => {
+        {breadGoods.map((breadGood, index) => {
           const columnIndex = Math.floor(index / 1); // Each item will be in its own column
           return (
             <motion.div
-              key={item.id}
+              key={breadGood.id}
               ref={columnRefs[columnIndex]}
               initial="initial"
               animate={inViewStates[columnIndex] ? "animate" : "initial"}
@@ -40,8 +57,8 @@ function MusicStore() {
             >
               <div className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px]">
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={breadGood.image}
+                  alt={breadGood.title}
                   fill
                   className="w-full h-full object-contain"
                 />
@@ -54,7 +71,7 @@ function MusicStore() {
                       : "text-theme2-musictextcolor"
                   }`}
                 >
-                  {item.title}
+                  {breadGood.title}
                 </h2>
                 <p
                   className={`text-[18px] xs:text-[28px] mb-4 text-center ${
@@ -63,7 +80,7 @@ function MusicStore() {
                       : "text-theme2-musictextcolor"
                   }`}
                 >
-                  ${item.price}
+                  ${breadGood.price}
                 </p>
                 <div className="flex justify-center items-center">
                   <button

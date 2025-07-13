@@ -20,7 +20,7 @@ export default function MusicPage() {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
       .then((res) => res.json())
       .then((data) => setMusicReleases(data))
-      .catch((err) => console.error("Failed to load music releases:", err));
+      .catch((err) => console.error("Failed to load Sofi Tukker music releases:", err));
   }, []);
 
   return (
