@@ -64,7 +64,6 @@ merch_data = [
 ]
 
 with app.app_context():
-    db.create_all()
     for data in merch_data:
         merch = MerchProduct(**data)
         db.session.add(merch)

@@ -28,7 +28,6 @@ bread_data = [
 ]
 
 with app.app_context():
-    db.create_all()
     for data in bread_data:
         bread = BreadGood(**data)
         db.session.add(bread)

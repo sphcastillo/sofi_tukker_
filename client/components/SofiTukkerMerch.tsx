@@ -22,6 +22,7 @@ export default function SofiTukkerMerch() {
   const inViewStates = refs.map((ref) => useInView(ref, { once: false }));
 
   useEffect(() => {
+    console.log("fetching merch items, merchItems: ", merchItems);
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/merch-products`)
       .then((res) => res.json())
       .then((data) => setMerchItems(data))

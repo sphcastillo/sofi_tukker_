@@ -166,7 +166,6 @@ tour_data =  [
 ]
 
 with app.app_context():
-    db.create_all()  # Optional: only needed if tables are not created yet
     for data in tour_data:
         tour = TourDate(**data)
         db.session.add(tour)

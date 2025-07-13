@@ -120,7 +120,6 @@ store_data = [
 ]
 
 with app.app_context():
-    db.create_all()
     for item in store_data:
         store = StoreItem(**item)
         db.session.add(store)

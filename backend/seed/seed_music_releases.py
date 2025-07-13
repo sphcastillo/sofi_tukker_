@@ -54,7 +54,6 @@ music_data = [
 ]
 
 with app.app_context():
-    db.create_all()
     for release in music_data:
         release = MusicRelease(**release)
         db.session.add(release)
