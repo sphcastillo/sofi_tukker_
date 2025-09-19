@@ -16,6 +16,22 @@ export const tourDates = [
       link: "https://posh.vip/e/palm-tree-music-festival-montecito",
     },
     {
+      date: "OCT 11, 2025",
+      venue: "PALM TREE CLUB MIAMI",
+      city: "MIAMI, FL",
+      VIP: false,
+      tickets: true,
+      link: "https://posh.vip/e/sofi-tukker-presented-by-palm-tree-club-miami-1",
+    },
+    {
+      date: "OCT 18, 2025",
+      venue: "SPORTS ILLUSTRATED F1",
+      city: "AUSTIN, TX",
+      VIP: false,
+      tickets: true,
+      link: "https://www.sicircuitseries.com/",
+    },
+    {
       date: "NOV 9, 2025",
       venue: "EDC - ORLANDO",
       city: "ORLANDO, FL",
@@ -23,6 +39,14 @@ export const tourDates = [
       tickets: true,
       link: "https://edcorlando.frontgatetickets.com/?irgwc=1&clickid=V02QCa1P0xycTmuVoOQuFTBsUksSRlUdIx6ZWw0&camefrom=CFC_BUYAT_1387536&impradid=1387536&REFERRAL_ID=tmfeedbuyat1387536&wt.mc_id=aff_BUYAT_1387536&utm_source=1387536-Seated&impradname=Seated&utm_medium=affiliate&ircid=4272",
     },
+    {
+      date: "DEC 26, 2025",
+      venue: "BELLY UP ASPEN",
+      city: "ASPEN, CO",
+      VIP: false,
+      tickets: true,
+      link: "https://tickets.bellyupaspen.com/link/event?event=sofi-tukker-12-26-25",
+    }
     // {
     //   date: "",
     //   venue: "",

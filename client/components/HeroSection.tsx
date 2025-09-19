@@ -7,7 +7,7 @@ function HeroSection() {
   return (
     <div>
       <Image
-        src={theme === "theme1" ? '/images/homepage/hero/homepageHeroCover.png' : '/images/homepage/hero/homepageHeroCoverTheme2.png'}
+        src={theme === "theme1" ? '/images/homepage/hero/homepageHeroCover.png' : '/images/homepage/hero/homepageHeroTheme2Signed.png'}
         alt="BREAD Hero Image"
         width={2888}
         height={1373}
