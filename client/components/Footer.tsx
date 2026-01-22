@@ -6,12 +6,13 @@ import { useTheme } from "../context/ThemeContext";
 
 function Footer() {
   const { theme } = useTheme();
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="bg-[#000000]">
       <div className="p-5 pb-[92px] pt-[96px]">
         <div className="flex flex-col space-y-8 md:flex-row md:justify-between items-center sm:space-y-6 md:space-y-0">
-          {/* Subscribe Section */}
+
           <div className="flex items-center">
             <Link
               href="/signup"
@@ -40,7 +41,6 @@ function Footer() {
             </Link>
           </div>
 
-          {/* Social Icons Section */}
           <div className="w-full md:w-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {SocialItems.map((item, index) => (
@@ -64,7 +64,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Copyright Section */}
           <div className="">
             <span
               className={`${beiko.className} ${
@@ -73,7 +72,7 @@ function Footer() {
                   : "text-theme2-footertextcolor"
               }`}
             >
-              © Copyright 2025 Sofi-Tukker. All Rights Reserved.
+              © Copyright {currentYear} Sofi-Tukker. All Rights Reserved.
             </span>
             <div className="flex justify-center md:justify-start">
               <p
