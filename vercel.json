@@ -1,14 +1,9 @@
 {
-  "functions": {
-    "python/**/*.py": {
-      "runtime": "python"
-    }
-  },
   "rewrites": [
-    { "source": "/_py/store-items", "destination": "/python/store_items.py" },
-    { "source": "/_py/tour-dates", "destination": "/python/tour_dates.py" },
-    { "source": "/_py/bread-goods", "destination": "/python/bread_goods.py" },
-    { "source": "/_py/merch-products", "destination": "/python/merch_products.py" },
-    { "source": "/_py/music-releases", "destination": "/python/music_releases.py" }
+    { "source": "/_py/merch-products", "destination": "/api/_py/merch_products.py" },
+    { "source": "/_py/music-releases", "destination": "/api/_py/music_releases.py" },
+    { "source": "/_py/store-items", "destination": "/api/_py/store_items.py" },
+    { "source": "/_py/tour-dates", "destination": "/api/_py/tour_dates.py" },
+    { "source": "/_py/bread-goods", "destination": "/api/_py/bread_goods.py" }
   ]
 }

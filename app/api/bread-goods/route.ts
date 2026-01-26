@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
   const origin = new URL(req.url).origin;
-  const res = await fetch(`/api/bread-goods`, { cache: "no-store" });
+  const res = await fetch(`${origin}/_py/bread-goods`, { cache: "no-store" });
   const body = await res.text();
 
   return new NextResponse(body, {

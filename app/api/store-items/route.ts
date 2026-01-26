@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
   const origin = new URL(req.url).origin;
 
-  const res = await fetch(`/api/store-items`, {
+  const res = await fetch(`${origin}/_py/store-items`, {
     cache: "no-store",
     headers: { Accept: "application/json" },
   });

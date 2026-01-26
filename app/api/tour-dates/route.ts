@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
   const origin = new URL(req.url).origin;
 
-  const res = await fetch(`/api/tour-dates`, {
+  const res = await fetch(`${origin}/_py/tour-dates`, {
     cache: "no-store",
     headers: { Accept: "application/json" },
   });
