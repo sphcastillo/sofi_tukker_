@@ -8,8 +8,7 @@
 /coverage
 
 # next.js
-client/.next/
-client/README.md
+/.next/
 /out/
 
 # production
@@ -26,7 +25,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel
@@ -35,28 +33,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# --- Python backend specific ignores ---
-
-# Python bytecode
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
-venv/
-env/
-.venv/
-
-# Python-specific env/config
-*.env
-*.sqlite3
-
-# VSCode and PyCharm config (optional)
-.vscode/
-.idea/
-
-# Flask or Django specific (if using SQLite or migrations)
-instance/
-*.db
-*.log
-migrations/
+README.md
