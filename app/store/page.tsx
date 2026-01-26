@@ -16,7 +16,7 @@ export default function StorePage() {
         />
       </div>
 
-      <div className="pt-10">
+      <div className="hidden pt-10">
         <ul className={`${franklinGothicCondensed.className} flex flex-row justify-center space-x-5 xxs:space-x-8 items-center`}>
           <li>
             <span className="tracking-wide text-[#fa264e] text-[15px] xs:text-[18px] sm:text-[20px]">FEATURED</span>
