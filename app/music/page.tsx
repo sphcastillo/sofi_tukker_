@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
-// import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
+import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
 
 type MusicRelease = {
   id: number;
@@ -14,14 +14,14 @@ type MusicRelease = {
 
 
 export default function MusicPage() {
-  const [musicReleases, setMusicReleases] = useState<MusicRelease[]>([]);
+  // const [musicReleases, setMusicReleases] = useState<MusicRelease[]>([]);
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
-      .then((res) => res.json())
-      .then((data) => setMusicReleases(data))
-      .catch((err) => console.error("Failed to load Sofi Tukker music releases:", err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
+  //     .then((res) => res.json())
+  //     .then((data) => setMusicReleases(data))
+  //     .catch((err) => console.error("Failed to load Sofi Tukker music releases:", err));
+  // }, []);
 
   return (
     <div
@@ -84,7 +84,7 @@ export default function MusicPage() {
       </div>
 
       <div className="w-full md:w-4/5 mx-auto">
-        {musicReleases.map((release, index) => (
+        {SofiTukkerMusicObjectives.map((release, index) => (
           <div key={index} className="mb-2">
             <div
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}

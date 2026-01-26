@@ -4,28 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { useEffect, useState } from "react";
-// import { tourDates } from "@/data/TourData";
+import { tourDates } from "@/data/TourData";
 
-type TourDate = {
-  id: number;
-  date: string;
-  venue: string;
-  city: string;
-  VIP: boolean;
-  tickets: boolean;
-  link: string;
-};
 
 export default function TourPage() {
   const { theme } = useTheme();
-  const [tourDates, setTourDates] = useState<TourDate[]>([]);
+  // const [tourDates, setTourDates] = useState<TourDate[]>([]);
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-dates`)
-      .then((res) => res.json())
-      .then((data) => setTourDates(data))
-      .catch((err) => console.error("Failed to load Sofi Tukker tour dates:", err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-dates`)
+  //     .then((res) => res.json())
+  //     .then((data) => setTourDates(data))
+  //     .catch((err) => console.error("Failed to load Sofi Tukker tour dates:", err));
+  // }, []);
 
   return (
     <div
@@ -130,7 +121,7 @@ export default function TourPage() {
                 </button>
               )}
               {tour.tickets ? (
-                <Link href={tour.link} target="_blank">
+                <Link href={tour.link || ''} target="_blank">
                   <div
                     className={`${franklinGothicCondensed.className} w-full ${
                       !tour.VIP ? "xl:max-w-[240px]" : ""
@@ -161,7 +152,7 @@ export default function TourPage() {
                   </div>
                 </Link>
               ) : (
-                <Link href={tour.link} target="_blank">
+                <Link href={tour.link || ''} target="_blank">
                   <div
                     className={`${franklinGothicCondensed.className} w-full ${
                       !tour.VIP ? "xl:max-w-[240px]" : ""
