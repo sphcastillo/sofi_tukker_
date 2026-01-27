@@ -7,7 +7,6 @@ import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 import { MusicStoreVariants } from "@/utils/variants";
 import Link from "next/link";
-// import { BreadStoreItems } from "@/data/MusicStoreData";
 
 type BreadGood = {
   id: number;
@@ -36,15 +35,30 @@ function BreadItem({
       animate={isInView ? "animate" : "initial"}
       variants={variants}
       className="flex flex-col items-center"
+      whileHover={{ 
+        y: -12,
+        scale: 1.05,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      whileTap={{ 
+        y: -8,
+        scale: 1.02,
+        transition: { duration: 0.2, ease: "easeOut" }
+      }}
     >
-      <div className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px]">
+      <motion.div 
+        className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px]"
+        whileHover={{ 
+          transition: { duration: 0.3, ease: "easeOut" }
+        }}
+      >
         <Image
           src={breadGood.image}
           alt={breadGood.title}
           fill
           className="w-full h-full object-contain"
         />
-      </div>
+      </motion.div>
       <div className={`${beiko.className} p-4`}>
         <h2
           className={`text-[18px] xs:text-[28px] font-semibold mb-2 text-center leading-3 ${
