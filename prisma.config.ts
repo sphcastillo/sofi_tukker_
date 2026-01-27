@@ -9,6 +9,7 @@ export default defineConfig({
   },
 
   migrations: {
-    seed: "tsx prisma/seed.ts",
+    seed: "tsx -r tsconfig-paths/register prisma/seed.ts",
   },
+  
 });
