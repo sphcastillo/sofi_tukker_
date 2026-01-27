@@ -15,3 +15,15 @@ model StoreItem {
 
   @@map("store_items")
 }
+
+model TourDate {
+  id      Int     @id @default(autoincrement())
+  date    String
+  venue   String
+  city    String
+  link    String
+  vip     Boolean @default(false)
+  tickets Boolean @default(true)
+
+  @@map("tour_dates")
+}

@@ -4,19 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { useEffect, useState } from "react";
-import { tourDates } from "@/data/TourData";
+
+type TourDate = {
+  date: string;
+  venue: string;
+  city: string;
+  link: string;
+  VIP: boolean;
+  tickets: boolean;
+};
 
 
 export default function TourPage() {
   const { theme } = useTheme();
-  // const [tourDates, setTourDates] = useState<TourDate[]>([]);
+  const [tourDates, setTourDates] = useState<TourDate[]>([]);
 
-  // useEffect(() => {
-  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tour-dates`)
-  //     .then((res) => res.json())
-  //     .then((data) => setTourDates(data))
-  //     .catch((err) => console.error("Failed to load Sofi Tukker tour dates:", err));
-  // }, []);
+  useEffect(() => {
+    fetch("/api/tour-dates", { cache: "no-store" })
+      .then((res) => res.json())
+      .then(setTourDates)
+      .catch((err) => console.error("Failed to load tour dates:", err));
+  }, []);
 
   return (
     <div
@@ -51,7 +59,6 @@ export default function TourPage() {
                 : "hover:bg-theme2-tourpagehoverbgcolor"
             }`}
           >
-            {/* First Column: Date and Venue */}
             <div>
               <div
                 className={`${
@@ -75,7 +82,6 @@ export default function TourPage() {
               </div>
             </div>
 
-            {/* Second Column: City */}
             <div
               className={`${
                 franklinGothicCondensed.className
@@ -88,7 +94,6 @@ export default function TourPage() {
               {tour.city}
             </div>
 
-            {/* Third Column: Buttons */}
             <div className="flex justify-end gap-2 flex-col xs:flex-row">
               {tour.VIP && (
                 <button
