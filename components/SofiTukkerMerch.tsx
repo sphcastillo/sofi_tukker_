@@ -2,7 +2,6 @@
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-// import { SofiTukkerMerchItems } from "@/data/SofiTukkerMerchData";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 import { imageVariants } from "@/utils/variants";
@@ -34,8 +33,23 @@ function MerchItem({
     initial="initial"
     animate={isInView ? "animate" : "initial"}
     variants={imageVariants}
+    whileHover={{ 
+      y: -12,
+      scale: 1.05,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }}
+    whileTap={{ 
+      y: -8,
+      scale: 1.02,
+      transition: { duration: 0.2, ease: "easeOut" }
+    }}
   >
-    <div className="w-full h-full flex justify-center items-center">
+    <motion.div 
+      className="w-full h-full flex justify-center items-center"
+      whileHover={{ 
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+    >
       <Image
         src={item.image}
         alt={item.title}
@@ -43,7 +57,7 @@ function MerchItem({
         height={350}
         className="max-h-[260px] object-contain z-10 w-auto h-auto"
       />
-    </div>
+    </motion.div>
     <div className={`${beiko.className} p-4 w-full`}>
       <h2
         className={`text-[18px] xs:text-[28px] text-center leading-tight ${
@@ -98,13 +112,16 @@ export default function SofiTukkerMerch() {
 
 
   useEffect(() => {
-    console.log("fetching merch items, merchItems: ", merchItems);
-    // DATA FLOW: Fetches from /api/merch-products → returns data from /data/SofiTukkerMerchData.ts
-    fetch('/api/merch-products')
+    fetch("/api/merch-products")
       .then((res) => res.json())
       .then((data) => setMerchItems(data))
-      .catch((err) => console.error("Failed to load merch items: ", err));
+      .catch(console.error);
   }, []);
+  
+  useEffect(() => {
+    console.log("merchItems updated:", merchItems);
+  }, [merchItems]);
+  
 
   return (
     <div
