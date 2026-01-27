@@ -120,6 +120,4 @@ theme1: #DD90E1
 theme2: #2FC64d
 
 
-*Not deploy Flask as a long-running app. 
-Instead: each endpoint is a function, Stateless, and connects to Postgres per request. 
 

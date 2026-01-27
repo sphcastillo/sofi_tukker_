@@ -99,7 +99,8 @@ export default function SofiTukkerMerch() {
 
   useEffect(() => {
     console.log("fetching merch items, merchItems: ", merchItems);
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/merch-products`)
+    // DATA FLOW: Fetches from /api/merch-products → returns data from /data/SofiTukkerMerchData.ts
+    fetch('/api/merch-products')
       .then((res) => res.json())
       .then((data) => setMerchItems(data))
       .catch((err) => console.error("Failed to load merch items: ", err));

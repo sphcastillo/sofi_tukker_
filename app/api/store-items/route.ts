@@ -1,17 +1,19 @@
 import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-export async function GET(req: Request) {
-  const origin = new URL(req.url).origin;
+export async function GET() {
+  try {
+    const items = await prisma.storeItem.findMany({
+      orderBy: { id: "asc" },
+      select: { id: true, title: true, image: true, price: true },
+    });
 
-  const res = await fetch(`${origin}/_py/store-items`, {
-    cache: "no-store",
-    headers: { Accept: "application/json" },
-  });
-
-  const body = await res.text();
-
-  return new NextResponse(body, {
-    status: res.status,
-    headers: { "Content-Type": "application/json" },
-  });
+    return NextResponse.json(items);
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : String(e) },
+      { status: 500 }
+    );
+  }
 }

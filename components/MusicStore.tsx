@@ -80,13 +80,13 @@ function BreadItem({
   );
 }
 
-// ✅ Main component that fetches data
 function MusicStore() {
   const { theme } = useTheme();
   const [breadGoods, setBreadGoods] = useState<BreadGood[]>([]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bread-goods`)
+    // DATA FLOW: Fetches from /api/bread-goods → Python endpoint (needs DATABASE_URL)
+    fetch('/api/bread-goods')
       .then((res) => res.json())
       .then((data) => setBreadGoods(data))
       .catch((err) =>

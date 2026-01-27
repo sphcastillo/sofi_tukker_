@@ -1,8 +1,24 @@
-import SofiTukkerStore from "@/components/SofiTukkerStore";
+'use client';
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
 
+type StoreItem = {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+};
+
 export default function StorePage() {
+  const [storeItems, setStoreItems] = useState<StoreItem[]>([]);
+
+  useEffect(() => {
+    fetch('/api/store-items')
+      .then((res) => res.json())
+      .then((data) => setStoreItems(data))
+      .catch((err) => console.error("Failed to load store items:", err));
+  }, []);
   return (
     <div className="w-full bg-[#FFF3E8] pt-6 pb-[124px]">
       <div className="flex items-center justify-center pt-2 xs:pt-7">
@@ -34,11 +50,42 @@ export default function StorePage() {
       </div>
 
       <div className="pt-8 xs:pt-9 sm:pt-12">
-        <SofiTukkerStore />
+        <div className="bg-[#FFF3E8] px-3 xs:px-[54px]">
+        <p className={`${franklinGothicCondensed.className} text-[#fa264e] text-[20px] tracking-wide`}>Total Items: {storeItems.length}</p>
+
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6">
+            {storeItems.map((item) => (
+              <div
+                key={item.id}
+                className="relative group flex flex-col items-center"
+              >
+                <div className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px] my-2">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="object-contain"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={item.id <= 3}
+                  />
+                </div>
+
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white transition-opacity duration-300">
+                  <h3 className={`${franklinGothicCondensed.className} text-lg `}>
+                    {item.title}
+                  </h3>
+                  <p className={`${franklinGothicCondensed.className} text-sm`}>
+                    ${item.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="flex items-center justify-center pt-8">
-        <Image 
+        <Image
           src='/images/musicpage/STBreadLogo.png'
           alt="Sofi Tukker Bread Logo"
           width={800}
