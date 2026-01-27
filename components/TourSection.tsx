@@ -40,25 +40,37 @@ function TourSection() {
       <div
         className={`${beiko.className} flex justify-center items-center pt-[48px] xs:pt-[54px] pb-10`}
       >
-        <button className={`rounded-full bg-[#ffffff] border-[2px] pb-[9px] pt-[14px] px-4 ${
-          theme === "theme1"
-            ? "border-theme1-tourbuttonbordercolor"
-            : "border-theme2-tourbuttonbordercolor"
-        } ${
+        <motion.button 
+          className={`rounded-full bg-[#ffffff] border-[2px] pb-[9px] pt-[14px] px-4 ${
             theme === "theme1"
-              ? "text-theme1-tourbuttontextcolor"
-              : "text-theme2-tourbuttontextcolor"
+              ? "border-theme1-tourbuttonbordercolor"
+              : "border-theme2-tourbuttonbordercolor"
           } ${
-            theme === "theme1"
-              ? "bg-theme1-tourbuttonbgcolor"
-              : "bg-theme2-tourbuttonbgcolor"
-          }`}>
+              theme === "theme1"
+                ? "text-theme1-tourbuttontextcolor"
+                : "text-theme2-tourbuttontextcolor"
+            } ${
+              theme === "theme1"
+                ? "bg-theme1-tourbuttonbgcolor"
+                : "bg-theme2-tourbuttonbgcolor"
+            }`}
+          whileHover={{ 
+            scale: 1.1,
+            y: -4,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          whileTap={{ 
+            scale: 0.95,
+            y: -2,
+            transition: { duration: 0.2, ease: "easeOut" }
+          }}
+        >
           <Link href="/tour">
             <span className="flex items-center text-[18px] sm:text-[36px]">
               PURCHASE TICKETS
             </span>
           </Link>
-        </button>
+        </motion.button>
       </div>
     </div>
   );

@@ -34,10 +34,19 @@ function MusicVideosGallery() {
       animate={musicVideoInView ? 'animate' : 'initial'}
     >
       {videos.map((video) => (
-        <div
+        <motion.div
           key={video.id}
           className="relative w-full aspect-video cursor-pointer"
           onClick={() => setActiveVideo(video.url)}
+          whileHover={{ 
+            scale: 1.05,
+            zIndex: 10,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          whileTap={{ 
+            scale: 0.98,
+            transition: { duration: 0.2, ease: "easeOut" }
+          }}
         >
           {activeVideo === video.url ? (
             <iframe
@@ -57,11 +66,15 @@ function MusicVideosGallery() {
             />
           )}
           {!activeVideo && (
-            <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div 
+              className="absolute inset-0 flex items-center justify-center"
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.2 }}
+            >
               <button className="text-white text-2xl">▶️</button>
-            </div>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );
