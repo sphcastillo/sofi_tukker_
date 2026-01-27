@@ -27,3 +27,14 @@ model TourDate {
 
   @@map("tour_dates")
 }
+
+model BreadGood {
+  id    Int    @id @default(autoincrement())
+  title String
+  image String
+  price String
+  link  String
+
+  @@map("bread_goods")
+}
+

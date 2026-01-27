@@ -23,6 +23,11 @@ export type StoreItem = $Result.DefaultSelection<Prisma.$StoreItemPayload>
  * 
  */
 export type TourDate = $Result.DefaultSelection<Prisma.$TourDatePayload>
+/**
+ * Model BreadGood
+ * 
+ */
+export type BreadGood = $Result.DefaultSelection<Prisma.$BreadGoodPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -160,6 +165,16 @@ export class PrismaClient<
     * ```
     */
   get tourDate(): Prisma.TourDateDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.breadGood`: Exposes CRUD operations for the **BreadGood** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BreadGoods
+    * const breadGoods = await prisma.breadGood.findMany()
+    * ```
+    */
+  get breadGood(): Prisma.BreadGoodDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -595,7 +610,8 @@ export namespace Prisma {
 
   export const ModelName: {
     StoreItem: 'StoreItem',
-    TourDate: 'TourDate'
+    TourDate: 'TourDate',
+    BreadGood: 'BreadGood'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -611,7 +627,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "storeItem" | "tourDate"
+      modelProps: "storeItem" | "tourDate" | "breadGood"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -763,6 +779,80 @@ export namespace Prisma {
           }
         }
       }
+      BreadGood: {
+        payload: Prisma.$BreadGoodPayload<ExtArgs>
+        fields: Prisma.BreadGoodFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BreadGoodFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BreadGoodFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          findFirst: {
+            args: Prisma.BreadGoodFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BreadGoodFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          findMany: {
+            args: Prisma.BreadGoodFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>[]
+          }
+          create: {
+            args: Prisma.BreadGoodCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          createMany: {
+            args: Prisma.BreadGoodCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BreadGoodCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>[]
+          }
+          delete: {
+            args: Prisma.BreadGoodDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          update: {
+            args: Prisma.BreadGoodUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          deleteMany: {
+            args: Prisma.BreadGoodDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BreadGoodUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BreadGoodUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>[]
+          }
+          upsert: {
+            args: Prisma.BreadGoodUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BreadGoodPayload>
+          }
+          aggregate: {
+            args: Prisma.BreadGoodAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBreadGood>
+          }
+          groupBy: {
+            args: Prisma.BreadGoodGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BreadGoodGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BreadGoodCountArgs<ExtArgs>
+            result: $Utils.Optional<BreadGoodCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -873,6 +963,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     storeItem?: StoreItemOmit
     tourDate?: TourDateOmit
+    breadGood?: BreadGoodOmit
   }
 
   /* Types for Logging */
@@ -3025,6 +3116,1035 @@ export namespace Prisma {
 
 
   /**
+   * Model BreadGood
+   */
+
+  export type AggregateBreadGood = {
+    _count: BreadGoodCountAggregateOutputType | null
+    _avg: BreadGoodAvgAggregateOutputType | null
+    _sum: BreadGoodSumAggregateOutputType | null
+    _min: BreadGoodMinAggregateOutputType | null
+    _max: BreadGoodMaxAggregateOutputType | null
+  }
+
+  export type BreadGoodAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BreadGoodSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BreadGoodMinAggregateOutputType = {
+    id: number | null
+    title: string | null
+    image: string | null
+    price: string | null
+    link: string | null
+  }
+
+  export type BreadGoodMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    image: string | null
+    price: string | null
+    link: string | null
+  }
+
+  export type BreadGoodCountAggregateOutputType = {
+    id: number
+    title: number
+    image: number
+    price: number
+    link: number
+    _all: number
+  }
+
+
+  export type BreadGoodAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type BreadGoodSumAggregateInputType = {
+    id?: true
+  }
+
+  export type BreadGoodMinAggregateInputType = {
+    id?: true
+    title?: true
+    image?: true
+    price?: true
+    link?: true
+  }
+
+  export type BreadGoodMaxAggregateInputType = {
+    id?: true
+    title?: true
+    image?: true
+    price?: true
+    link?: true
+  }
+
+  export type BreadGoodCountAggregateInputType = {
+    id?: true
+    title?: true
+    image?: true
+    price?: true
+    link?: true
+    _all?: true
+  }
+
+  export type BreadGoodAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BreadGood to aggregate.
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BreadGoods to fetch.
+     */
+    orderBy?: BreadGoodOrderByWithRelationInput | BreadGoodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BreadGoodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BreadGoods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BreadGoods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BreadGoods
+    **/
+    _count?: true | BreadGoodCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BreadGoodAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BreadGoodSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BreadGoodMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BreadGoodMaxAggregateInputType
+  }
+
+  export type GetBreadGoodAggregateType<T extends BreadGoodAggregateArgs> = {
+        [P in keyof T & keyof AggregateBreadGood]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBreadGood[P]>
+      : GetScalarType<T[P], AggregateBreadGood[P]>
+  }
+
+
+
+
+  export type BreadGoodGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BreadGoodWhereInput
+    orderBy?: BreadGoodOrderByWithAggregationInput | BreadGoodOrderByWithAggregationInput[]
+    by: BreadGoodScalarFieldEnum[] | BreadGoodScalarFieldEnum
+    having?: BreadGoodScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BreadGoodCountAggregateInputType | true
+    _avg?: BreadGoodAvgAggregateInputType
+    _sum?: BreadGoodSumAggregateInputType
+    _min?: BreadGoodMinAggregateInputType
+    _max?: BreadGoodMaxAggregateInputType
+  }
+
+  export type BreadGoodGroupByOutputType = {
+    id: number
+    title: string
+    image: string
+    price: string
+    link: string
+    _count: BreadGoodCountAggregateOutputType | null
+    _avg: BreadGoodAvgAggregateOutputType | null
+    _sum: BreadGoodSumAggregateOutputType | null
+    _min: BreadGoodMinAggregateOutputType | null
+    _max: BreadGoodMaxAggregateOutputType | null
+  }
+
+  type GetBreadGoodGroupByPayload<T extends BreadGoodGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BreadGoodGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BreadGoodGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BreadGoodGroupByOutputType[P]>
+            : GetScalarType<T[P], BreadGoodGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BreadGoodSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    image?: boolean
+    price?: boolean
+    link?: boolean
+  }, ExtArgs["result"]["breadGood"]>
+
+  export type BreadGoodSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    image?: boolean
+    price?: boolean
+    link?: boolean
+  }, ExtArgs["result"]["breadGood"]>
+
+  export type BreadGoodSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    image?: boolean
+    price?: boolean
+    link?: boolean
+  }, ExtArgs["result"]["breadGood"]>
+
+  export type BreadGoodSelectScalar = {
+    id?: boolean
+    title?: boolean
+    image?: boolean
+    price?: boolean
+    link?: boolean
+  }
+
+  export type BreadGoodOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "image" | "price" | "link", ExtArgs["result"]["breadGood"]>
+
+  export type $BreadGoodPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BreadGood"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      title: string
+      image: string
+      price: string
+      link: string
+    }, ExtArgs["result"]["breadGood"]>
+    composites: {}
+  }
+
+  type BreadGoodGetPayload<S extends boolean | null | undefined | BreadGoodDefaultArgs> = $Result.GetResult<Prisma.$BreadGoodPayload, S>
+
+  type BreadGoodCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BreadGoodFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BreadGoodCountAggregateInputType | true
+    }
+
+  export interface BreadGoodDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BreadGood'], meta: { name: 'BreadGood' } }
+    /**
+     * Find zero or one BreadGood that matches the filter.
+     * @param {BreadGoodFindUniqueArgs} args - Arguments to find a BreadGood
+     * @example
+     * // Get one BreadGood
+     * const breadGood = await prisma.breadGood.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BreadGoodFindUniqueArgs>(args: SelectSubset<T, BreadGoodFindUniqueArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BreadGood that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BreadGoodFindUniqueOrThrowArgs} args - Arguments to find a BreadGood
+     * @example
+     * // Get one BreadGood
+     * const breadGood = await prisma.breadGood.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BreadGoodFindUniqueOrThrowArgs>(args: SelectSubset<T, BreadGoodFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BreadGood that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodFindFirstArgs} args - Arguments to find a BreadGood
+     * @example
+     * // Get one BreadGood
+     * const breadGood = await prisma.breadGood.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BreadGoodFindFirstArgs>(args?: SelectSubset<T, BreadGoodFindFirstArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BreadGood that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodFindFirstOrThrowArgs} args - Arguments to find a BreadGood
+     * @example
+     * // Get one BreadGood
+     * const breadGood = await prisma.breadGood.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BreadGoodFindFirstOrThrowArgs>(args?: SelectSubset<T, BreadGoodFindFirstOrThrowArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BreadGoods that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BreadGoods
+     * const breadGoods = await prisma.breadGood.findMany()
+     * 
+     * // Get first 10 BreadGoods
+     * const breadGoods = await prisma.breadGood.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const breadGoodWithIdOnly = await prisma.breadGood.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BreadGoodFindManyArgs>(args?: SelectSubset<T, BreadGoodFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BreadGood.
+     * @param {BreadGoodCreateArgs} args - Arguments to create a BreadGood.
+     * @example
+     * // Create one BreadGood
+     * const BreadGood = await prisma.breadGood.create({
+     *   data: {
+     *     // ... data to create a BreadGood
+     *   }
+     * })
+     * 
+     */
+    create<T extends BreadGoodCreateArgs>(args: SelectSubset<T, BreadGoodCreateArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BreadGoods.
+     * @param {BreadGoodCreateManyArgs} args - Arguments to create many BreadGoods.
+     * @example
+     * // Create many BreadGoods
+     * const breadGood = await prisma.breadGood.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BreadGoodCreateManyArgs>(args?: SelectSubset<T, BreadGoodCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BreadGoods and returns the data saved in the database.
+     * @param {BreadGoodCreateManyAndReturnArgs} args - Arguments to create many BreadGoods.
+     * @example
+     * // Create many BreadGoods
+     * const breadGood = await prisma.breadGood.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BreadGoods and only return the `id`
+     * const breadGoodWithIdOnly = await prisma.breadGood.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BreadGoodCreateManyAndReturnArgs>(args?: SelectSubset<T, BreadGoodCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BreadGood.
+     * @param {BreadGoodDeleteArgs} args - Arguments to delete one BreadGood.
+     * @example
+     * // Delete one BreadGood
+     * const BreadGood = await prisma.breadGood.delete({
+     *   where: {
+     *     // ... filter to delete one BreadGood
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BreadGoodDeleteArgs>(args: SelectSubset<T, BreadGoodDeleteArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BreadGood.
+     * @param {BreadGoodUpdateArgs} args - Arguments to update one BreadGood.
+     * @example
+     * // Update one BreadGood
+     * const breadGood = await prisma.breadGood.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BreadGoodUpdateArgs>(args: SelectSubset<T, BreadGoodUpdateArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BreadGoods.
+     * @param {BreadGoodDeleteManyArgs} args - Arguments to filter BreadGoods to delete.
+     * @example
+     * // Delete a few BreadGoods
+     * const { count } = await prisma.breadGood.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BreadGoodDeleteManyArgs>(args?: SelectSubset<T, BreadGoodDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BreadGoods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BreadGoods
+     * const breadGood = await prisma.breadGood.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BreadGoodUpdateManyArgs>(args: SelectSubset<T, BreadGoodUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BreadGoods and returns the data updated in the database.
+     * @param {BreadGoodUpdateManyAndReturnArgs} args - Arguments to update many BreadGoods.
+     * @example
+     * // Update many BreadGoods
+     * const breadGood = await prisma.breadGood.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BreadGoods and only return the `id`
+     * const breadGoodWithIdOnly = await prisma.breadGood.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BreadGoodUpdateManyAndReturnArgs>(args: SelectSubset<T, BreadGoodUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BreadGood.
+     * @param {BreadGoodUpsertArgs} args - Arguments to update or create a BreadGood.
+     * @example
+     * // Update or create a BreadGood
+     * const breadGood = await prisma.breadGood.upsert({
+     *   create: {
+     *     // ... data to create a BreadGood
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BreadGood we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BreadGoodUpsertArgs>(args: SelectSubset<T, BreadGoodUpsertArgs<ExtArgs>>): Prisma__BreadGoodClient<$Result.GetResult<Prisma.$BreadGoodPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BreadGoods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodCountArgs} args - Arguments to filter BreadGoods to count.
+     * @example
+     * // Count the number of BreadGoods
+     * const count = await prisma.breadGood.count({
+     *   where: {
+     *     // ... the filter for the BreadGoods we want to count
+     *   }
+     * })
+    **/
+    count<T extends BreadGoodCountArgs>(
+      args?: Subset<T, BreadGoodCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BreadGoodCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BreadGood.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BreadGoodAggregateArgs>(args: Subset<T, BreadGoodAggregateArgs>): Prisma.PrismaPromise<GetBreadGoodAggregateType<T>>
+
+    /**
+     * Group by BreadGood.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BreadGoodGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BreadGoodGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BreadGoodGroupByArgs['orderBy'] }
+        : { orderBy?: BreadGoodGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BreadGoodGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBreadGoodGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BreadGood model
+   */
+  readonly fields: BreadGoodFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BreadGood.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BreadGoodClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BreadGood model
+   */
+  interface BreadGoodFieldRefs {
+    readonly id: FieldRef<"BreadGood", 'Int'>
+    readonly title: FieldRef<"BreadGood", 'String'>
+    readonly image: FieldRef<"BreadGood", 'String'>
+    readonly price: FieldRef<"BreadGood", 'String'>
+    readonly link: FieldRef<"BreadGood", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BreadGood findUnique
+   */
+  export type BreadGoodFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter, which BreadGood to fetch.
+     */
+    where: BreadGoodWhereUniqueInput
+  }
+
+  /**
+   * BreadGood findUniqueOrThrow
+   */
+  export type BreadGoodFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter, which BreadGood to fetch.
+     */
+    where: BreadGoodWhereUniqueInput
+  }
+
+  /**
+   * BreadGood findFirst
+   */
+  export type BreadGoodFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter, which BreadGood to fetch.
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BreadGoods to fetch.
+     */
+    orderBy?: BreadGoodOrderByWithRelationInput | BreadGoodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BreadGoods.
+     */
+    cursor?: BreadGoodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BreadGoods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BreadGoods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BreadGoods.
+     */
+    distinct?: BreadGoodScalarFieldEnum | BreadGoodScalarFieldEnum[]
+  }
+
+  /**
+   * BreadGood findFirstOrThrow
+   */
+  export type BreadGoodFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter, which BreadGood to fetch.
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BreadGoods to fetch.
+     */
+    orderBy?: BreadGoodOrderByWithRelationInput | BreadGoodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BreadGoods.
+     */
+    cursor?: BreadGoodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BreadGoods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BreadGoods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BreadGoods.
+     */
+    distinct?: BreadGoodScalarFieldEnum | BreadGoodScalarFieldEnum[]
+  }
+
+  /**
+   * BreadGood findMany
+   */
+  export type BreadGoodFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter, which BreadGoods to fetch.
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BreadGoods to fetch.
+     */
+    orderBy?: BreadGoodOrderByWithRelationInput | BreadGoodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BreadGoods.
+     */
+    cursor?: BreadGoodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BreadGoods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BreadGoods.
+     */
+    skip?: number
+    distinct?: BreadGoodScalarFieldEnum | BreadGoodScalarFieldEnum[]
+  }
+
+  /**
+   * BreadGood create
+   */
+  export type BreadGoodCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * The data needed to create a BreadGood.
+     */
+    data: XOR<BreadGoodCreateInput, BreadGoodUncheckedCreateInput>
+  }
+
+  /**
+   * BreadGood createMany
+   */
+  export type BreadGoodCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BreadGoods.
+     */
+    data: BreadGoodCreateManyInput | BreadGoodCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BreadGood createManyAndReturn
+   */
+  export type BreadGoodCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * The data used to create many BreadGoods.
+     */
+    data: BreadGoodCreateManyInput | BreadGoodCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BreadGood update
+   */
+  export type BreadGoodUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * The data needed to update a BreadGood.
+     */
+    data: XOR<BreadGoodUpdateInput, BreadGoodUncheckedUpdateInput>
+    /**
+     * Choose, which BreadGood to update.
+     */
+    where: BreadGoodWhereUniqueInput
+  }
+
+  /**
+   * BreadGood updateMany
+   */
+  export type BreadGoodUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BreadGoods.
+     */
+    data: XOR<BreadGoodUpdateManyMutationInput, BreadGoodUncheckedUpdateManyInput>
+    /**
+     * Filter which BreadGoods to update
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * Limit how many BreadGoods to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BreadGood updateManyAndReturn
+   */
+  export type BreadGoodUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * The data used to update BreadGoods.
+     */
+    data: XOR<BreadGoodUpdateManyMutationInput, BreadGoodUncheckedUpdateManyInput>
+    /**
+     * Filter which BreadGoods to update
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * Limit how many BreadGoods to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BreadGood upsert
+   */
+  export type BreadGoodUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * The filter to search for the BreadGood to update in case it exists.
+     */
+    where: BreadGoodWhereUniqueInput
+    /**
+     * In case the BreadGood found by the `where` argument doesn't exist, create a new BreadGood with this data.
+     */
+    create: XOR<BreadGoodCreateInput, BreadGoodUncheckedCreateInput>
+    /**
+     * In case the BreadGood was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BreadGoodUpdateInput, BreadGoodUncheckedUpdateInput>
+  }
+
+  /**
+   * BreadGood delete
+   */
+  export type BreadGoodDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+    /**
+     * Filter which BreadGood to delete.
+     */
+    where: BreadGoodWhereUniqueInput
+  }
+
+  /**
+   * BreadGood deleteMany
+   */
+  export type BreadGoodDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BreadGoods to delete
+     */
+    where?: BreadGoodWhereInput
+    /**
+     * Limit how many BreadGoods to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BreadGood without action
+   */
+  export type BreadGoodDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BreadGood
+     */
+    select?: BreadGoodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BreadGood
+     */
+    omit?: BreadGoodOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -3059,6 +4179,17 @@ export namespace Prisma {
   };
 
   export type TourDateScalarFieldEnum = (typeof TourDateScalarFieldEnum)[keyof typeof TourDateScalarFieldEnum]
+
+
+  export const BreadGoodScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    image: 'image',
+    price: 'price',
+    link: 'link'
+  };
+
+  export type BreadGoodScalarFieldEnum = (typeof BreadGoodScalarFieldEnum)[keyof typeof BreadGoodScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3247,6 +4378,60 @@ export namespace Prisma {
     tickets?: BoolWithAggregatesFilter<"TourDate"> | boolean
   }
 
+  export type BreadGoodWhereInput = {
+    AND?: BreadGoodWhereInput | BreadGoodWhereInput[]
+    OR?: BreadGoodWhereInput[]
+    NOT?: BreadGoodWhereInput | BreadGoodWhereInput[]
+    id?: IntFilter<"BreadGood"> | number
+    title?: StringFilter<"BreadGood"> | string
+    image?: StringFilter<"BreadGood"> | string
+    price?: StringFilter<"BreadGood"> | string
+    link?: StringFilter<"BreadGood"> | string
+  }
+
+  export type BreadGoodOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    link?: SortOrder
+  }
+
+  export type BreadGoodWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: BreadGoodWhereInput | BreadGoodWhereInput[]
+    OR?: BreadGoodWhereInput[]
+    NOT?: BreadGoodWhereInput | BreadGoodWhereInput[]
+    title?: StringFilter<"BreadGood"> | string
+    image?: StringFilter<"BreadGood"> | string
+    price?: StringFilter<"BreadGood"> | string
+    link?: StringFilter<"BreadGood"> | string
+  }, "id">
+
+  export type BreadGoodOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    link?: SortOrder
+    _count?: BreadGoodCountOrderByAggregateInput
+    _avg?: BreadGoodAvgOrderByAggregateInput
+    _max?: BreadGoodMaxOrderByAggregateInput
+    _min?: BreadGoodMinOrderByAggregateInput
+    _sum?: BreadGoodSumOrderByAggregateInput
+  }
+
+  export type BreadGoodScalarWhereWithAggregatesInput = {
+    AND?: BreadGoodScalarWhereWithAggregatesInput | BreadGoodScalarWhereWithAggregatesInput[]
+    OR?: BreadGoodScalarWhereWithAggregatesInput[]
+    NOT?: BreadGoodScalarWhereWithAggregatesInput | BreadGoodScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BreadGood"> | number
+    title?: StringWithAggregatesFilter<"BreadGood"> | string
+    image?: StringWithAggregatesFilter<"BreadGood"> | string
+    price?: StringWithAggregatesFilter<"BreadGood"> | string
+    link?: StringWithAggregatesFilter<"BreadGood"> | string
+  }
+
   export type StoreItemCreateInput = {
     title: string
     image: string
@@ -3358,6 +4543,59 @@ export namespace Prisma {
     link?: StringFieldUpdateOperationsInput | string
     vip?: BoolFieldUpdateOperationsInput | boolean
     tickets?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type BreadGoodCreateInput = {
+    title: string
+    image: string
+    price: string
+    link: string
+  }
+
+  export type BreadGoodUncheckedCreateInput = {
+    id?: number
+    title: string
+    image: string
+    price: string
+    link: string
+  }
+
+  export type BreadGoodUpdateInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type BreadGoodUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type BreadGoodCreateManyInput = {
+    id?: number
+    title: string
+    image: string
+    price: string
+    link: string
+  }
+
+  export type BreadGoodUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type BreadGoodUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -3498,6 +4736,38 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type BreadGoodCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    link?: SortOrder
+  }
+
+  export type BreadGoodAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BreadGoodMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    link?: SortOrder
+  }
+
+  export type BreadGoodMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    link?: SortOrder
+  }
+
+  export type BreadGoodSumOrderByAggregateInput = {
+    id?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {

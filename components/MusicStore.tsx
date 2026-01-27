@@ -6,6 +6,7 @@ import Image from "next/image";
 import { beiko } from "@/utils/fonts";
 import { useTheme } from "@/context/ThemeContext";
 import { MusicStoreVariants } from "@/utils/variants";
+import Link from "next/link";
 // import { BreadStoreItems } from "@/data/MusicStoreData";
 
 type BreadGood = {
@@ -16,7 +17,6 @@ type BreadGood = {
   link: string;
 };
 
-// ✅ Subcomponent that handles animation and in-view logic per item
 function BreadItem({
   breadGood,
   theme,
@@ -65,6 +65,7 @@ function BreadItem({
           ${breadGood.price}
         </p>
         <div className="flex justify-center items-center">
+          <Link href={breadGood.link} target="_blank" rel="noopener noreferrer">
           <button
             className={`text-[16px] tracking-wide pt-2 pb-1 px-3 rounded-3xl  ${
               theme === "theme1"
@@ -74,6 +75,7 @@ function BreadItem({
           >
             SHOP NOW
           </button>
+          </Link>
         </div>
       </div>
     </motion.div>
@@ -85,7 +87,6 @@ function MusicStore() {
   const [breadGoods, setBreadGoods] = useState<BreadGood[]>([]);
 
   useEffect(() => {
-    // DATA FLOW: Fetches from /api/bread-goods → Python endpoint (needs DATABASE_URL)
     fetch('/api/bread-goods')
       .then((res) => res.json())
       .then((data) => setBreadGoods(data))
