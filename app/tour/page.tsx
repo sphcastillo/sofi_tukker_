@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 type TourDate = {
   date: string;
@@ -99,7 +100,7 @@ export default function TourPage() {
                 <button
                   className={`${
                     franklinGothicCondensed.className
-                  } w-full text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
+                  } w-full text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
                     theme === "theme1"
                       ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                       : "hover:bg-theme2-tourpagehoverbutonbgcolor"
@@ -130,14 +131,14 @@ export default function TourPage() {
                   <div
                     className={`${franklinGothicCondensed.className} w-full ${
                       !tour.VIP ? "xl:max-w-[240px]" : ""
-                    }  text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
+                    } text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
                       theme === "theme1"
                         ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                         : "hover:bg-theme2-tourpagehoverbutonbgcolor"
                     } ${
                       theme === "theme1"
                         ? "hover:text-theme1-tourpagehoverbuttontextcolor"
-                        : "hover:text-theme2-tourpagehoverbuttontextcolorr"
+                        : "hover:text-theme2-tourpagehoverbuttontextcolor"
                     } hover:border-2 
                                        ${
                                          theme === "theme1"
@@ -161,7 +162,7 @@ export default function TourPage() {
                   <div
                     className={`${franklinGothicCondensed.className} w-full ${
                       !tour.VIP ? "xl:max-w-[240px]" : ""
-                    } text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl ${
+                    } text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl ${
                       theme === "theme1"
                         ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                         : "hover:bg-theme2-tourpagehoverbutonbgcolor"
@@ -194,11 +195,11 @@ export default function TourPage() {
         ))}
       </div>
 
-      <div className="flex items-center justify-center pb-4 md:pt-10">
+      <div className="flex items-center justify-center pb-8 md:pt-10">
         <span
           className={`${
             franklinGothicCondensed.className
-          } text-[15px] xxs:text-[18px] sm:text-[22px] text-center ${
+          }  text-[15px] xxs:text-[18px] sm:text-[22px] text-center text-pretty ${
             theme === "theme1"
               ? "text-theme1-tourpagenotificationtext"
               : "text-theme2-tourpagenotificationtext"
@@ -209,7 +210,7 @@ export default function TourPage() {
       </div>
 
       <div className="flex items-center justify-center pb-[72px]">
-        <button
+        <motion.button
           className={`${
             franklinGothicCondensed.className
           } text-[15px] xxs:text-[18px] sm:text-[22px] ${
@@ -234,9 +235,19 @@ export default function TourPage() {
                                  ? "hover:border-theme1-tourpagehoverbuttonbordercolor"
                                  : "hover:border-theme2-tourpagehoverbuttonbordercolor"
                              }`}
+          whileHover={{ 
+            scale: 1.1,
+            y: -4,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          whileTap={{ 
+            scale: 0.95,
+            y: -2,
+            transition: { duration: 0.2, ease: "easeOut" }
+          }}
         >
           FOLLOW SOFI TUKKER
-        </button>
+        </motion.button>
       </div>
     </div>
   );
