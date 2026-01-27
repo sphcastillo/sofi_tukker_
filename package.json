@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "prisma generate && next dev",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate || true",
+    "prisma:generate": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/pg": "^8.16.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "dotenv": "^17.2.3",
