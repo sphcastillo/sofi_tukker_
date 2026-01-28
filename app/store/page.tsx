@@ -50,23 +50,23 @@ export default function StorePage() {
       </div>
 
       <div className="pt-8 xs:pt-9 sm:pt-12">
-        <div className="bg-[#FFF3E8] px-3 xs:px-[54px]">
-          <div className="py-3">
+        <div className="bg-[#FFF3E8] px-4 sm:px-12">
+          <div className="">
             <p className={`${franklinGothicCondensed.className} text-[#fa264e] text-[20px] tracking-wide`}>Total Items: {storeItems.length}</p>
           </div>
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {storeItems.map((item) => (
               <div
                 key={item.id}
                 className="relative group flex flex-col items-center transition-transform duration-300 ease-out hover:-translate-y-3 active:-translate-y-3"
               >
-                <div className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px] my-2">
+                <div className="relative w-full h-32 xs:h-40 sm:h-48 md:max-w-[400px] md:max-h-[300px] my-2">
                   <Image
                     src={item.image}
                     alt={item.title}
                     className="object-contain"
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
                     priority={item.id <= 3}
                   />
                 </div>
