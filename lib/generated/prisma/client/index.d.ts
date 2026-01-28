@@ -33,6 +33,11 @@ export type BreadGood = $Result.DefaultSelection<Prisma.$BreadGoodPayload>
  * 
  */
 export type MerchProduct = $Result.DefaultSelection<Prisma.$MerchProductPayload>
+/**
+ * Model MusicRelease
+ * 
+ */
+export type MusicRelease = $Result.DefaultSelection<Prisma.$MusicReleasePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -190,6 +195,16 @@ export class PrismaClient<
     * ```
     */
   get merchProduct(): Prisma.MerchProductDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.musicRelease`: Exposes CRUD operations for the **MusicRelease** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more MusicReleases
+    * const musicReleases = await prisma.musicRelease.findMany()
+    * ```
+    */
+  get musicRelease(): Prisma.MusicReleaseDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -627,7 +642,8 @@ export namespace Prisma {
     StoreItem: 'StoreItem',
     TourDate: 'TourDate',
     BreadGood: 'BreadGood',
-    MerchProduct: 'MerchProduct'
+    MerchProduct: 'MerchProduct',
+    MusicRelease: 'MusicRelease'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -643,7 +659,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "storeItem" | "tourDate" | "breadGood" | "merchProduct"
+      modelProps: "storeItem" | "tourDate" | "breadGood" | "merchProduct" | "musicRelease"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -943,6 +959,80 @@ export namespace Prisma {
           }
         }
       }
+      MusicRelease: {
+        payload: Prisma.$MusicReleasePayload<ExtArgs>
+        fields: Prisma.MusicReleaseFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MusicReleaseFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MusicReleaseFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          findFirst: {
+            args: Prisma.MusicReleaseFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MusicReleaseFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          findMany: {
+            args: Prisma.MusicReleaseFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>[]
+          }
+          create: {
+            args: Prisma.MusicReleaseCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          createMany: {
+            args: Prisma.MusicReleaseCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MusicReleaseCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>[]
+          }
+          delete: {
+            args: Prisma.MusicReleaseDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          update: {
+            args: Prisma.MusicReleaseUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          deleteMany: {
+            args: Prisma.MusicReleaseDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MusicReleaseUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MusicReleaseUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>[]
+          }
+          upsert: {
+            args: Prisma.MusicReleaseUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MusicReleasePayload>
+          }
+          aggregate: {
+            args: Prisma.MusicReleaseAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMusicRelease>
+          }
+          groupBy: {
+            args: Prisma.MusicReleaseGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MusicReleaseGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MusicReleaseCountArgs<ExtArgs>
+            result: $Utils.Optional<MusicReleaseCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1055,6 +1145,7 @@ export namespace Prisma {
     tourDate?: TourDateOmit
     breadGood?: BreadGoodOmit
     merchProduct?: MerchProductOmit
+    musicRelease?: MusicReleaseOmit
   }
 
   /* Types for Logging */
@@ -5265,6 +5356,1009 @@ export namespace Prisma {
 
 
   /**
+   * Model MusicRelease
+   */
+
+  export type AggregateMusicRelease = {
+    _count: MusicReleaseCountAggregateOutputType | null
+    _avg: MusicReleaseAvgAggregateOutputType | null
+    _sum: MusicReleaseSumAggregateOutputType | null
+    _min: MusicReleaseMinAggregateOutputType | null
+    _max: MusicReleaseMaxAggregateOutputType | null
+  }
+
+  export type MusicReleaseAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type MusicReleaseSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type MusicReleaseMinAggregateOutputType = {
+    id: number | null
+    title: string | null
+    url: string | null
+  }
+
+  export type MusicReleaseMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    url: string | null
+  }
+
+  export type MusicReleaseCountAggregateOutputType = {
+    id: number
+    title: number
+    url: number
+    _all: number
+  }
+
+
+  export type MusicReleaseAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type MusicReleaseSumAggregateInputType = {
+    id?: true
+  }
+
+  export type MusicReleaseMinAggregateInputType = {
+    id?: true
+    title?: true
+    url?: true
+  }
+
+  export type MusicReleaseMaxAggregateInputType = {
+    id?: true
+    title?: true
+    url?: true
+  }
+
+  export type MusicReleaseCountAggregateInputType = {
+    id?: true
+    title?: true
+    url?: true
+    _all?: true
+  }
+
+  export type MusicReleaseAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MusicRelease to aggregate.
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MusicReleases to fetch.
+     */
+    orderBy?: MusicReleaseOrderByWithRelationInput | MusicReleaseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MusicReleaseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MusicReleases from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MusicReleases.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned MusicReleases
+    **/
+    _count?: true | MusicReleaseCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: MusicReleaseAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: MusicReleaseSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MusicReleaseMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MusicReleaseMaxAggregateInputType
+  }
+
+  export type GetMusicReleaseAggregateType<T extends MusicReleaseAggregateArgs> = {
+        [P in keyof T & keyof AggregateMusicRelease]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMusicRelease[P]>
+      : GetScalarType<T[P], AggregateMusicRelease[P]>
+  }
+
+
+
+
+  export type MusicReleaseGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MusicReleaseWhereInput
+    orderBy?: MusicReleaseOrderByWithAggregationInput | MusicReleaseOrderByWithAggregationInput[]
+    by: MusicReleaseScalarFieldEnum[] | MusicReleaseScalarFieldEnum
+    having?: MusicReleaseScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MusicReleaseCountAggregateInputType | true
+    _avg?: MusicReleaseAvgAggregateInputType
+    _sum?: MusicReleaseSumAggregateInputType
+    _min?: MusicReleaseMinAggregateInputType
+    _max?: MusicReleaseMaxAggregateInputType
+  }
+
+  export type MusicReleaseGroupByOutputType = {
+    id: number
+    title: string
+    url: string
+    _count: MusicReleaseCountAggregateOutputType | null
+    _avg: MusicReleaseAvgAggregateOutputType | null
+    _sum: MusicReleaseSumAggregateOutputType | null
+    _min: MusicReleaseMinAggregateOutputType | null
+    _max: MusicReleaseMaxAggregateOutputType | null
+  }
+
+  type GetMusicReleaseGroupByPayload<T extends MusicReleaseGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MusicReleaseGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MusicReleaseGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MusicReleaseGroupByOutputType[P]>
+            : GetScalarType<T[P], MusicReleaseGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MusicReleaseSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    url?: boolean
+  }, ExtArgs["result"]["musicRelease"]>
+
+  export type MusicReleaseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    url?: boolean
+  }, ExtArgs["result"]["musicRelease"]>
+
+  export type MusicReleaseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    url?: boolean
+  }, ExtArgs["result"]["musicRelease"]>
+
+  export type MusicReleaseSelectScalar = {
+    id?: boolean
+    title?: boolean
+    url?: boolean
+  }
+
+  export type MusicReleaseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "url", ExtArgs["result"]["musicRelease"]>
+
+  export type $MusicReleasePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MusicRelease"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      title: string
+      url: string
+    }, ExtArgs["result"]["musicRelease"]>
+    composites: {}
+  }
+
+  type MusicReleaseGetPayload<S extends boolean | null | undefined | MusicReleaseDefaultArgs> = $Result.GetResult<Prisma.$MusicReleasePayload, S>
+
+  type MusicReleaseCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MusicReleaseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MusicReleaseCountAggregateInputType | true
+    }
+
+  export interface MusicReleaseDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MusicRelease'], meta: { name: 'MusicRelease' } }
+    /**
+     * Find zero or one MusicRelease that matches the filter.
+     * @param {MusicReleaseFindUniqueArgs} args - Arguments to find a MusicRelease
+     * @example
+     * // Get one MusicRelease
+     * const musicRelease = await prisma.musicRelease.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MusicReleaseFindUniqueArgs>(args: SelectSubset<T, MusicReleaseFindUniqueArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one MusicRelease that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MusicReleaseFindUniqueOrThrowArgs} args - Arguments to find a MusicRelease
+     * @example
+     * // Get one MusicRelease
+     * const musicRelease = await prisma.musicRelease.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MusicReleaseFindUniqueOrThrowArgs>(args: SelectSubset<T, MusicReleaseFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MusicRelease that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseFindFirstArgs} args - Arguments to find a MusicRelease
+     * @example
+     * // Get one MusicRelease
+     * const musicRelease = await prisma.musicRelease.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MusicReleaseFindFirstArgs>(args?: SelectSubset<T, MusicReleaseFindFirstArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MusicRelease that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseFindFirstOrThrowArgs} args - Arguments to find a MusicRelease
+     * @example
+     * // Get one MusicRelease
+     * const musicRelease = await prisma.musicRelease.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MusicReleaseFindFirstOrThrowArgs>(args?: SelectSubset<T, MusicReleaseFindFirstOrThrowArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more MusicReleases that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all MusicReleases
+     * const musicReleases = await prisma.musicRelease.findMany()
+     * 
+     * // Get first 10 MusicReleases
+     * const musicReleases = await prisma.musicRelease.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const musicReleaseWithIdOnly = await prisma.musicRelease.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MusicReleaseFindManyArgs>(args?: SelectSubset<T, MusicReleaseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a MusicRelease.
+     * @param {MusicReleaseCreateArgs} args - Arguments to create a MusicRelease.
+     * @example
+     * // Create one MusicRelease
+     * const MusicRelease = await prisma.musicRelease.create({
+     *   data: {
+     *     // ... data to create a MusicRelease
+     *   }
+     * })
+     * 
+     */
+    create<T extends MusicReleaseCreateArgs>(args: SelectSubset<T, MusicReleaseCreateArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many MusicReleases.
+     * @param {MusicReleaseCreateManyArgs} args - Arguments to create many MusicReleases.
+     * @example
+     * // Create many MusicReleases
+     * const musicRelease = await prisma.musicRelease.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MusicReleaseCreateManyArgs>(args?: SelectSubset<T, MusicReleaseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many MusicReleases and returns the data saved in the database.
+     * @param {MusicReleaseCreateManyAndReturnArgs} args - Arguments to create many MusicReleases.
+     * @example
+     * // Create many MusicReleases
+     * const musicRelease = await prisma.musicRelease.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many MusicReleases and only return the `id`
+     * const musicReleaseWithIdOnly = await prisma.musicRelease.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MusicReleaseCreateManyAndReturnArgs>(args?: SelectSubset<T, MusicReleaseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a MusicRelease.
+     * @param {MusicReleaseDeleteArgs} args - Arguments to delete one MusicRelease.
+     * @example
+     * // Delete one MusicRelease
+     * const MusicRelease = await prisma.musicRelease.delete({
+     *   where: {
+     *     // ... filter to delete one MusicRelease
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MusicReleaseDeleteArgs>(args: SelectSubset<T, MusicReleaseDeleteArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one MusicRelease.
+     * @param {MusicReleaseUpdateArgs} args - Arguments to update one MusicRelease.
+     * @example
+     * // Update one MusicRelease
+     * const musicRelease = await prisma.musicRelease.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MusicReleaseUpdateArgs>(args: SelectSubset<T, MusicReleaseUpdateArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more MusicReleases.
+     * @param {MusicReleaseDeleteManyArgs} args - Arguments to filter MusicReleases to delete.
+     * @example
+     * // Delete a few MusicReleases
+     * const { count } = await prisma.musicRelease.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MusicReleaseDeleteManyArgs>(args?: SelectSubset<T, MusicReleaseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MusicReleases.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many MusicReleases
+     * const musicRelease = await prisma.musicRelease.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MusicReleaseUpdateManyArgs>(args: SelectSubset<T, MusicReleaseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MusicReleases and returns the data updated in the database.
+     * @param {MusicReleaseUpdateManyAndReturnArgs} args - Arguments to update many MusicReleases.
+     * @example
+     * // Update many MusicReleases
+     * const musicRelease = await prisma.musicRelease.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more MusicReleases and only return the `id`
+     * const musicReleaseWithIdOnly = await prisma.musicRelease.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MusicReleaseUpdateManyAndReturnArgs>(args: SelectSubset<T, MusicReleaseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one MusicRelease.
+     * @param {MusicReleaseUpsertArgs} args - Arguments to update or create a MusicRelease.
+     * @example
+     * // Update or create a MusicRelease
+     * const musicRelease = await prisma.musicRelease.upsert({
+     *   create: {
+     *     // ... data to create a MusicRelease
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the MusicRelease we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MusicReleaseUpsertArgs>(args: SelectSubset<T, MusicReleaseUpsertArgs<ExtArgs>>): Prisma__MusicReleaseClient<$Result.GetResult<Prisma.$MusicReleasePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of MusicReleases.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseCountArgs} args - Arguments to filter MusicReleases to count.
+     * @example
+     * // Count the number of MusicReleases
+     * const count = await prisma.musicRelease.count({
+     *   where: {
+     *     // ... the filter for the MusicReleases we want to count
+     *   }
+     * })
+    **/
+    count<T extends MusicReleaseCountArgs>(
+      args?: Subset<T, MusicReleaseCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MusicReleaseCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a MusicRelease.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MusicReleaseAggregateArgs>(args: Subset<T, MusicReleaseAggregateArgs>): Prisma.PrismaPromise<GetMusicReleaseAggregateType<T>>
+
+    /**
+     * Group by MusicRelease.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MusicReleaseGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MusicReleaseGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MusicReleaseGroupByArgs['orderBy'] }
+        : { orderBy?: MusicReleaseGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MusicReleaseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMusicReleaseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the MusicRelease model
+   */
+  readonly fields: MusicReleaseFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for MusicRelease.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MusicReleaseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the MusicRelease model
+   */
+  interface MusicReleaseFieldRefs {
+    readonly id: FieldRef<"MusicRelease", 'Int'>
+    readonly title: FieldRef<"MusicRelease", 'String'>
+    readonly url: FieldRef<"MusicRelease", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * MusicRelease findUnique
+   */
+  export type MusicReleaseFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter, which MusicRelease to fetch.
+     */
+    where: MusicReleaseWhereUniqueInput
+  }
+
+  /**
+   * MusicRelease findUniqueOrThrow
+   */
+  export type MusicReleaseFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter, which MusicRelease to fetch.
+     */
+    where: MusicReleaseWhereUniqueInput
+  }
+
+  /**
+   * MusicRelease findFirst
+   */
+  export type MusicReleaseFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter, which MusicRelease to fetch.
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MusicReleases to fetch.
+     */
+    orderBy?: MusicReleaseOrderByWithRelationInput | MusicReleaseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MusicReleases.
+     */
+    cursor?: MusicReleaseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MusicReleases from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MusicReleases.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MusicReleases.
+     */
+    distinct?: MusicReleaseScalarFieldEnum | MusicReleaseScalarFieldEnum[]
+  }
+
+  /**
+   * MusicRelease findFirstOrThrow
+   */
+  export type MusicReleaseFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter, which MusicRelease to fetch.
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MusicReleases to fetch.
+     */
+    orderBy?: MusicReleaseOrderByWithRelationInput | MusicReleaseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MusicReleases.
+     */
+    cursor?: MusicReleaseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MusicReleases from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MusicReleases.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MusicReleases.
+     */
+    distinct?: MusicReleaseScalarFieldEnum | MusicReleaseScalarFieldEnum[]
+  }
+
+  /**
+   * MusicRelease findMany
+   */
+  export type MusicReleaseFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter, which MusicReleases to fetch.
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MusicReleases to fetch.
+     */
+    orderBy?: MusicReleaseOrderByWithRelationInput | MusicReleaseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing MusicReleases.
+     */
+    cursor?: MusicReleaseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MusicReleases from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MusicReleases.
+     */
+    skip?: number
+    distinct?: MusicReleaseScalarFieldEnum | MusicReleaseScalarFieldEnum[]
+  }
+
+  /**
+   * MusicRelease create
+   */
+  export type MusicReleaseCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * The data needed to create a MusicRelease.
+     */
+    data: XOR<MusicReleaseCreateInput, MusicReleaseUncheckedCreateInput>
+  }
+
+  /**
+   * MusicRelease createMany
+   */
+  export type MusicReleaseCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many MusicReleases.
+     */
+    data: MusicReleaseCreateManyInput | MusicReleaseCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * MusicRelease createManyAndReturn
+   */
+  export type MusicReleaseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * The data used to create many MusicReleases.
+     */
+    data: MusicReleaseCreateManyInput | MusicReleaseCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * MusicRelease update
+   */
+  export type MusicReleaseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * The data needed to update a MusicRelease.
+     */
+    data: XOR<MusicReleaseUpdateInput, MusicReleaseUncheckedUpdateInput>
+    /**
+     * Choose, which MusicRelease to update.
+     */
+    where: MusicReleaseWhereUniqueInput
+  }
+
+  /**
+   * MusicRelease updateMany
+   */
+  export type MusicReleaseUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update MusicReleases.
+     */
+    data: XOR<MusicReleaseUpdateManyMutationInput, MusicReleaseUncheckedUpdateManyInput>
+    /**
+     * Filter which MusicReleases to update
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * Limit how many MusicReleases to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * MusicRelease updateManyAndReturn
+   */
+  export type MusicReleaseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * The data used to update MusicReleases.
+     */
+    data: XOR<MusicReleaseUpdateManyMutationInput, MusicReleaseUncheckedUpdateManyInput>
+    /**
+     * Filter which MusicReleases to update
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * Limit how many MusicReleases to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * MusicRelease upsert
+   */
+  export type MusicReleaseUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * The filter to search for the MusicRelease to update in case it exists.
+     */
+    where: MusicReleaseWhereUniqueInput
+    /**
+     * In case the MusicRelease found by the `where` argument doesn't exist, create a new MusicRelease with this data.
+     */
+    create: XOR<MusicReleaseCreateInput, MusicReleaseUncheckedCreateInput>
+    /**
+     * In case the MusicRelease was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MusicReleaseUpdateInput, MusicReleaseUncheckedUpdateInput>
+  }
+
+  /**
+   * MusicRelease delete
+   */
+  export type MusicReleaseDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+    /**
+     * Filter which MusicRelease to delete.
+     */
+    where: MusicReleaseWhereUniqueInput
+  }
+
+  /**
+   * MusicRelease deleteMany
+   */
+  export type MusicReleaseDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MusicReleases to delete
+     */
+    where?: MusicReleaseWhereInput
+    /**
+     * Limit how many MusicReleases to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * MusicRelease without action
+   */
+  export type MusicReleaseDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MusicRelease
+     */
+    select?: MusicReleaseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MusicRelease
+     */
+    omit?: MusicReleaseOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -5321,6 +6415,15 @@ export namespace Prisma {
   };
 
   export type MerchProductScalarFieldEnum = (typeof MerchProductScalarFieldEnum)[keyof typeof MerchProductScalarFieldEnum]
+
+
+  export const MusicReleaseScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    url: 'url'
+  };
+
+  export type MusicReleaseScalarFieldEnum = (typeof MusicReleaseScalarFieldEnum)[keyof typeof MusicReleaseScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -5617,6 +6720,50 @@ export namespace Prisma {
     link?: StringWithAggregatesFilter<"MerchProduct"> | string
   }
 
+  export type MusicReleaseWhereInput = {
+    AND?: MusicReleaseWhereInput | MusicReleaseWhereInput[]
+    OR?: MusicReleaseWhereInput[]
+    NOT?: MusicReleaseWhereInput | MusicReleaseWhereInput[]
+    id?: IntFilter<"MusicRelease"> | number
+    title?: StringFilter<"MusicRelease"> | string
+    url?: StringFilter<"MusicRelease"> | string
+  }
+
+  export type MusicReleaseOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    url?: SortOrder
+  }
+
+  export type MusicReleaseWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: MusicReleaseWhereInput | MusicReleaseWhereInput[]
+    OR?: MusicReleaseWhereInput[]
+    NOT?: MusicReleaseWhereInput | MusicReleaseWhereInput[]
+    title?: StringFilter<"MusicRelease"> | string
+    url?: StringFilter<"MusicRelease"> | string
+  }, "id">
+
+  export type MusicReleaseOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    url?: SortOrder
+    _count?: MusicReleaseCountOrderByAggregateInput
+    _avg?: MusicReleaseAvgOrderByAggregateInput
+    _max?: MusicReleaseMaxOrderByAggregateInput
+    _min?: MusicReleaseMinOrderByAggregateInput
+    _sum?: MusicReleaseSumOrderByAggregateInput
+  }
+
+  export type MusicReleaseScalarWhereWithAggregatesInput = {
+    AND?: MusicReleaseScalarWhereWithAggregatesInput | MusicReleaseScalarWhereWithAggregatesInput[]
+    OR?: MusicReleaseScalarWhereWithAggregatesInput[]
+    NOT?: MusicReleaseScalarWhereWithAggregatesInput | MusicReleaseScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MusicRelease"> | number
+    title?: StringWithAggregatesFilter<"MusicRelease"> | string
+    url?: StringWithAggregatesFilter<"MusicRelease"> | string
+  }
+
   export type StoreItemCreateInput = {
     title: string
     image: string
@@ -5836,6 +6983,45 @@ export namespace Prisma {
     link?: StringFieldUpdateOperationsInput | string
   }
 
+  export type MusicReleaseCreateInput = {
+    title: string
+    url: string
+  }
+
+  export type MusicReleaseUncheckedCreateInput = {
+    id?: number
+    title: string
+    url: string
+  }
+
+  export type MusicReleaseUpdateInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type MusicReleaseUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type MusicReleaseCreateManyInput = {
+    id?: number
+    title: string
+    url: string
+  }
+
+  export type MusicReleaseUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type MusicReleaseUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -6037,6 +7223,32 @@ export namespace Prisma {
   }
 
   export type MerchProductSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type MusicReleaseCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    url?: SortOrder
+  }
+
+  export type MusicReleaseAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type MusicReleaseMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    url?: SortOrder
+  }
+
+  export type MusicReleaseMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    url?: SortOrder
+  }
+
+  export type MusicReleaseSumOrderByAggregateInput = {
     id?: SortOrder
   }
 

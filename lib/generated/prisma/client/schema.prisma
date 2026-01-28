@@ -47,3 +47,11 @@ model MerchProduct {
 
   @@map("merch_products")
 }
+
+model MusicRelease {
+  id    Int    @id @default(autoincrement())
+  title String
+  url   String
+
+  @@map("music_releases")
+}

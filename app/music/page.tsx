@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
-import { SofiTukkerMusicObjectives } from "@/data/SofiTukkerMusicData";
+import { motion } from "framer-motion";
+
 
 type MusicRelease = {
   id: number;
@@ -14,14 +15,15 @@ type MusicRelease = {
 
 
 export default function MusicPage() {
-  // const [musicReleases, setMusicReleases] = useState<MusicRelease[]>([]);
+  const [musicReleases, setMusicReleases] = useState<MusicRelease[]>([]);
 
-  // useEffect(() => {
-  //   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/music-releases`)
-  //     .then((res) => res.json())
-  //     .then((data) => setMusicReleases(data))
-  //     .catch((err) => console.error("Failed to load Sofi Tukker music releases:", err));
-  // }, []);
+  useEffect(() => {
+    fetch("/api/music-releases")
+      .then((res) => res.json())
+      .then(setMusicReleases)
+      .catch(console.error);
+  }, []);
+  
 
   return (
     <div
@@ -84,12 +86,24 @@ export default function MusicPage() {
       </div>
 
       <div className="w-full md:w-4/5 mx-auto">
-        {SofiTukkerMusicObjectives.map((release, index) => (
-          <div key={index} className="mb-2">
+        {musicReleases.map((release) => (
+          <div key={release.id} className="mb-2">
             <div
               className={`${franklinGothicCondensed.className} p-1 flex justify-center `}
             >
-              <div className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center ">
+              <motion.div 
+                className="w-[80%] rounded-3xl bg-[#E98CE6] py-2 flex justify-center"
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -4,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                whileTap={{ 
+                  scale: 0.98,
+                  y: -2,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+              >
                 <Link 
                   href={release.url} 
                   target="_blank" 
@@ -101,7 +115,7 @@ export default function MusicPage() {
                 </span>
                 </Link>
 
-              </div>
+              </motion.div>
             </div>
           </div>
         ))}
@@ -111,9 +125,31 @@ export default function MusicPage() {
         <div
           className={`${franklinGothicCondensed.className} p-1 flex justify-center`}
         >
-          <div className="w-[70%] rounded-3xl bg-[#FFF3E8] flex justify-center py-[6px]">
-            <span className="text-[#E98CE6] ">EMAIL SIGN UP</span>
-          </div>
+          <motion.div 
+            className="w-[70%] rounded-3xl bg-[#FFF3E8] flex justify-center py-[6px]"
+            whileHover={{ 
+              scale: 1.08,
+              boxShadow: "0 10px 25px rgba(233, 140, 230, 0.4)",
+              transition: { duration: 0.3, ease: "easeOut" }
+            }}
+            whileTap={{ 
+              scale: 1.02,
+              boxShadow: "0 5px 15px rgba(233, 140, 230, 0.3)",
+              transition: { duration: 0.2, ease: "easeOut" }
+            }}
+          >
+            <Link href="/contact">
+              <motion.span 
+                className="text-[#E98CE6]"
+                whileHover={{ 
+                  letterSpacing: "0.1em",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+              >
+                EMAIL SIGN UP
+              </motion.span>
+            </Link>
+          </motion.div>
         </div>
       </div>
 

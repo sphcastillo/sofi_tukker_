@@ -1,12 +1,19 @@
 import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
 
-export async function GET(req: Request) {
-  const origin = new URL(req.url).origin;
-  const res = await fetch(`${origin}/_py/music-releases`, { cache: "no-store" });
-  const body = await res.text();
+export async function GET() {
+  try {
+    const releases = await prisma.musicRelease.findMany({
+      orderBy: { id: "asc" },
+      select: { id: true, title: true, url: true },
+    });
 
-  return new NextResponse(body, {
-    status: res.status,
-    headers: { "Content-Type": "application/json" },
-  });
+    return NextResponse.json(releases);
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : String(e) },
+      { status: 500 }
+    );
+  }
 }
