@@ -65,15 +65,16 @@ function Footer() {
           </div>
 
           <div className="">
-            <span
-              className={`${beiko.className} whitespace-nowrap ${
+            <div
+              className={`${beiko.className} flex flex-col xs:flex-row xs:whitespace-nowrap xs:space-x-1 ${
                 theme === "theme1"
                   ? "text-theme1-footertextcolor"
                   : "text-theme2-footertextcolor"
               }`}
             >
-              © Copyright {currentYear} Sofi-Tukker. All Rights Reserved.
-            </span>
+              <span>© Copyright {currentYear} Sofi-Tukker.</span>
+              <span className="text-center">All Rights Reserved.</span>
+            </div>
             <div className="flex justify-center lgPlus:justify-start">
               <p
                 className={`${

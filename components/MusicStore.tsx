@@ -34,7 +34,7 @@ function BreadItem({
       initial="initial"
       animate={isInView ? "animate" : "initial"}
       variants={variants}
-      className="flex flex-col items-center"
+      className="flex flex-col items-center w-full max-w-full"
       whileHover={{ 
         y: -12,
         scale: 1.05,
@@ -47,7 +47,7 @@ function BreadItem({
       }}
     >
       <motion.div 
-        className="relative w-full h-48 min-w-[230px] max-w-[400px] max-h-[300px]"
+        className="relative w-full h-32 xs:h-40 sm:h-48 md:min-w-[230px] md:max-w-[400px] md:max-h-[300px]"
         whileHover={{ 
           transition: { duration: 0.3, ease: "easeOut" }
         }}
@@ -57,6 +57,7 @@ function BreadItem({
           alt={breadGood.title}
           fill
           className="w-full h-full object-contain"
+          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
         />
       </motion.div>
       <div className={`${beiko.className} p-4`}>
@@ -110,8 +111,8 @@ function MusicStore() {
   }, []);
 
   return (
-    <div className="p-4 pt-[72px] sm:pt-[120px]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="xs:p-4 pt-[72px] sm:pt-[120px]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
         {breadGoods.map((breadGood) => (
           <BreadItem
             key={breadGood.id}

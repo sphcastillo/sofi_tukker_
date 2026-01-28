@@ -38,7 +38,7 @@ function MusicSection() {
 
   return (
     <div
-      className={`relative flex flex-col justify-center items-center ${
+      className={`relative flex flex-col justify-center items-center pb-9 ${
         theme === "theme1"
           ? "bg-theme1-musicbgcolor"
           : "bg-theme2-musicbgcolor"

@@ -45,7 +45,7 @@ function MerchItem({
     }}
   >
     <motion.div 
-      className="w-full h-full flex justify-center items-center"
+      className="relative w-full h-32 xs:h-40 sm:h-48 md:h-56 flex justify-center items-center"
       whileHover={{ 
         transition: { duration: 0.3, ease: "easeOut" }
       }}
@@ -53,9 +53,9 @@ function MerchItem({
       <Image
         src={item.image}
         alt={item.title}
-        width={560}
-        height={350}
-        className="max-h-[260px] object-contain z-10 w-auto h-auto"
+        fill
+        className="object-contain z-10"
+        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
       />
     </motion.div>
     <div className={`${beiko.className} p-4 w-full`}>
@@ -127,7 +127,7 @@ export default function SofiTukkerMerch() {
     <div
       className={`p-4 flex justify-center `}
     >
-      <div className="z-20 mt-[-32px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+      <div className="z-20 mt-[18px] xs:mt-[-32px] grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {merchItems.map((item) => (
           <MerchItem
             key={item.id}
