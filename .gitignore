@@ -36,3 +36,6 @@ next-env.d.ts
 README.md
 
 /app/generated/prisma
+
+notes.md
+notes/

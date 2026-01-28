@@ -137,21 +137,21 @@ export default function TourPage() {
                         : "hover:bg-theme2-tourpagehoverbutonbgcolor"
                     } ${
                       theme === "theme1"
-                        ? "hover:text-theme1-tourpagehoverbuttontextcolor"
+                        ? "hover:text-[#000000]"
                         : "hover:text-theme2-tourpagehoverbuttontextcolor"
                     } hover:border-2 
                                        ${
                                          theme === "theme1"
-                                           ? "hover:border-theme1-tourpagehoverbuttonbordercolor"
+                                           ? "hover:border-[#dd90e1]"
                                            : "hover:border-theme2-tourpagehoverbuttonbordercolor"
                                        } ${
                       theme === "theme1"
                         ? "text-theme1-tourpagebuttontextcolor"
-                        : "text-theme2-tourpagebuttontextcolor"
+                        : "text-[#606adc]"
                     } ${
                       theme === "theme1"
                         ? "bg-theme1-tourpagebuttonbgcolor"
-                        : "bg-theme2-tourpagebuttonbgcolor"
+                        : "bg-[#2fc64d]"
                     }`}
                   >
                     Tickets
@@ -232,7 +232,7 @@ export default function TourPage() {
           } hover:border-2 
                              ${
                                theme === "theme1"
-                                 ? "hover:border-theme1-tourpagehoverbuttonbordercolor"
+                                 ? "hover:border-[#dd90e1]"
                                  : "hover:border-theme2-tourpagehoverbuttonbordercolor"
                              }`}
           whileHover={{ 
