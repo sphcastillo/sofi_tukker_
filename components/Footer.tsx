@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className="bg-[#000000]">
       <div className="p-5 pb-[92px] pt-[96px]">
-        <div className="flex flex-col space-y-8 md:flex-row md:justify-between items-center sm:space-y-6 md:space-y-0">
+        <div className="flex flex-col space-y-8 lgPlus:flex-row lgPlus:justify-between items-center sm:space-y-6 lgPlus:space-y-0">
 
           <div className="flex items-center">
             <Link
@@ -66,7 +66,7 @@ function Footer() {
 
           <div className="">
             <span
-              className={`${beiko.className} ${
+              className={`${beiko.className} whitespace-nowrap ${
                 theme === "theme1"
                   ? "text-theme1-footertextcolor"
                   : "text-theme2-footertextcolor"
@@ -74,7 +74,7 @@ function Footer() {
             >
               © Copyright {currentYear} Sofi-Tukker. All Rights Reserved.
             </span>
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center lgPlus:justify-start">
               <p
                 className={`${
                   beiko.className
