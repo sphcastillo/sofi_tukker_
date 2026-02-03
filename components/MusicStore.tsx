@@ -53,11 +53,11 @@ function BreadItem({
         }}
       >
         <Image
+          sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 50vw"
           src={breadGood.image}
           alt={breadGood.title}
           fill
           className="w-full h-full object-contain"
-          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
         />
       </motion.div>
       <div className={`${beiko.className} p-4`}>

@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { client } from "@/sanity/lib/client";
-import { tourDatesQuery } from "@/sanity/lib/queries";
+import { musicVideosQuery } from "@/sanity/lib/queries";
 
 export async function GET() {
   try {
-    const dates = await client.fetch(tourDatesQuery);
-    return NextResponse.json(dates);
+    const items = await client.fetch(musicVideosQuery);
+    return NextResponse.json(items);
   } catch (e) {
     console.error(e);
     return NextResponse.json(

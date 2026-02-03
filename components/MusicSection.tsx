@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import MUSICtitle from "@/public/images/homepage/musicSection/MUSICtitle.png";
+import MUSICtheme2 from "@/public/images/homepage/musicSection/MUSICtheme2.png";
 import MusicStore from "@/components/MusicStore";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -47,11 +49,9 @@ function MusicSection() {
       {!hasScrolled ? (
         <div className="top-[-20px] xxs:top-[-50px] absolute object-contain z-20 w-[254px] xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]">
           <Image
-            src={theme === "theme1" ? '/images/homepage/musicSection/MUSICtitle.png' : '/images/homepage/musicSection/MUSICtheme2.png'}
+            sizes="(min-width: 768px) 549px, (min-width: 640px) 457px, (min-width: 540px) 383px, (min-width: 414px) 292px, 254px"
+            src={theme === "theme1" ? MUSICtitle : MUSICtheme2}
             alt="MUSIC Title"
-            priority
-            width={1158}
-            height={275}
           />
         </div>
       ) : (
@@ -61,11 +61,9 @@ function MusicSection() {
           style={{ backgroundColor: "transparent" }}
         >
           <Image
-            src={theme === "theme1" ? '/images/homepage/musicSection/MUSICtitle.png' : '/images/homepage/musicSection/MUSICtheme2.png'}
+            sizes="(min-width: 768px) 549px, (min-width: 640px) 457px, (min-width: 540px) 383px, (min-width: 414px) 292px, 254px"
+            src={theme === "theme1" ? MUSICtitle : MUSICtheme2}
             alt="MUSIC Title"
-            priority
-            width={1158}
-            height={275}
           />
         </div>
       )}

@@ -51,11 +51,11 @@ function MerchItem({
       }}
     >
       <Image
+        sizes="(min-width: 768px) calc((100vw - 80px) / 3), calc((100vw - 56px) / 2)"
         src={item.image}
         alt={item.title}
         fill
         className="object-contain z-10"
-        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
       />
     </motion.div>
     <div className={`${beiko.className} p-4 w-full`}>

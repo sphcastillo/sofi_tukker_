@@ -1,14 +1,11 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { client } from "@/sanity/lib/client";
+import { musicReleasesQuery } from "@/sanity/lib/queries";
 
 export async function GET() {
   try {
-    const releases = await prisma.musicRelease.findMany({
-      orderBy: { id: "asc" },
-      select: { id: true, title: true, url: true },
-    });
-
-    return NextResponse.json(releases);
+    const items = await client.fetch(musicReleasesQuery);
+    return NextResponse.json(items);
   } catch (e) {
     console.error(e);
     return NextResponse.json(

@@ -1,6 +1,9 @@
 "use client";
 import { beiko } from "@/utils/fonts";
 import Image from "next/image";
+import sofitukker_logo from "@/public/images/homepage/header/sofitukker_logo.png";
+import st_logo from "@/public/images/homepage/header/st_logo.png";
+import sofitukkertheme2 from "@/public/images/homepage/header/sofitukkertheme2.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -21,16 +24,16 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  let logoSrc = "/images/homepage/header/sofitukker_logo.png";
+  let logoSrc = sofitukker_logo;
   let logoWidthClassName = "";
 
   if (!isScrolled) {
     if (theme === "theme1") {
-      logoSrc = "/images/homepage/header/st_logo.png";
+      logoSrc = st_logo;
       logoWidthClassName =
         "w-[82px] xxs:w-[87px] xs:w-[97px] sm:w-[99px] md:w-[102px] lg:w-[133px]";
     } else {
-      logoSrc = "/images/homepage/header/sofitukkertheme2.png";
+      logoSrc = sofitukkertheme2;
       logoWidthClassName = 'w-[99px] xxs:w-[124px] xs:w-[157px] sm:w-[186px] md:w-[210px] lg:w-[280px]';
     }
   } else {
@@ -82,10 +85,9 @@ function Navbar() {
         >
           <Link href="/" className="flex justify-center">
             <Image
+              sizes="(min-width: 1024px) 280px, (min-width: 768px) 210px, (min-width: 640px) 186px, (min-width: 540px) 157px, (min-width: 414px) 124px, 99px"
               src={logoSrc}
               alt="Sofi Tukker Logo"
-              width={397}
-              height={49}
               priority
               className={`object-cover cursor-pointer ${logoWidthClassName}`}
             />

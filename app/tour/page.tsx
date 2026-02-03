@@ -1,6 +1,8 @@
 "use client";
 import { franklinGothicCondensed } from "@/utils/fonts";
 import Image from "next/image";
+import TOURtitle from "@/public/images/homepage/tourSection/TOURtitle.png";
+import TourTheme2 from "@/public/images/homepage/tourSection/TourTheme2.png";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 import { useEffect, useState } from "react";
@@ -37,11 +39,10 @@ export default function TourPage() {
     >
       <div className="flex items-center justify-center pb-8">
         <Image
-          src={theme === "theme1" ? '/images/homepage/tourSection/TOURtitle.png' : '/images/homepage/tourSection/TourTheme2.png'}
+          sizes="(min-width: 1024px) 600px, (min-width: 768px) 432px, (min-width: 640px) 487px, (min-width: 540px) 412px, (min-width: 414px) 312px, 270px"
+          src={theme === "theme1" ? TOURtitle : TourTheme2}
           alt="Sofi Tukker - Tour title"
           priority
-          width={1158}
-          height={275}
           className="w-[270px] xxs:w-[312px] xs:w-[412px] sm:w-[487px] md:w-[432px] lg:w-[600px]"
         />
       </div>

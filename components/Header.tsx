@@ -1,6 +1,5 @@
 "use client";
 import Navbar from "./Navbar/Navbar";
-import NavbarBanner from "./Navbar/NavbarBanner";
 import NavSocials from "./Navbar/NavSocials";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -8,7 +7,6 @@ function Header() {
   const { theme } = useTheme();
   return (
     <div>
-      <NavbarBanner />
       <div className={`sticky top-0 w-full z-50 ${
           theme === "theme1"
             ? "bg-theme1-navbgcolor"

@@ -2,6 +2,7 @@
 import STBread from "@/images/header/st_logo.png";
 import { useState } from "react";
 import Image from "next/image";
+import st_logo from "@/public/images/homepage/header/st_logo.png";
 import { franklinGothicCondensed } from "@/utils/fonts";
 
 export default function SignUpPage() {
@@ -151,12 +152,10 @@ export default function SignUpPage() {
         </form>
       </div>
       <div className="flex items-center justify-center pt-4 sm:pt-7">
-        <Image 
-          src='/images/homepage/header/st_logo.png'
+        <Image
+          sizes="(min-width: 640px) 164px, 120px"
+          src={st_logo}
           alt="Sofi Tukker - Bread Logo"
-          width={200}
-          height={100}
-          priority
           className="w-[120px] sm:w-[164px]"
         />
       </div>

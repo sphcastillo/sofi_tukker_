@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        unoptimized: true,
+        formats: ["image/avif", "image/webp"],
         remotePatterns: [
             {
                 protocol: "https",
                 hostname: "img.youtube.com",
-                pathname: "**"
+                pathname: "/vi/**"
+            },
+            {
+                protocol: "https",
+                hostname: "cdn.sanity.io",
+                pathname: "/images/**"
             },
 
         ]

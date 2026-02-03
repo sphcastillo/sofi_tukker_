@@ -1,5 +1,7 @@
 'use client';
 import Image from "next/image";
+import sofitukkerstorelogo from "@/public/images/storeFrontpage/sofitukkerstorelogo.png";
+import STBreadLogo from "@/public/images/musicpage/STBreadLogo.png";
 import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
 
@@ -23,10 +25,9 @@ export default function StorePage() {
     <div className="w-full bg-[#FFF3E8] pt-6 pb-[124px]">
       <div className="flex items-center justify-center pt-2 xs:pt-7">
         <Image
-          src='/images/storeFrontpage/sofitukkerstorelogo.png'
+          sizes="(min-width: 1024px) 720px, (min-width: 768px) 470px, (min-width: 640px) 410px, (min-width: 540px) 330px, (min-width: 414px) 317px, 289px"
+          src={sofitukkerstorelogo}
           alt="Sofi Tukker Store Logo"
-          width={800}
-          height={225}
           className="w-[289px] xxs:w-[317px] xs:w-[330px] sm:w-[410px] md:w-[470px] lg:w-[720px]"
           priority
         />
@@ -62,11 +63,11 @@ export default function StorePage() {
               >
                 <div className="relative w-full h-32 xs:h-40 sm:h-48 md:max-w-[400px] md:max-h-[300px] my-2">
                   <Image
+                    sizes="(min-width: 1344px) 400px, (min-width: 768px) calc((100vw - 144px) / 3), (min-width: 640px) calc((100vw - 120px) / 2), calc((100vw - 48px) / 2)"
                     src={item.image}
                     alt={item.title}
                     className="object-contain"
                     fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 33vw"
                     priority={item.id <= 3}
                   />
                 </div>
@@ -87,12 +88,10 @@ export default function StorePage() {
 
       <div className="flex items-center justify-center pt-8">
         <Image
-          src='/images/musicpage/STBreadLogo.png'
+          sizes="(min-width: 1024px) 180px, (min-width: 768px) 170px, (min-width: 540px) 160px, (min-width: 414px) 127px, 119px"
+          src={STBreadLogo}
           alt="Sofi Tukker Bread Logo"
-          width={800}
-          height={225}
           className="w-[119px] xxs:w-[127px] xs:w-[160px] md:w-[170px] lg:w-[180px]"
-          priority
         />
       </div>
     </div>

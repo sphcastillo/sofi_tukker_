@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Sofi Tukker: Developer Edition",
   description:
-    "As a passionate web developer and Sofi Tukker fan, I've taken on the challenge of recreating their official website as closely as possible. This project showcases my ability to meticulously replicate design elements while maintaining the vibrant and dynamic feel that Sofi Tukker is known for. Dive into my work to see how I've combined creativity and technical expertise to bring this ambitious vision to life! Portfolio site only.",
+    "Fan-made portfolio recreation of the Sofi Tukker website. Not affiliated with or endorsed by Sofi Tukker. Built to showcase front-end development skills.",
 };
 
 export default function RootLayout({
@@ -21,6 +22,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

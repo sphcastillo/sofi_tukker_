@@ -1,13 +1,10 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { client } from "@/sanity/lib/client";
+import { storeItemsQuery } from "@/sanity/lib/queries";
 
 export async function GET() {
   try {
-    const items = await prisma.storeItem.findMany({
-      orderBy: { id: "asc" },
-      select: { id: true, title: true, image: true, price: true },
-    });
-
+    const items = await client.fetch(storeItemsQuery);
     return NextResponse.json(items);
   } catch (e) {
     console.error(e);

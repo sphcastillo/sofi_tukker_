@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import MusicSection from "@/components/MusicSection";
 import TourSection from "@/components/TourSection";
 import MerchSection from "@/components/MerchSection";
@@ -17,7 +16,6 @@ export default function Home() {
       <MerchSection />
       <VideoGallerySection />
       <ImageGallerySection />
-      <Footer />
     </main>
   );
 }

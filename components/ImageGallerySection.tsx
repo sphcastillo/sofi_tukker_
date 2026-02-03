@@ -1,5 +1,9 @@
 "use client";
 import Image from "next/image";
+import breadThrowSomeAssBuns from "@/public/images/homepage/imageGallerySection/breadThrowSomeAssBuns.png";
+import butter1 from "@/public/images/homepage/imageGallerySection/butter1.jpg";
+import breadAlbumArtwork from "@/public/images/homepage/imageGallerySection/breadAlbumArtwork.png";
+import butter2 from "@/public/images/homepage/imageGallerySection/butter2.jpg";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
@@ -34,16 +38,15 @@ function ImageGallerySection() {
         animate={albumArtworkInView ? "animate" : "initial"}
       >
         <Image
+          sizes="50vw"
           src={
             theme === "theme1"
-              ? "/images/homepage/imageGallerySection/breadThrowSomeAssBuns.png"
-              : "/images/homepage/imageGallerySection/butter1.jpg"
+              ? breadThrowSomeAssBuns
+              : butter1
           }
-          alt="Throw Some Ass Buns"
+          alt={theme === "theme1" ? "Throw Some Ass buns artwork" : "SOFI TUKKER — BUTTER artwork"}
+          placeholder="blur"
           className="w-full h-full object-cover"
-          width={970}
-          height={1304}
-          priority
         />
       </motion.div>
       <motion.div
@@ -54,16 +57,15 @@ function ImageGallerySection() {
         className="flex-1"
       >
         <Image
+          sizes="50vw"
           src={
             theme === "theme1"
-              ? "/images/homepage/imageGallerySection/breadAlbumArtwork.png"
-              : "/images/homepage/imageGallerySection/butter2.jpg"
+              ? breadAlbumArtwork
+              : butter2
           }
-          alt="Bread Album Artwork"
+          alt={theme === "theme1" ? "BREAD album artwork" : "SOFI TUKKER — BUTTER artwork"}
+          placeholder="blur"
           className="w-full h-full object-cover"
-          priority
-          width={970}
-          height={1304}
         />
       </motion.div>
     </div>

@@ -25,7 +25,7 @@ type MusicStoreItems = {
       id: 3,
       title: "CASSETTE",
       price: "14.99",
-      image: 'images/homepage/musicStore/cassette.png',
+      image: '/images/homepage/musicStore/cassette.png',
       link: "/",
     },
   ];

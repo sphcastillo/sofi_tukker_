@@ -1,6 +1,11 @@
 'use client';
 
 import Image from "next/image";
+import musicBackground from "@/public/images/musicpage/blurredBreadAlbumCover.jpg";
+import SofiTukkerTitle from "@/public/images/musicpage/SofiTukkerTitle.png";
+import BreadTitle from "@/public/images/musicpage/BreadTitle.png";
+import breadAlbumCover from "@/public/images/musicpage/breadAlbumCover.jpeg";
+import STBreadLogo from "@/public/images/musicpage/STBreadLogo.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { franklinGothicCondensed } from "@/utils/fonts";
@@ -27,21 +32,22 @@ export default function MusicPage() {
 
   return (
     <div
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat pb-[76px] sm:pb-[84px] md:pb-[76px]"
-      style={{
-        backgroundImage: `url('/images/musicpage/blurredBreadAlbumCover.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100%",
-        width: "100%",
-      }}
+      className="relative isolate min-h-screen w-full pb-[76px] sm:pb-[84px] md:pb-[76px]"
     >
+      <Image
+        src={musicBackground}
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-10 object-cover pointer-events-none"
+        priority
+        placeholder="blur"
+      />
       <div className="flex justify-center items-center pt-5 pb-1 sm:pt-7">
         <Image
-          src='/images/musicpage/SofiTukkerTitle.png'
+          sizes="(min-width: 1024px) 395px, (min-width: 768px) 431px, (min-width: 640px) 360px, (min-width: 540px) 342px, (min-width: 414px) 260px, 226px"
+          src={SofiTukkerTitle}
           alt="Sofi Tukker"
-          width={700}
-          height={375}
           priority
           className="w-[226px] xxs:w-[260px] xs:w-[342px] sm:w-[360px] md:w-[431px] lg:w-[395px]"
         />
@@ -49,10 +55,9 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center py-4">
         <Image
-          src='/images/musicpage/BreadTitle.png'
+          sizes="(min-width: 1024px) 338px, (min-width: 768px) 370px, (min-width: 640px) 308px, (min-width: 540px) 293px, (min-width: 414px) 223px, 194px"
+          src={BreadTitle}
           alt="Bread"
-          width={700}
-          height={375}
           priority
           className="w-[194px] xxs:w-[223px] xs:w-[293px] sm:w-[308px] md:w-[370px] lg:w-[338px]"
         />
@@ -64,10 +69,10 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center py-4">
         <Image
-          src='/images/musicpage/breadAlbumCover.jpeg'
+          sizes="(min-width: 1024px) 508px, (min-width: 768px) 554px, (min-width: 640px) 464px, (min-width: 540px) 440px, (min-width: 414px) 334px, 293px"
+          src={breadAlbumCover}
           alt="Bread Album Cover"
-          width={700}
-          height={375}
+          placeholder="blur"
           priority
           className="w-[293px] xxs:w-[334px] xs:w-[440px] sm:w-[464px] md:w-[554px] lg:w-[508px]"
         />
@@ -155,11 +160,9 @@ export default function MusicPage() {
 
       <div className="flex justify-center items-center pt-3">
         <Image
-          src='/images/musicpage/STBreadLogo.png'
+          sizes="(min-width: 1024px) 158px, (min-width: 768px) 116px, (min-width: 640px) 96px, (min-width: 540px) 84px, (min-width: 414px) 76px, 64px"
+          src={STBreadLogo}
           alt="Sofi Tukker Bread Logo ~ ST Bread"
-          width={700}
-          priority
-          height={375}
           className="w-[64px] xxs:w-[76px] xs:w-[84px] sm:w-[96px] md:w-[116px] lg:w-[158px]"
         />
       </div>

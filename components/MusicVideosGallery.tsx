@@ -1,8 +1,14 @@
 'use client'
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView, Variants } from "framer-motion";
-import { videos } from "@/data/MusicVideosData";
+
+type MusicVideo = {
+  id: number;
+  title: string;
+  thumbnail: string;
+  url: string;
+};
 
 const musicVideosVariants: Variants = {
   initial: {
@@ -19,11 +25,17 @@ const musicVideosVariants: Variants = {
 
 function MusicVideosGallery() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [videos, setVideos] = useState<MusicVideo[]>([]);
 
   const musicVideoRef = useRef(null);
-
   const musicVideoInView = useInView(musicVideoRef, { once: false });
 
+  useEffect(() => {
+    fetch("/api/music-videos")
+      .then((res) => res.json())
+      .then((data) => setVideos(Array.isArray(data) ? data : []))
+      .catch((err) => console.error("Failed to load music videos:", err));
+  }, []);
 
   return (
     <motion.div 
@@ -58,6 +70,7 @@ function MusicVideosGallery() {
             ></iframe>
           ) : (
             <Image
+              sizes="(min-width: 640px) 25vw, 50vw"
               src={video.thumbnail}
               alt={video.title}
               className="w-full h-full object-cover"

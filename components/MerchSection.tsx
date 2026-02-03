@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import MERCHtitle from "@/public/images/homepage/merchSection/MERCHtitle.png";
+import Merchtheme2 from "@/public/images/homepage/merchSection/Merchtheme2.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
@@ -29,11 +31,9 @@ function MerchSection() {
           className="flex pt-[66px] justify-center object-contain w-[254px] z-20 xxs:w-[292px] xs:w-[383px] sm:w-[457px] md:w-[549px]"
         >
           <Image
-            src={theme === 'theme1' ? '/images/homepage/merchSection/MERCHtitle.png' : '/images/homepage/merchSection/Merchtheme2.png'} 
+            sizes="(min-width: 768px) 549px, (min-width: 640px) 457px, (min-width: 540px) 383px, (min-width: 414px) 292px, 254px"
+            src={theme === 'theme1' ? MERCHtitle : Merchtheme2}
             alt="Merch Title"
-            priority
-            width={600}
-            height={100}
           />
         </motion.div>
       </div>
