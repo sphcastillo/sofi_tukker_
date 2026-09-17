@@ -39,3 +39,8 @@ README.md
 
 notes.md
 notes/
+
+# Sanity Functions
+functions/**/.env*
+functions/**/.build/
+functions/**/node_modules/

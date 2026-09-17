@@ -5,7 +5,10 @@ export const storeItemsQuery = `*[_type == "storeItem"] | order(sortOrder asc) {
   price
 }`;
 
-export const tourDatesQuery = `*[_type == "tourDate"] | order(eventDate asc) {
+export const tourDatesQuery = `*[
+  _type == "tourDate" &&
+  archived != true
+] | order(eventDate asc) {
   date,
   venue,
   specialGuest,

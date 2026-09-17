@@ -63,6 +63,13 @@ export const tourDate = defineType({
       initialValue: 0,
       hidden: true,
     }),
+    defineField({
+      name: "archived",
+      title: "Archived",
+      type: "boolean",
+      description: "Archived shows are hidden from the website.",
+      initialValue: false,
+    }),
   ],
   orderings: [
     {
