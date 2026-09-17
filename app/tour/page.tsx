@@ -48,7 +48,7 @@ export default function TourPage() {
         />
       </div>
 
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto">
         {tourDates.map((tour, index) => {
           const specialGuest = tour.specialGuest
             ?.trim()

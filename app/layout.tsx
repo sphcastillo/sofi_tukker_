@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "Sofi Tukker: Developer Edition",
+  title: {
+    default: "Home : Sofi-Tukker",
+    template: "%s : Sofi-Tukker",
+  },
   description:
     "Fan-made portfolio recreation of the Sofi Tukker website. Not affiliated with or endorsed by Sofi Tukker. Built to showcase front-end development skills.",
 };
