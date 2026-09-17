@@ -6,10 +6,18 @@ export const tourDate = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "eventDate",
+      title: "Event Date",
+      type: "date",
+      description:
+        "The show date. Studio and the tour page list events from nearest to furthest.",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "date",
-      title: "Date",
+      title: "Display Date",
       type: "string",
-      description: 'Display format, e.g. "JAN 29, 2026"',
+      description: 'How the date appears on the site, e.g. "JAN 29, 2026"',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -53,21 +61,32 @@ export const tourDate = defineType({
       title: "Sort Order",
       type: "number",
       initialValue: 0,
+      hidden: true,
     }),
   ],
   orderings: [
     {
-      title: "Sort Order",
-      name: "sortOrderAsc",
-      by: [{ field: "sortOrder", direction: "asc" }],
+      title: "Date (nearest first)",
+      name: "eventDateAsc",
+      by: [{ field: "eventDate", direction: "asc" }],
+    },
+    {
+      title: "Date (furthest first)",
+      name: "eventDateDesc",
+      by: [{ field: "eventDate", direction: "desc" }],
     },
   ],
   preview: {
-    select: { title: "venue", date: "date", specialGuest: "specialGuest" },
-    prepare({ title, date, specialGuest }) {
+    select: {
+      venue: "venue",
+      date: "date",
+      eventDate: "eventDate",
+      specialGuest: "specialGuest",
+    },
+    prepare({ venue, date, eventDate, specialGuest }) {
       return {
-        title,
-        subtitle: specialGuest ? `${date} · w/ ${specialGuest}` : date,
+        title: date || eventDate,
+        subtitle: specialGuest ? `${venue} · w/ ${specialGuest}` : venue,
       };
     },
   },

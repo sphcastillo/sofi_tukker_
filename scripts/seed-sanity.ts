@@ -7,6 +7,7 @@ import { BandStoreProducts } from "../data/SofiTukkerStoreData";
 import { SofiTukkerMerchItems } from "../data/SofiTukkerMerchData";
 import { SofiTukkerMusicObjectives } from "../data/SofiTukkerMusicData";
 import { videos } from "../data/MusicVideosData";
+import { parseDisplayDate } from "./parse-tour-date";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
@@ -94,6 +95,7 @@ async function main() {
   tourDates.forEach((item, i) => {
     tx.create({
       _type: "tourDate",
+      eventDate: parseDisplayDate(item.date) ?? undefined,
       date: item.date,
       venue: item.venue,
       city: item.city,
