@@ -57,7 +57,7 @@ export default function TourPage() {
           return (
             <div
               key={index}
-              className={`grid grid-cols-3 gap-4 items-center p-1 xxs:p-2 xs:p-4 md:px-12 lg:px-[120px] rounded-lg mb-4 transition-colors duration-300 ${
+              className={`group grid grid-cols-3 gap-4 items-center p-1 xxs:p-2 xs:p-4 md:px-12 lg:px-[120px] rounded-lg mb-4 transition-colors duration-300 ${
                 theme === "theme1"
                   ? "bg-theme1-tourpagebgcolor"
                   : "bg-theme2-tourpagebgcolor"
@@ -118,14 +118,14 @@ export default function TourPage() {
                 <button
                   className={`${
                     franklinGothicCondensed.className
-                  } inline-flex items-center justify-center w-full xs:w-0 xs:flex-1 xs:basis-0 text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
+                  } inline-flex items-center justify-center w-full xs:w-0 xs:flex-1 xs:basis-0 text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl transition-colors duration-300 hover:border-2 ${
                     theme === "theme1"
                       ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
-                      : "hover:bg-theme2-tourpagehoverbutonbgcolor"
+                      : "group-hover:bg-[#2FC64d]"
                   } ${
                     theme === "theme1"
                       ? "hover:text-theme1-tourpagehoverbuttontextcolor"
-                      : "hover:text-theme2-tourpagehoverbuttontextcolorr"
+                      : "group-hover:text-[#000000]"
                   } hover:border-2 
                                      ${
                                        theme === "theme1"
