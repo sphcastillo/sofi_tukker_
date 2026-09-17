@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 type TourDate = {
   date: string;
   venue: string;
+  specialGuest?: string | null;
   city: string;
   link: string;
   VIP: boolean;
@@ -48,19 +49,24 @@ export default function TourPage() {
       </div>
 
       <div className="container mx-auto p-4">
-        {tourDates.map((tour, index) => (
-          <div
-            key={index}
-            className={`grid grid-cols-3 gap-4 items-center p-1 xxs:p-2 xs:p-4 md:px-12 lg:px-[120px] rounded-lg mb-4 transition-colors duration-300 ${
-              theme === "theme1"
-                ? "bg-theme1-tourpagebgcolor"
-                : "bg-theme2-tourpagebgcolor"
-            } ${
-              theme === "theme1"
-                ? "hover:bg-theme1-tourpagehoverbgcolor"
-                : "hover:bg-theme2-tourpagehoverbgcolor"
-            }`}
-          >
+        {tourDates.map((tour, index) => {
+          const specialGuest = tour.specialGuest
+            ?.trim()
+            .replace(/^w\/\s*/i, "");
+
+          return (
+            <div
+              key={index}
+              className={`grid grid-cols-3 gap-4 items-center p-1 xxs:p-2 xs:p-4 md:px-12 lg:px-[120px] rounded-lg mb-4 transition-colors duration-300 ${
+                theme === "theme1"
+                  ? "bg-theme1-tourpagebgcolor"
+                  : "bg-theme2-tourpagebgcolor"
+              } ${
+                theme === "theme1"
+                  ? "hover:bg-theme1-tourpagehoverbgcolor"
+                  : "hover:bg-theme2-tourpagehoverbgcolor"
+              }`}
+            >
             <div>
               <div
                 className={`${
@@ -82,6 +88,17 @@ export default function TourPage() {
               >
                 {tour.venue}
               </div>
+              {specialGuest ? (
+                <div
+                  className={`${franklinGothicCondensed.className} ${
+                    theme === "theme1"
+                      ? "text-theme1-tourpagetextcolor"
+                      : "text-theme2-tourpagetextcolor"
+                  } text-[13px] xxs:text-[15px] sm:text-[18px]`}
+                >
+                  w/ {specialGuest}
+                </div>
+              ) : null}
             </div>
 
             <div
@@ -96,12 +113,12 @@ export default function TourPage() {
               {tour.city}
             </div>
 
-            <div className="flex justify-end gap-2 flex-col xs:flex-row">
+            <div className="flex justify-end gap-2 flex-col xs:flex-row xs:items-stretch">
               {tour.VIP && (
                 <button
                   className={`${
                     franklinGothicCondensed.className
-                  } w-full text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
+                  } inline-flex items-center justify-center w-full xs:w-0 xs:flex-1 xs:basis-0 text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
                     theme === "theme1"
                       ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                       : "hover:bg-theme2-tourpagehoverbutonbgcolor"
@@ -128,11 +145,13 @@ export default function TourPage() {
                 </button>
               )}
               {tour.tickets ? (
-                <Link href={tour.link || ''} target="_blank">
+                <Link
+                  href={tour.link || ''}
+                  target="_blank"
+                  className={`w-full ${tour.VIP ? "xs:w-0 xs:flex-1 xs:basis-0" : "xl:max-w-[240px]"}`}
+                >
                   <div
-                    className={`${franklinGothicCondensed.className} w-full ${
-                      !tour.VIP ? "xl:max-w-[240px]" : ""
-                    } text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
+                    className={`${franklinGothicCondensed.className} inline-flex items-center justify-center w-full h-full text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl hover:border-2 ${
                       theme === "theme1"
                         ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                         : "hover:bg-theme2-tourpagehoverbutonbgcolor"
@@ -159,11 +178,13 @@ export default function TourPage() {
                   </div>
                 </Link>
               ) : (
-                <Link href={tour.link || ''} target="_blank">
+                <Link
+                  href={tour.link || ''}
+                  target="_blank"
+                  className={`w-full ${tour.VIP ? "xs:w-0 xs:flex-1 xs:basis-0" : "xl:max-w-[240px]"}`}
+                >
                   <div
-                    className={`${franklinGothicCondensed.className} w-full ${
-                      !tour.VIP ? "xl:max-w-[240px]" : ""
-                    } text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl ${
+                    className={`${franklinGothicCondensed.className} inline-flex items-center justify-center w-full h-full text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl ${
                       theme === "theme1"
                         ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
                         : "hover:bg-theme2-tourpagehoverbutonbgcolor"
@@ -193,7 +214,8 @@ export default function TourPage() {
               )}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="flex items-center justify-center pb-8 md:pt-10">

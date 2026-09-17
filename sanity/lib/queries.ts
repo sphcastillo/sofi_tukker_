@@ -8,6 +8,7 @@ export const storeItemsQuery = `*[_type == "storeItem"] | order(sortOrder asc) {
 export const tourDatesQuery = `*[_type == "tourDate"] | order(sortOrder asc) {
   date,
   venue,
+  specialGuest,
   city,
   link,
   "VIP": vip,

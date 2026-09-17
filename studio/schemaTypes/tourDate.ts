@@ -19,6 +19,13 @@ export const tourDate = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "specialGuest",
+      title: "Special Guest",
+      type: "string",
+      description:
+        'Optional. Shown below the venue as “w/ Guest Name”. Enter the name only, e.g. "The Veronicas".',
+    }),
+    defineField({
       name: "city",
       title: "City",
       type: "string",
@@ -56,6 +63,12 @@ export const tourDate = defineType({
     },
   ],
   preview: {
-    select: { title: "venue", subtitle: "date" },
+    select: { title: "venue", date: "date", specialGuest: "specialGuest" },
+    prepare({ title, date, specialGuest }) {
+      return {
+        title,
+        subtitle: specialGuest ? `${date} · w/ ${specialGuest}` : date,
+      };
+    },
   },
 });
