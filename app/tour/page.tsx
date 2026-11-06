@@ -15,6 +15,7 @@ type TourDate = {
   city: string;
   link: string;
   VIP: boolean;
+  vipLink?: string | null;
   tickets: boolean;
 };
 
@@ -115,34 +116,41 @@ export default function TourPage() {
 
             <div className="flex justify-end gap-2 flex-col xs:flex-row xs:items-stretch">
               {tour.VIP && (
-                <button
-                  className={`${
-                    franklinGothicCondensed.className
-                  } inline-flex items-center justify-center w-full xs:w-0 xs:flex-1 xs:basis-0 text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl transition-colors duration-300 hover:border-2 ${
-                    theme === "theme1"
-                      ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
-                      : "group-hover:bg-[#2FC64d]"
-                  } ${
-                    theme === "theme1"
-                      ? "hover:text-theme1-tourpagehoverbuttontextcolor"
-                      : "group-hover:text-[#000000]"
-                  } hover:border-2 
+                <Link
+                  href={tour.vipLink || ""}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full xs:w-0 xs:flex-1 xs:basis-0"
+                >
+                  <div
+                    className={`${
+                      franklinGothicCondensed.className
+                    } inline-flex items-center justify-center w-full h-full text-center text-[15px] xxs:text-[18px] sm:text-[22px] px-2 py-2 xs:px-4 rounded-xl transition-colors duration-300 hover:border-2 ${
+                      theme === "theme1"
+                        ? "hover:bg-theme1-tourpagehoverbutonbgcolor"
+                        : "group-hover:bg-[#2FC64d]"
+                    } ${
+                      theme === "theme1"
+                        ? "hover:text-theme1-tourpagehoverbuttontextcolor"
+                        : "group-hover:text-[#000000]"
+                    } hover:border-2 
                                      ${
                                        theme === "theme1"
                                          ? "hover:border-theme1-tourpagehoverbuttonbordercolor"
                                          : "hover:border-theme2-tourpagehoverbuttonbordercolor"
                                      } ${
-                    theme === "theme1"
-                      ? "text-theme1-tourpagebuttontextcolor"
-                      : "text-theme2-tourpagebuttontextcolor"
-                  } ${
-                    theme === "theme1"
-                      ? "bg-theme1-tourpagebuttonbgcolor"
-                      : "bg-theme2-tourpagebuttonbgcolor"
-                  }`}
-                >
-                  VIP
-                </button>
+                      theme === "theme1"
+                        ? "text-theme1-tourpagebuttontextcolor"
+                        : "text-theme2-tourpagebuttontextcolor"
+                    } ${
+                      theme === "theme1"
+                        ? "bg-theme1-tourpagebuttonbgcolor"
+                        : "bg-theme2-tourpagebuttonbgcolor"
+                    }`}
+                  >
+                    VIP
+                  </div>
+                </Link>
               )}
               {tour.tickets ? (
                 <Link

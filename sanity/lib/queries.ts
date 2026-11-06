@@ -15,6 +15,7 @@ export const tourDatesQuery = `*[
   city,
   link,
   "VIP": vip,
+  vipLink,
   tickets
 }`;
 

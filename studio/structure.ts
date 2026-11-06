@@ -18,11 +18,11 @@ export const structure: StructureResolver = (S, context) =>
             perspective: "previewDrafts",
           });
           const tourDates: TourDateListItem[] = await client.fetch(
-            `*[_type == "tourDate"] | order(eventDate asc) {_id, date, venue}`
+            `*[_type == "tourDate"] | order(eventDate desc) {_id, date, venue}`
           );
 
           return S.list()
-            .id("tour-dates-chronological")
+            .id("tour-dates-newest-first")
             .title("Tour Dates")
             .items(
               tourDates.map((doc) => {
