@@ -55,7 +55,11 @@ export const structure: StructureResolver = (S, context) =>
         .child(S.documentTypeList("musicRelease").title("Music Releases")),
       S.listItem()
         .title("Music Videos")
-        .child(S.documentTypeList("musicVideo").title("Music Videos")),
+        .child(
+          S.documentTypeList("musicVideo")
+            .title("Music Videos")
+            .defaultOrdering([{ field: "sortOrder", direction: "asc" }])
+        ),
       S.listItem()
         .title("Social Links")
         .child(S.documentTypeList("socialLink").title("Social Links")),

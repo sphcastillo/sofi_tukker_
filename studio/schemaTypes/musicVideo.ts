@@ -27,7 +27,10 @@ export const musicVideo = defineType({
       name: "sortOrder",
       title: "Sort Order",
       type: "number",
-      initialValue: 0,
+      description:
+        "Leave as 1 to put this video first; older videos shift down. Set a different number to place it yourself.",
+      initialValue: 1,
+      validation: (Rule) => Rule.required().integer().min(1),
     }),
   ],
   orderings: [
@@ -38,6 +41,11 @@ export const musicVideo = defineType({
     },
   ],
   preview: {
-    select: { title: "title" },
+    select: { title: "title", sortOrder: "sortOrder" },
+    prepare({ title, sortOrder }) {
+      return {
+        title: sortOrder ? `${sortOrder}. ${title}` : title,
+      };
+    },
   },
 });
