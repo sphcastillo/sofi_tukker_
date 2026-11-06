@@ -41,8 +41,8 @@ export const musicReleasesQuery = `*[_type == "musicRelease"] | order(sortOrder 
   url
 }`;
 
-export const musicVideosQuery = `*[_type == "musicVideo"] | order(sortOrder asc) {
-  "id": sortOrder,
+export const musicVideosQuery = `*[_type == "musicVideo"] | order(sortOrder asc, _createdAt asc) {
+  "id": _id,
   title,
   thumbnail,
   url

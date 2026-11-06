@@ -17,12 +17,6 @@ export const videos = [
     url: "https://www.youtube.com/embed/nRpCivrtmXM?autoplay=1",
     title: "SOFI TUKKER - Throw Some Ass (Official Music Video)",
   },
-  // {
-  //   id: 3,
-  //   thumbnail: "https://img.youtube.com/vi/sc04A4n0qkk/maxresdefault.jpg",
-  //   url: "https://www.youtube.com/embed/sc04A4n0qkk?autoplay=1",
-  //   title: "SOFI TUKKER - Spiral (Official Music Video)",
-  // },
   {
     id: 4,
     thumbnail: "https://img.youtube.com/vi/6wYLQmMyhF0/maxresdefault.jpg",
